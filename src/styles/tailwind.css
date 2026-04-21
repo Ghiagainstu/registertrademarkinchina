@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #1E293B;
+  --accent: #10B981;
+  --bg: #F8FAFC;
+  --text: #0F172A;
+}
+html { font-family: system-ui, -apple-system, sans-serif; }
+body { background: var(--bg); color: var(--text); }

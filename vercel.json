@@ -1,0 +1,9 @@
+{
+  "buildCommand": "echo 'Nothing to build for static site'; true",
+  "devCommand": "echo 'No dev server for static'; true",
+  "installCommand": "echo 'Skipping install'; true",
+  "framework": "nextjs",
+  "output": "standalone",
+  "env": { "NEXT_PUBLIC_SITE_URL": "https://your-domain.com" },
+  "build": { "env": { "NODE_ENV": "production" } }
+}
