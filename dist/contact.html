@@ -85,10 +85,10 @@
       <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-12">
         <!-- Form -->
         <div class="md:col-span-3 reveal">
-          <form id="contactFormEl" class="space-y-6" action="https://formspree.io/f/registertrademarkinchina" method="POST" novalidate>
+          <form id="contactFormEl" class="space-y-6" action="https://formspree.io/f/mjgdborb" method="POST" novalidate>
             <input type="hidden" name="_replyto" value="info@registertrademarkinchina.com">
             <input type="hidden" name="_subject" value="New Trademark Inquiry">
-            <input type="hidden" name="_gotcha" style="display:none">
+
 
             <div class="grid sm:grid-cols-2 gap-6">
               <div>
@@ -147,6 +147,10 @@
           </form>
 
           <!-- Success message -->
+          <div id="formError" class="hidden mt-8 glass rounded-2xl p-8 text-center border border-red-500/20">
+            <h3 class="font-display text-xl font-semibold mb-2 text-red-400">Submission Failed</h3>
+            <p class="text-slate-400 text-sm">Please try again or email us at <a href="mailto:info@registertrademarkinchina.com" class="text-brand hover:underline">info@registertrademarkinchina.com</a></p>
+          </div>
           <div id="formSuccess" class="hidden mt-8 glass rounded-2xl p-8 text-center">
             <div class="w-14 h-14 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>

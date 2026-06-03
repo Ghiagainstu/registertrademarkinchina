@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   'use strict';
 
   // Mobile menu toggle
@@ -9,7 +9,6 @@
     btn.addEventListener('click', function () {
       menu.classList.toggle('hidden');
     });
-    // Close on link click
     menu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         menu.classList.add('hidden');
@@ -58,13 +57,17 @@
     });
   }
 
-  // Form handling
+  // Form handling (Formspree AJAX)
   function initForm() {
     var form = document.getElementById('contactFormEl');
     var success = document.getElementById('formSuccess');
+    var error = document.getElementById('formError');
+    var btn = document.getElementById('contactSubmitBtn');
     if (!form) return;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      if (error) error.classList.add('hidden');
       var formData = new FormData(form);
       fetch(form.action, {
         method: 'POST',
@@ -74,9 +77,19 @@
         if (res.ok) {
           form.classList.add('hidden');
           if (success) success.classList.remove('hidden');
+        } else {
+          return res.json().then(function (data) {
+            if (data && data.errors) {
+              var msgs = data.errors.map(function (e) { return e.message; }).join(', ');
+              if (error) error.querySelector('p').textContent = msgs;
+            }
+            if (error) error.classList.remove('hidden');
+          });
         }
       }).catch(function () {
-        alert('Something went wrong. Please try again or email us directly.');
+        if (error) error.classList.remove('hidden');
+      }).then(function () {
+        if (btn) { btn.disabled = false; btn.textContent = 'Send Inquiry'; }
       });
     });
   }
