@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "echo 'Static build'; true",
-    "postbuild": "node update-faq-with-contact.js",
-    "dev": "echo 'No dev server'"
+    "dev": "npx tailwindcss -i ./src/styles/tailwind.css -o ./dist/styles/tailwind.css --watch",
+    "build": "npx tailwindcss -i ./src/styles/tailwind.css -o ./dist/styles/tailwind.css --minify",
+    "preview": "npx serve dist"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^3.4.17"
+  }
 }

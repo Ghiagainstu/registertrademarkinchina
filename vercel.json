@@ -1,9 +1,14 @@
-{
-  "buildCommand": "echo 'Nothing to build for static site'; true",
-  "devCommand": "echo 'No dev server for static'; true",
-  "installCommand": "echo 'Skipping install'; true",
-  "framework": "nextjs",
-  "output": "standalone",
-  "env": { "NEXT_PUBLIC_SITE_URL": "https://your-domain.com" },
-  "build": { "env": { "NODE_ENV": "production" } }
+﻿{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/cookie", "destination": "/cookie.html" }
+  ]
 }

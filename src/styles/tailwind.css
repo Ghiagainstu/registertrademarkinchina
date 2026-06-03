@@ -1,12 +1,115 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --brand: #1E293B;
-  --accent: #10B981;
-  --bg: #F8FAFC;
-  --text: #0F172A;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: #0B0F1A;
+    color: #E2E8F0;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  ::selection {
+    background: rgba(15, 240, 179, 0.3);
+    color: #fff;
+  }
 }
-html { font-family: system-ui, -apple-system, sans-serif; }
-body { background: var(--bg); color: var(--text); }
+
+@layer components {
+  /* Glassmorphism card */
+  .glass {
+    background: rgba(15, 19, 32, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(15, 240, 179, 0.1);
+  }
+  .glass-hover:hover {
+    border-color: rgba(15, 240, 179, 0.3);
+    box-shadow: 0 0 30px rgba(15, 240, 179, 0.1);
+  }
+
+  /* Neon text */
+  .text-neon {
+    color: #0FF0B3;
+    text-shadow: 0 0 20px rgba(15, 240, 179, 0.5);
+  }
+  .text-neon-blue {
+    color: #00D4FF;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+
+  /* Gradient border */
+  .border-gradient {
+    border-image: linear-gradient(135deg, #0FF0B3, #00D4FF) 1;
+  }
+
+  /* Geometric accent line */
+  .accent-line {
+    position: relative;
+  }
+  .accent-line::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #0FF0B3, #00D4FF);
+  }
+
+  /* Button glow */
+  .btn-glow {
+    background: linear-gradient(135deg, #0FF0B3, #00D4FF);
+    color: #0B0F1A;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-glow:hover {
+    box-shadow: 0 0 30px rgba(15, 240, 179, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Outline button */
+  .btn-outline {
+    border: 1px solid rgba(15, 240, 179, 0.4);
+    color: #0FF0B3;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover {
+    background: rgba(15, 240, 179, 0.1);
+    border-color: #0FF0B3;
+  }
+
+  /* Grid background */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(15, 240, 179, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 240, 179, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Section divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(15, 240, 179, 0.2), transparent);
+  }
+
+  /* Scroll-triggered fade */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
