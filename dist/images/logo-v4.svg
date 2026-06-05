@@ -1,0 +1,21 @@
+﻿<svg viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="moonGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0FF0B3"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+    <filter id="glow4">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Moon -->
+  <circle cx="24" cy="22" r="14" fill="url(#moonGrad4)" filter="url(#glow4)"/>
+  <circle cx="30" cy="18" r="11" fill="#0B0F1A"/>
+  <!-- TMG inside moon -->
+  <text x="12" y="28" font-family="Space Grotesk, system-ui, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" letter-spacing="-0.3">TM</text>
+  <!-- Brand name -->
+  <text x="48" y="28" font-family="Space Grotesk, system-ui, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">TUYUE</text>
+  <!-- Tagline -->
+  <text x="48" y="42" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#64748B" letter-spacing="1.5">TRADEMARK REGISTRATION</text>
+</svg>

@@ -1,0 +1,19 @@
+﻿<svg viewBox="0 0 220 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="moonGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0FF0B3"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+  </defs>
+  <!-- RT text -->
+  <text x="0" y="34" font-family="Space Grotesk, system-ui, sans-serif" font-size="26" font-weight="700" fill="#0FF0B3" letter-spacing="-0.5">RT</text>
+  <!-- Moon as the dot/accent on M -->
+  <circle cx="72" cy="10" r="7" fill="url(#moonGrad3)"/>
+  <circle cx="75" cy="8" r="5.5" fill="#0B0F1A"/>
+  <!-- M -->
+  <text x="58" y="34" font-family="Space Grotesk, system-ui, sans-serif" font-size="26" font-weight="700" fill="#0FF0B3" letter-spacing="-0.5">M</text>
+  <!-- CN -->
+  <text x="90" y="34" font-family="Space Grotesk, system-ui, sans-serif" font-size="26" font-weight="700" fill="#00D4FF" letter-spacing="-0.5">CN</text>
+  <!-- Tagline -->
+  <text x="0" y="46" font-family="Inter, system-ui, sans-serif" font-size="8" fill="#64748B" letter-spacing="2">TRADEMARK REGISTRATION</text>
+</svg>
