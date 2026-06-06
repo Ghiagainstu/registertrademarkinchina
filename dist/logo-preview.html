@@ -3,104 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logo Preview — RTMCN</title>
+  <title>Logo Preview — RTM + CN</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0B0F1A; color: #E2E8F0; font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; padding: 60px 40px; }
-    h1 { font-family: 'Space Grotesk', system-ui; text-align: center; margin-bottom: 12px; font-size: 28px; }
-    .subtitle { text-align: center; color: #64748B; margin-bottom: 60px; font-size: 14px; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; }
-    .card { background: rgba(15, 19, 32, 0.6); border: 1px solid rgba(15, 240, 179, 0.1); border-radius: 16px; padding: 40px; text-align: center; transition: border-color 0.3s; }
-    .card:hover { border-color: rgba(15, 240, 179, 0.3); box-shadow: 0 0 30px rgba(15, 240, 179, 0.1); }
-    .card-label { font-size: 13px; color: #64748B; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 2px; }
-    .card img { max-width: 280px; height: auto; margin-bottom: 16px; }
-    .card p { font-size: 13px; color: #94A3B8; line-height: 1.6; max-width: 320px; margin: 0 auto; }
-    .card .desc { margin-top: 8px; font-weight: 600; color: #E2E8F0; font-size: 14px; }
-    .divider { max-width: 900px; margin: 40px auto; border-top: 1px solid rgba(15, 240, 179, 0.1); }
-    .context-section { max-width: 900px; margin: 0 auto 60px; }
-    .context-section h2 { font-family: 'Space Grotesk'; font-size: 18px; margin-bottom: 24px; color: #0FF0B3; }
-    .context-card { background: rgba(15, 19, 32, 0.6); border: 1px solid rgba(15, 240, 179, 0.1); border-radius: 16px; padding: 24px; }
-    .context-card img { max-width: 360px; height: auto; }
-    .nav-preview { background: rgba(15, 19, 32, 0.8); border: 1px solid rgba(15, 240, 179, 0.1); border-radius: 12px; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto 20px; }
+    body { background: #0B0F1A; color: #E2E8F0; font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; padding: 60px 40px; }
+    h1 { font-family: 'Space Grotesk'; font-size: 24px; color: #64748B; }
+    .card { background: rgba(15, 19, 32, 0.6); border: 1px solid rgba(15, 240, 179, 0.1); border-radius: 16px; padding: 48px 80px; text-align: center; }
+    .card img { max-width: 320px; height: auto; }
+    .nav-preview { background: rgba(15, 19, 32, 0.8); border: 1px solid rgba(15, 240, 179, 0.1); border-radius: 12px; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 700px; }
     .nav-preview img { height: 32px; width: auto; }
     .nav-links { color: #94A3B8; font-size: 13px; display: flex; gap: 24px; }
+    .label { color: #64748B; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
   </style>
 </head>
 <body>
-  <h1>Logo Versions</h1>
-  <p class="subtitle">Based on the crescent moon from tuyuesioxin.cn, adapted to RTMCN brand colors (#0FF0B3 green + #00D4FF blue)</p>
-
-  <div class="grid">
-    <div class="card">
-      <div class="card-label">Version 1</div>
-      <img src="/images/logo-v1.svg" alt="Logo V1">
-      <p class="desc">Moon icon + RTMCN inline</p>
-      <p>TMG moon on left, RTMCN text on right. Simple, matches tuyuesioxin.cn layout.</p>
-    </div>
-    <div class="card">
-      <div class="card-label">Version 2</div>
-      <img src="/images/logo-v2.svg" alt="Logo V2">
-      <p class="desc">Centered moon with glow + RTMCN</p>
-      <p>Moon sits above/centered, with glow effect. RTMCN text below. More prominent moon.</p>
-    </div>
-    <div class="card">
-      <div class="card-label">Version 3</div>
-      <img src="/images/logo-v3.svg" alt="Logo V3">
-      <p class="desc">Moon accent on M + tagline</p>
-      <p>Moon replaces the dot on M. "TRADEMARK REGISTRATION" tagline below. Creative integration.</p>
-    </div>
-    <div class="card">
-      <div class="card-label">Version 4</div>
-      <img src="/images/logo-v4.svg" alt="Logo V4">
-      <p class="desc">TUYUE full brand + moon + tagline</p>
-      <p>Uses full brand name "TUYUE" instead of RTMCN. Moon with TM inside. Clean and professional.</p>
-    </div>
+  <h1>Logo: RTM (moon) + CN (blue)</h1>
+  
+  <div class="card">
+    <img src="/images/logo-v1-preview.svg" alt="Logo preview">
   </div>
 
-  <div class="divider"></div>
-
-  <div class="context-section">
-    <h2>Context: How it looks in the nav bar</h2>
-
-    <div class="nav-preview">
-      <img src="/images/logo-v1.svg" alt="V1 nav">
-      <div class="nav-links"><span>Services</span><span>About</span><span>Contact</span></div>
-    </div>
-    <div class="nav-preview">
-      <img src="/images/logo-v2.svg" alt="V2 nav">
-      <div class="nav-links"><span>Services</span><span>About</span><span>Contact</span></div>
-    </div>
-    <div class="nav-preview">
-      <img src="/images/logo-v3.svg" alt="V3 nav">
-      <div class="nav-links"><span>Services</span><span>About</span><span>Contact</span></div>
-    </div>
-    <div class="nav-preview">
-      <img src="/images/logo-v4.svg" alt="V4 nav">
-      <div class="nav-links"><span>Services</span><span>About</span><span>Contact</span></div>
-    </div>
+  <p class="label">In nav bar context</p>
+  <div class="nav-preview">
+    <img src="/images/logo-v1-preview.svg" alt="Logo in nav">
+    <div class="nav-links"><span>Services</span><span>Process</span><span>Case Study</span><span>Classes</span><span>About</span></div>
   </div>
 
-  <div class="context-section">
-    <h2>Reference: tuyuesioxin.cn moon logo</h2>
-    <div class="context-card" style="text-align:center">
-      <p style="color:#94A3B8; font-size:13px;">Gold moon with TMG letters — source style</p>
-      <svg viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:300px; margin:20px auto; display:block;">
-        <defs>
-          <linearGradient id="refGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#c9a84c"/>
-            <stop offset="100%" stop-color="#e8c87a"/>
-          </linearGradient>
-        </defs>
-        <circle cx="30" cy="24" r="16" fill="url(#refGrad)"/>
-        <circle cx="37" cy="20" r="13" fill="#080c14"/>
-        <text x="16" y="32" font-family="Inter, sans-serif" font-size="19" font-weight="800" fill="#f0f4ff" letter-spacing="-0.8">TMG</text>
-        <text x="58" y="32" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#f0f4ff" letter-spacing="-0.5">Tuyue Media</text>
-        <text x="58" y="48" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#8896ab">Gateway</text>
-      </svg>
-    </div>
+  <p class="label">Dark background detail</p>
+  <div style="background:#070A14; border-radius:12px; padding:32px 48px;">
+    <img src="/images/logo-v1-preview.svg" alt="Logo on dark" style="height:40px;">
   </div>
 </body>
 </html>
