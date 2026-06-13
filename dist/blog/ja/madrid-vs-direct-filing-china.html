@@ -75,6 +75,9 @@
     /* TOC active */
     .toc-link.active { color: #0ff0b3; border-left: 2px solid #0ff0b3; padding-left: 0.75rem; }
   </style>
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html">
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/madrid-vs-direct-filing-china.html">
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html">
 </head>
 <body class="bg-slate-950 text-slate-300 font-body">
   <div id="reading-progress"></div>
@@ -89,6 +92,17 @@
         <a href="/ja/about.html" class="hover:text-brand transition-colors">会社概要</a>
         <a href="/blog/ja/" class="hover:text-brand transition-colors">ブログ</a>
         <a href="/ja/contact.html" class="hover:text-brand transition-colors">お問い合わせ</a>
+      </div>
+      <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="言語選択" aria-expanded="false">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          JA
+        </button>
+        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a href="#" class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
+          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
       </div>
       <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -162,6 +176,17 @@
                 <p class="text-sm text-slate-400 mb-4">中国商標登録についてご質問がありますか？</p>
                 <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">お問い合わせ</a>
               </div>
+      <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="言語選択" aria-expanded="false">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          JA
+        </button>
+        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a href="#" class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
+          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
             </div>
           </aside>
         </div>
@@ -173,6 +198,17 @@
         <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">中国商標登録のお手伝いが必要ですか？</h2>
         <p class="text-slate-400 mb-8">専門家がプロセス全体をご案内いたします。</p>
         <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">お問い合わせ</a>
+      </div>
+      <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="言語選択" aria-expanded="false">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          JA
+        </button>
+        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a href="#" class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
+          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
       </div>
     </section>
   </main>
@@ -247,5 +283,36 @@
       });
     });
 </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
 </body>
 </html>

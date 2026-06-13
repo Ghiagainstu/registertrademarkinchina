@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://registertrademarkchina.com/</loc>
@@ -89,7 +89,54 @@
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url></urlset>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/ja/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/index.html"/>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/ja/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/about.html"/>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/ja/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/services.html"/>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/ja/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/contact.html"/>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/ja/classes.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/classes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/classes.html"/>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/index.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
 
 
 

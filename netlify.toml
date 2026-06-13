@@ -38,3 +38,43 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/ja"
+  to = "/ja/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ja/about"
+  to = "/ja/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/ja/services"
+  to = "/ja/services.html"
+  status = 200
+
+[[redirects]]
+  from = "/ja/contact"
+  to = "/ja/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/ja/privacy"
+  to = "/ja/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/ja/cookie"
+  to = "/ja/cookie.html"
+  status = 200
+
+[[redirects]]
+  from = "/ja/classes"
+  to = "/ja/classes.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/ja"
+  to = "/blog/ja/index.html"
+  status = 200
