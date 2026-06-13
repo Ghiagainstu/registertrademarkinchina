@@ -87,9 +87,9 @@
           EN
         </button>
         <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
-          <a href="#" class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+          <a  class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
+          <a  class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a  class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
         </div>
       </div>
             <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white" aria-label="Open menu" aria-expanded="false">
@@ -458,6 +458,5 @@
         });
       });
     })();</script>
-<script>    (function(){var b=document.getElementById('lang-btn'),d=document.getElementById('lang-dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('hidden');b.setAttribute('aria-expanded',d.classList.contains('hidden')?'false':'true');});document.addEventListener('click',function(){d.classList.add('hidden');b.setAttribute('aria-expanded','false');});d.querySelectorAll('a[data-lang]').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var lang=l.dataset.lang,path=window.location.pathname,parts=path.split('/'),slug=parts.pop()||'index.html';if(slug==='')slug='index.html';window.location.href=lang==='en'?'/blog/'+slug:'/blog/'+lang+'/'+slug;});});})();</script>
 </body>
 </html>
