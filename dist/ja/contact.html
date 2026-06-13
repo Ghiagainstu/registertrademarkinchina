@@ -50,7 +50,7 @@
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand focus:text-surface focus:rounded-lg focus:font-semibold">コンテンツへスキップ</a>
 
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 glass border-b border-white/5" role="navigation" aria-label="Main navigation">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/ja/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
@@ -73,7 +73,7 @@
           <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
         </div>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -86,28 +86,7 @@
       <a href="/ja/about.html" class="block text-sm text-slate-400 hover:text-brand">会社概要</a>
       <a href="/ja/contact.html" class="block text-sm text-brand">お問い合わせ</a>
     </div>
-      <div class="relative" id="lang-switcher">
-        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="言語選択" aria-expanded="false">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          JA
-        </button>
-        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
-          <a href="#" class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
-        </div>
-      </div>
-  </nav>
-
-  <main id="main-content" class="pt-24">
-    <!-- Hero -->
-    <section class="py-24 px-6">
-      <div class="max-w-4xl mx-auto text-center reveal">
-        <p class="text-brand font-mono text-xs tracking-widest uppercase mb-3">お問い合わせ</p>
-        <h1 class="font-display text-4xl md:text-5xl font-bold mb-6">ブランド保護を<br><span class="text-brand">始めましょう</span></h1>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">無料の予備商標調査とコンサルテーションをご利用いただけます。義務は一切ありません。1営業日以内にご返信いたします。</p>
-      </div>
-    </section>
+      </section>
 
     <div class="section-divider max-w-4xl mx-auto"></div>
 
@@ -293,5 +272,6 @@
         });
       });
     })();</script>
+<script>    (function(){var b=document.getElementById('lang-btn'),d=document.getElementById('lang-dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('hidden');b.setAttribute('aria-expanded',d.classList.contains('hidden')?'false':'true');});document.addEventListener('click',function(){d.classList.add('hidden');b.setAttribute('aria-expanded','false');});d.querySelectorAll('a[data-lang]').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var lang=l.dataset.lang,path=window.location.pathname,slug=path.split('/').pop()||'index.html';if(slug==='')slug='index.html';window.location.href=lang==='en'?'/'+slug:'/'+lang+'/'+slug;});});})();</script>
 </body>
 </html>

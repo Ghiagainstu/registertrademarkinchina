@@ -49,7 +49,7 @@
   <!-- Skip to content -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand focus:text-surface focus:rounded-lg focus:font-semibold">Skip to content</a>
 
-  <nav class="fixed top-0 w-full z-50 glass border-b border-white/5" role="navigation" aria-label="Main navigation">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
@@ -173,6 +173,7 @@
         });
       });
     })();</script>
+<script>    (function(){var b=document.getElementById('lang-btn'),d=document.getElementById('lang-dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('hidden');b.setAttribute('aria-expanded',d.classList.contains('hidden')?'false':'true');});document.addEventListener('click',function(){d.classList.add('hidden');b.setAttribute('aria-expanded','false');});d.querySelectorAll('a[data-lang]').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var lang=l.dataset.lang,path=window.location.pathname,slug=path.split('/').pop()||'index.html';if(slug==='')slug='index.html';window.location.href=lang==='en'?'/'+slug:'/'+lang+'/'+slug;});});})();</script>
 </body>
 </html>
 

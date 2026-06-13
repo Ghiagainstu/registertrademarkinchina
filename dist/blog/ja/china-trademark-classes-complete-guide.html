@@ -82,7 +82,7 @@
 <body class="bg-slate-950 text-slate-300 font-body">
   <div id="reading-progress"></div>
 
-  <nav class="fixed top-0 w-full z-50 glass">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/ja/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN" class="h-8 w-auto"></a>
       <div class="hidden md:flex items-center gap-8 text-sm">
@@ -104,7 +104,7 @@
           <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
         </div>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white">
+            <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -716,19 +716,7 @@
                 <p class="text-sm text-slate-400 mb-4">中国商標登録についてご質問がありますか？</p>
                 <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">お問い合わせ</a>
               </div>
-      <div class="relative" id="lang-switcher">
-        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="言語選択" aria-expanded="false">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          JA
-        </button>
-        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
-          <a href="#" class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
-        </div>
-      </div>
-            </div>
-          </aside>
+      </aside>
         </div>
       </div>
     </section>
@@ -739,28 +727,7 @@
         <p class="text-slate-400 mb-8">専門家がプロセス全体をご案内いたします。</p>
         <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">お問い合わせ</a>
       </div>
-      <div class="relative" id="lang-switcher">
-        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="言語選択" aria-expanded="false">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          JA
-        </button>
-        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
-          <a href="#" class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-white/5 py-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
-          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — professional trademark services in China.</p>
-        </div>
-        <div>
+      <div>
           <h4 class="font-display font-semibold text-sm mb-3">Services</h4>
           <ul class="space-y-2 text-sm text-slate-500">
             <li><a href="/services.html" class="hover:text-brand transition-colors">Trademark Search</a></li>
@@ -854,5 +821,6 @@
         });
       });
     })();</script>
+<script>    (function(){var b=document.getElementById('lang-btn'),d=document.getElementById('lang-dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('hidden');b.setAttribute('aria-expanded',d.classList.contains('hidden')?'false':'true');});document.addEventListener('click',function(){d.classList.add('hidden');b.setAttribute('aria-expanded','false');});d.querySelectorAll('a[data-lang]').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var lang=l.dataset.lang,path=window.location.pathname,parts=path.split('/'),slug=parts.pop()||'index.html';if(slug==='')slug='index.html';window.location.href=lang==='en'?'/blog/'+slug:'/blog/'+lang+'/'+slug;});});})();</script>
 </body>
 </html>

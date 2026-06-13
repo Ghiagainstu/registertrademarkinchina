@@ -109,7 +109,7 @@
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand focus:text-surface focus:rounded-lg focus:font-semibold">コンテンツへスキップ</a>
 
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 glass border-b border-white/5" role="navigation" aria-label="Main navigation">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="/ja/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
@@ -132,7 +132,7 @@
           <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
         </div>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -145,24 +145,7 @@
       <a href="/ja/about.html" class="block text-sm text-slate-400 hover:text-brand">会社概要</a>
       <a href="/ja/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">お問い合わせ</a>
     </div>
-      <div class="relative" id="lang-switcher">
-        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="言語選択" aria-expanded="false">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          JA
-        </button>
-        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
-          <a href="#" class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
-        </div>
-      </div>
-  </nav>
-
-  <main id="main-content">
-  <!-- Hero -->
-  <section class="relative min-h-[90vh] flex items-center justify-center px-6 pt-24">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-neon-blue/5 pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+      <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
       <p class="text-brand font-mono text-sm tracking-widest uppercase mb-4">RTMCN — 中国商標登録のエキスパート</p>
       <h1 class="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
         中国で商標を<br><span class="text-brand">保護</span>する
@@ -396,67 +379,7 @@
         無料調査を開始する
       </a>
     </div>
-      <div class="relative" id="lang-switcher">
-        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="言語選択" aria-expanded="false">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          JA
-        </button>
-        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
-          <a href="#" class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
-          <a href="#" class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
-        </div>
-      </div>
-  </section>
-  <!-- Footer -->
-  <footer class="border-t border-white/5 py-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <a href="/ja/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
-          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 中国での商標登録に関するプロフェッショナルサービス。</p>
-        </div>
-        <div>
-          <h4 class="font-display font-semibold text-sm mb-3">サービス</h4>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="/ja/services.html" class="hover:text-brand transition-colors">商標調査</a></li>
-            <li><a href="/ja/services.html" class="hover:text-brand transition-colors">出願・登録</a></li>
-            <li><a href="/ja/services.html" class="hover:text-brand transition-colors">異議申立・防御</a></li>
-            <li><a href="/ja/services.html" class="hover:text-brand transition-colors">ブランド監視</a></li>
-            <li><a href="/ja/classes.html" class="hover:text-brand transition-colors">商標分類</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-display font-semibold text-sm mb-3">会社情報</h4>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="/ja/about.html" class="hover:text-brand transition-colors">会社概要</a></li>
-            <li><a href="/ja/contact.html" class="hover:text-brand transition-colors">お問い合わせ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-display font-semibold text-sm mb-3">法的情報</h4>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="/ja/privacy.html" class="hover:text-brand transition-colors">プライバシーポリシー</a></li>
-            <li><a href="/ja/cookie.html" class="hover:text-brand transition-colors">Cookieポリシー</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="section-divider mb-8"></div>
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-        <p>&copy; 2026 Tuyue Trademark Registration. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-  <!-- Cookie consent -->
-  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 glass border-t border-white/5 p-4 hidden">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-      <p class="text-slate-400">当サイトではCookieを使用してエクスペリエンスを向上させています。続行することで、<a href="/ja/cookie.html" class="text-brand hover:underline">Cookieポリシー</a>に同意したものとみなされます。</p>
-      <div class="flex gap-3">
-        <button id="cookie-accept" class="btn-glow px-5 py-2 rounded-lg text-sm font-semibold">同意する</button>
-        <a href="/ja/cookie.html" class="btn-outline px-5 py-2 rounded-lg text-sm">詳しく見る</a>
-      </div>
-    </div>
-  </div>
+      
   <script src="/scripts/main.js" defer></script>
 <script>    (function() {
       var btn = document.getElementById('lang-btn');
@@ -488,5 +411,6 @@
         });
       });
     })();</script>
+<script>    (function(){var b=document.getElementById('lang-btn'),d=document.getElementById('lang-dropdown');if(!b||!d)return;b.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('hidden');b.setAttribute('aria-expanded',d.classList.contains('hidden')?'false':'true');});document.addEventListener('click',function(){d.classList.add('hidden');b.setAttribute('aria-expanded','false');});d.querySelectorAll('a[data-lang]').forEach(function(l){l.addEventListener('click',function(e){e.preventDefault();var lang=l.dataset.lang,path=window.location.pathname,slug=path.split('/').pop()||'index.html';if(slug==='')slug='index.html';window.location.href=lang==='en'?'/'+slug:'/'+lang+'/'+slug;});});})();</script>
 </body>
 </html>
