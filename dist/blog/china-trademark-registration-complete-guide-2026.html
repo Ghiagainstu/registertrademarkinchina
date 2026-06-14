@@ -94,30 +94,41 @@
 <body class="bg-slate-950 text-slate-300">
   <div id="reading-progress"></div>
 
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto">
-      </a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
-        <a href="/services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Services</a>
-        <a href="/classes.html" class="text-sm text-slate-400 hover:text-white transition-colors">Classes</a>
-        <a href="/about.html" class="text-sm text-slate-400 hover:text-white transition-colors">About</a>
-        <a href="/blog/" class="text-sm text-brand font-semibold">Blog</a>
-        <a href="/contact.html" class="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">Services</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">Process</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">Case Study</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">Classes</a>
+        <a href="/blog/" class="text-brand">Blog</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">About</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">Get Started</a>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white" aria-label="Open menu" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          EN
+        </button>
+        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a  class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
+          <a  class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a  class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
-      <a href="/" class="block text-slate-300 hover:text-white">Home</a>
-      <a href="/services.html" class="block text-slate-300 hover:text-white">Services</a>
-      <a href="/classes.html" class="block text-slate-300 hover:text-white">Classes</a>
-      <a href="/about.html" class="block text-slate-300 hover:text-white">About</a>
-      <a href="/blog/" class="block text-brand font-semibold">Blog</a>
-      <a href="/contact.html" class="block text-slate-300 hover:text-white">Contact</a>
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">Services</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">Process</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">Case Study</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">Classes</a>
+      <a href="/blog/" class="block text-sm text-brand">Blog</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">About</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
     </div>
   </nav>
 
