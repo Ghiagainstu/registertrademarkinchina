@@ -123,6 +123,7 @@
   <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/classes.html">
   <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/classes.html">
   <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/classes.html">
+  <script src="/scripts/classes-data.js" defer></script>
 </head>
 <body class="min-h-screen bg-surface text-slate-200 font-body antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand focus:text-surface focus:rounded-lg focus:font-semibold">Skip to content</a>
@@ -163,10 +164,9 @@
       <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
     </div>
   </nav>
-  </nav>
   <main id="main-content" class="pt-24">
     <section class="hero-gradient py-16 px-6">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-4xl mx-auto text-center">
         <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
           <a href="/" class="hover:text-white transition-colors">Home</a>
           <span class="mx-2">/</span>
@@ -174,6 +174,7 @@
         </nav>
         <h1 class="font-display text-3xl md:text-5xl font-bold">Trademark Classes</h1>
         <p class="text-slate-400 mt-4 max-w-2xl">All 45 Nice Classification classes used by CNIPA for trademark registration in China.</p>
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">Trademark Classification</h1>
       </div>
     </section>
 <!-- Stats -->
@@ -259,39 +260,10 @@
         <p class="text-slate-400 mb-8">Our experts will help you identify the correct classes for your trademark filing.</p>
         <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">Get a Free Consultation</a>
       </div>
-      
 
-  <script src="/scripts/main.js" defer></script>
-<script>    (function() {
-      var btn = document.getElementById('lang-btn');
-      var dropdown = document.getElementById('lang-dropdown');
-      if (!btn || !dropdown) return;
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        dropdown.classList.toggle('hidden');
-        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
-      });
-      document.addEventListener('click', function() {
-        dropdown.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-      });
-      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          var lang = link.dataset.lang;
-          var path = window.location.pathname;
-          var slug = path.split('/').pop() || 'index.html';
-          if (slug === '' || slug === '/') slug = 'index.html';
-          var newPath;
-          if (lang === 'en') {
-            newPath = '/' + slug;
-          } else {
-            newPath = '/' + lang + '/' + slug;
-          }
-          window.location.href = newPath;
-        });
-      });
-    })();</script>
+    </section>
+  </main>
+
   <footer class="border-t border-white/5 py-12 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
@@ -332,6 +304,139 @@
     </div>
   </footer>
 
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof NICE_CLASSES === 'undefined') return;
+      
+      var goodsContainer = document.getElementById('goods-classes');
+      var servicesContainer = document.getElementById('services-classes');
+      var quickNav = document.getElementById('quick-nav');
+      var searchInput = document.getElementById('class-search');
+      var searchClear = document.getElementById('search-clear');
+      var resultCount = document.getElementById('search-result-count');
+      var expandAll = document.getElementById('expand-all');
+      var collapseAll = document.getElementById('collapse-all');
+      
+      function renderClass(cls) {
+        var isService = cls.id >= 35;
+        var accent = isService ? 'text-neon' : 'text-blue-400';
+        var badgeBg = isService ? 'bg-[#0ff0b3]/10' : 'bg-blue-400/10';
+        var borderHover = isService ? 'hover:border-[#0ff0b3]/30' : 'hover:border-blue-400/30';
+        
+        var itemsHtml = cls.items.map(function(item) {
+          return '<li class="flex items-start gap-2 py-1"><span class="text-slate-600 mt-0.5">•</span><span>' + item + '</span></li>';
+        }).join('');
+        
+        return '<details class="class-card group rounded-xl border border-white/5 ' + borderHover + ' transition-all duration-200" data-class-id="' + cls.id + '">' +
+          '<summary class="flex items-center gap-4 p-4 cursor-pointer select-none">' +
+            '<div class="flex-shrink-0 w-10 h-10 rounded-lg ' + badgeBg + ' flex items-center justify-center">' +
+              '<span class="font-display font-bold text-sm ' + accent + '">' + cls.id + '</span>' +
+            '</div>' +
+            '<div class="flex-1 min-w-0">' +
+              '<h3 class="font-display font-semibold text-sm text-slate-200">' + cls.name + '</h3>' +
+              '<p class="text-xs text-slate-500 truncate">' + cls.desc.substring(0, 80) + '...</p>' +
+            '</div>' +
+            '<svg class="w-4 h-4 text-slate-600 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>' +
+          '</summary>' +
+          '<div class="px-4 pb-4 pt-0">' +
+            '<p class="text-sm text-slate-400 mb-3 leading-relaxed">' + cls.desc + '</p>' +
+            '<h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Sample Items</h4>' +
+            '<ul class="text-sm text-slate-400 grid grid-cols-1 sm:grid-cols-2 gap-x-4">' + itemsHtml + '</ul>' +
+          '</div>' +
+        '</details>';
+      }
+      
+      function renderAll() {
+        var goodsHtml = '';
+        var servicesHtml = '';
+        var navHtml = '';
+        
+        NICE_CLASSES.forEach(function(cls) {
+          if (cls.id <= 34) {
+            goodsHtml += renderClass(cls);
+          } else {
+            servicesHtml += renderClass(cls);
+          }
+          var color = cls.id <= 34 ? 'bg-blue-400/10 text-blue-400 hover:bg-blue-400/20' : 'bg-[#0ff0b3]/10 text-[#0ff0b3] hover:bg-[#0ff0b3]/20';
+          navHtml += '<a href="#class-' + cls.id + '" class="qn-btn flex items-center justify-center rounded-md px-1.5 py-1 text-xs font-mono font-semibold transition-colors ' + color + '">' + cls.id + '</a>';
+        });
+        
+        goodsContainer.innerHTML = goodsHtml;
+        servicesContainer.innerHTML = servicesHtml;
+        quickNav.innerHTML = navHtml;
+        
+        // Add ids to class cards
+        document.querySelectorAll('.class-card').forEach(function(card) {
+          var id = card.getAttribute('data-class-id');
+          card.id = 'class-' + id;
+        });
+      }
+      
+      renderAll();
+      
+      // Search
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          var q = this.value.toLowerCase().trim();
+          var cards = document.querySelectorAll('.class-card');
+          var visible = 0;
+          cards.forEach(function(card) {
+            var text = card.textContent.toLowerCase();
+            var match = !q || text.indexOf(q) !== -1;
+            card.style.display = match ? '' : 'none';
+            if (match) visible++;
+          });
+          resultCount.textContent = q ? visible + ' class' + (visible !== 1 ? 'es' : '') + ' found' : '';
+          if (searchClear) searchClear.style.display = q ? '' : 'none';
+        });
+      }
+      
+      if (searchClear) {
+        searchClear.addEventListener('click', function() {
+          searchInput.value = '';
+          searchInput.dispatchEvent(new Event('input'));
+        });
+      }
+      
+      if (expandAll) expandAll.addEventListener('click', function() {
+        document.querySelectorAll('.class-card').forEach(function(d) { d.open = true; });
+      });
+      if (collapseAll) collapseAll.addEventListener('click', function() {
+        document.querySelectorAll('.class-card').forEach(function(d) { d.open = false; });
+      });
+    });
+  </script>
+  <script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var slug = path.split('/').pop() || 'index.html';
+          if (slug === '' || slug === '/') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/' + slug;
+          } else {
+            newPath = '/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
   </main>
 </body>
 </html>
