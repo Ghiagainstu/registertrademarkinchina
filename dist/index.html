@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -144,7 +144,8 @@
         <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">About</a>
       <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
     </div>
-      <!-- Gradient orbs -->
+  </nav>
+  <!-- Gradient orbs -->
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand/10 rounded-full blur-3xl animate-float"></div>
     <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -417,18 +418,69 @@
         </div>
   </section>
   <div class="section-divider max-w-4xl mx-auto"></div>
-  <!-- CTA -->
+    <!-- CTA -->
   <section class="py-24 px-6">
     <div class="max-w-3xl mx-auto text-center reveal">
       <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Ready to Protect Your Brand?</h2>
-      <p class="text-slate-400 mb-8 max-w-xl mx-auto">Get a free preliminary trademark search and consultation. No obligations.</p>
+      <p class="text-slate-400 mb-8 max-w-xl mx-auto">Get a free preliminary trademark search and consultation. No obligation.</p>
       <a href="/contact.html" class="btn-glow inline-block px-10 py-4 rounded-lg text-base font-semibold">
         Start Your Free Search
       </a>
     </div>
-      
+  </section>
+  </main>
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="w-8 h-8"><span class="font-display font-bold text-lg">RTMCN</span></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — professional trademark services in China.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Services</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Trademark Search</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Filing &amp; Prosecution</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Opposition &amp; Defense</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Brand Monitoring</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">Trademark Classes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Company</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">About Us</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Legal</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>&copy; 2026 Tuyue Trademark Registration. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Cookie consent -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 glass border-t border-white/5 p-4 hidden">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <p class="text-slate-400">We use cookies to improve your experience. By continuing, you agree to our <a href="/cookie.html" class="text-brand hover:underline">Cookie Policy</a>.</p>
+      <div class="flex gap-3">
+        <button id="cookie-accept" class="btn-glow px-5 py-2 rounded-lg text-sm font-semibold">Accept</button>
+        <a href="/cookie.html" class="btn-outline px-5 py-2 rounded-lg text-sm">Learn More</a>
+      </div>
+    </div>
+  </div>
   <script src="/scripts/main.js" defer></script>
-<script>    (function() {
+  <script>
+    (function() {
       var btn = document.getElementById('lang-btn');
       var dropdown = document.getElementById('lang-dropdown');
       if (!btn || !dropdown) return;
@@ -457,7 +509,7 @@
           window.location.href = newPath;
         });
       });
-    })();</script>
-  </main>
+    })();
+  </script>
 </body>
 </html>
