@@ -1,304 +1,49 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>중국 상표등록 블로그 | RTMCN</title>
-  <meta name="description" content="중국 상표등록, 브랜드 보호, 지식재산 전략에 대한 전문적 인사이트.">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://registertrademarkchina.com/blog/ko/"
-  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/index.html">
-  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/index.html">
-  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/index.html">
-  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/index.html">
->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
-          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
-        }
-      }
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>中国商標登録ブログ | RTMCN</title>
+  <meta name="description" content="Expert insights on China trademark registration, brand protection, and IP strategy for international businesses.">
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:title" content="Blog — China Trademark Insights">
+  <meta property="og:description" content="Expert insights on China trademark registration and brand protection.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ko/">
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog — China Trademark Insights">
+  <meta name="twitter:description" content="Expert insights on China trademark registration and brand protection.">
+  <link rel="stylesheet" href="/styles/tailwind.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "RTMCN Blog",
+    "description": "Expert insights on China trademark registration and brand protection.",
+    "url": "https://registertrademarkchina.com/blog/"
+  }
   </script>
-  <style>
-    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
-    .post-card { transition: transform 0.2s, box-shadow 0.2s; }
-    .post-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(15,240,179,0.08); }
-    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
-    .text-neon { background: linear-gradient(135deg, #0FF0B3, #00D4FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog"}
+    ]
+  }
+  </script>
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-</head>
-<body class="bg-slate-950 text-slate-300 font-sans">
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto">
-      </a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
-        <a href="/services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Services</a>
-        <a href="/classes.html" class="text-sm text-slate-400 hover:text-white transition-colors">Classes</a>
-        <a href="/about.html" class="text-sm text-slate-400 hover:text-white transition-colors">About</a>
-        <a href="/blog/ko/" class="text-sm text-brand font-semibold">블로그</a>
-        <a href="/contact.html" class="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
-      </div>
-      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white" aria-label="메뉴" aria-expanded="false">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
-      <a href="/" class="block text-slate-300 hover:text-white">Home</a>
-      <a href="/services.html" class="block text-slate-300 hover:text-white">Services</a>
-      <a href="/classes.html" class="block text-slate-300 hover:text-white">Classes</a>
-      <a href="/about.html" class="block text-slate-300 hover:text-white">About</a>
-      <a href="/blog/ko/" class="block text-brand font-semibold">블로그</a>
-      <a href="/contact.html" class="block text-slate-300 hover:text-white">Contact</a>
-    </div>
-  </nav>
-
-  <main id="main-content" class="pt-24">
-    <nav class="max-w-5xl mx-auto px-6 pt-8 pb-2" aria-label="breadcrumbs">
-      <ol class="flex items-center gap-2 text-sm text-slate-500">
-        <li><a href="/" class="hover:text-brand transition-colors">홈</a></li>
-        <li class="text-slate-600">/</li>
-        <li class="text-slate-300">블로그</li>
-      </ol>
-    </nav>
-
-    <section class="hero-gradient py-12 px-6">
-      <div class="max-w-4xl mx-auto text-center">
-        <p class="text-brand text-sm font-mono uppercase tracking-widest mb-3">인사이트</p>
-        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">
-          중국 상표<span class="text-neon">블로그</span>
-        </h1>
-        <p class="mt-4 text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          중국 시장 진출을 위한 상표등록, 브랜드 보호, 지식재산 전략에 대한 전문적 인사이트.
-        </p>
-      </div>
-    </section>
-
-    <div class="section-divider max-w-4xl mx-auto"></div>
-
-    <section class="py-12 px-6">
-      <div class="max-w-4xl mx-auto space-y-6">
-
-        <a href="/blog/ko/china-trademark-registration-complete-guide-2026.html" class="post-card glass rounded-2xl p-8 block group">
-          <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
-                <span class="text-xs text-slate-500">June 5, 2026</span>
-              </div>
-              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">중국 상표등록 완벽 가이드 (2026년판)</h2>
-              <p class="text-slate-400 text-sm leading-relaxed mb-4">2026년 중국 상표등록 단계별 가이드. 출원 절차, 비용, 일정, CNIPA 요건을 모두 다룹니다.</p>
-              <div class="flex items-center gap-2 text-xs text-slate-500">
-                <span class="px-2 py-0.5 rounded bg-white/5">상표등록</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">선출원주의</span>
-              </div>
-            </div>
-            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </div>
-        </a>
-        <a href="/blog/ko/who-can-register-trademark-in-china.html" class="post-card glass rounded-2xl p-8 block group">
-          <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
-                <span class="text-xs text-slate-500">June 6, 2026</span>
-              </div>
-              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">누가 중국에서 상표등록을 할 수 있나? 국적 제한 없음</h2>
-              <p class="text-slate-400 text-sm leading-relaxed mb-4">전 세계 개인·기업 누구나 중국에서 상표등록 가능. 국적 제한 없음. 신청 방법 안내.</p>
-              <div class="flex items-center gap-2 text-xs text-slate-500">
-                <span class="px-2 py-0.5 rounded bg-white/5">국적제한</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">신청자격</span>
-              </div>
-            </div>
-            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </div>
-        </a>
-        <a href="/blog/ko/china-first-to-file-trademark-guide.html" class="post-card glass rounded-2xl p-8 block group">
-          <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
-                <span class="text-xs text-slate-500">June 7, 2026</span>
-              </div>
-              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">중국 선출원주의와 브랜드 스쿼팅 대응</h2>
-              <p class="text-slate-400 text-sm leading-relaxed mb-4">중국의 선출원주의 상표 제도와 브랜드 스쿼팅 대응 전략을 설명합니다.</p>
-              <div class="flex items-center gap-2 text-xs text-slate-500">
-                <span class="px-2 py-0.5 rounded bg-white/5">선출원주의</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">스쿼팅</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">대응전략</span>
-              </div>
-            </div>
-            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </div>
-        </a>
-        <a href="/blog/ko/how-long-trademark-registration-china.html" class="post-card glass rounded-2xl p-8 block group">
-          <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
-                <span class="text-xs text-slate-500">June 8, 2026</span>
-              </div>
-              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">중국 상표등록에 얼마나 걸리나?</h2>
-              <p class="text-slate-400 text-sm leading-relaxed mb-4">중국 상표등록은 통상 9~12개월. CNIPA 프로세스 각 단계별 상세 일정.</p>
-              <div class="flex items-center gap-2 text-xs text-slate-500">
-                <span class="px-2 py-0.5 rounded bg-white/5">기간</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">일정</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
-              </div>
-            </div>
-            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </div>
-        </a>
-        <a href="/blog/ko/how-much-trademark-registration-cost-china.html" class="post-card glass rounded-2xl p-8 block group">
-          <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
-                <span class="text-xs text-slate-500">June 9, 2026</span>
-              </div>
-              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">중국 상표등록 비용은?</h2>
-              <p class="text-slate-400 text-sm leading-relaxed mb-4">중국 상표등록은 클래스당 300위안부터. CNIPA 수수료와 대리인 수수료 완전 내역.</p>
-              <div class="flex items-center gap-2 text-xs text-slate-500">
-                <span class="px-2 py-0.5 rounded bg-white/5">비용</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">수수료</span>
-              </div>
-            </div>
-            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </div>
-        </a>
-        <a href="/blog/ko/china-trademark-classes-complete-guide.html" class="post-card glass rounded-2xl p-8 block group">
-          <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
-                <span class="text-xs text-slate-500">June 10, 2026</span>
-              </div>
-              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">중국 상표분류 완벽 가이드</h2>
-              <p class="text-slate-400 text-sm leading-relaxed mb-4">중국 45개 니스 분류 완벽 가이드. 제품·서비스에 적합한 분류를 확인하세요.</p>
-              <div class="flex items-center gap-2 text-xs text-slate-500">
-                <span class="px-2 py-0.5 rounded bg-white/5">분류</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">니스분류</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
-              </div>
-            </div>
-            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </div>
-        </a>
-        <a href="/blog/ko/common-reasons-trademark-rejection-china.html" class="post-card glass rounded-2xl p-8 block group">
-          <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
-                <span class="text-xs text-slate-500">June 11, 2026</span>
-              </div>
-              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">중국 상표 거절의 일반적인 이유</h2>
-              <p class="text-slate-400 text-sm leading-relaxed mb-4">CNIPA가 상표 출원을 거절하는 가장 일반적인 이유와 회피 방법.</p>
-              <div class="flex items-center gap-2 text-xs text-slate-500">
-                <span class="px-2 py-0.5 rounded bg-white/5">거절</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">대책</span>
-              </div>
-            </div>
-            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </div>
-        </a>
-        <a href="/blog/ko/china-trademark-monitoring-protection.html" class="post-card glass rounded-2xl p-8 block group">
-          <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
-                <span class="text-xs text-slate-500">June 12, 2026</span>
-              </div>
-              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">중국 상표 모니터링 및 보호 전략</h2>
-              <p class="text-slate-400 text-sm leading-relaxed mb-4">모니터링, 이의 제기, 세관 등록, 집행 전략으로 등록 상표를 보호하세요.</p>
-              <div class="flex items-center gap-2 text-xs text-slate-500">
-                <span class="px-2 py-0.5 rounded bg-white/5">모니터링</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">보호</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">집행</span>
-              </div>
-            </div>
-            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </div>
-        </a>
-        <a href="/blog/ko/madrid-vs-direct-filing-china.html" class="post-card glass rounded-2xl p-8 block group">
-          <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
-                <span class="text-xs text-slate-500">June 13, 2026</span>
-              </div>
-              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">마드리드 협정 vs 직접 출원</h2>
-              <p class="text-slate-400 text-sm leading-relaxed mb-4">중국 상표등록의 마드리드 협정과 CNIPA 직접 출원 비교. 일정, 비용, 리스크 확인.</p>
-              <div class="flex items-center gap-2 text-xs text-slate-500">
-                <span class="px-2 py-0.5 rounded bg-white/5">마드리드</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">직접출원</span>
-                <span class="px-2 py-0.5 rounded bg-white/5">전략</span>
-              </div>
-            </div>
-            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-          </div>
-        </a>
-
-      </div>
-    </section>
-  </main>
-
-<footer class="border-t border-white/5 py-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
-          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — professional trademark services in China.</p>
-        </div>
-        <div>
-          <h4 class="font-display font-semibold text-sm mb-3">Services</h4>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="/services.html" class="hover:text-brand transition-colors">Trademark Search</a></li>
-            <li><a href="/services.html" class="hover:text-brand transition-colors">Filing &amp; Prosecution</a></li>
-            <li><a href="/classes.html" class="hover:text-brand transition-colors">Trademark Classes</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-display font-semibold text-sm mb-3">Company</h4>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="/about.html" class="hover:text-brand transition-colors">About Us</a></li>
-            <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li>
-            <li><a href="/contact.html" class="hover:text-brand transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-display font-semibold text-sm mb-3">Legal</h4>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a></li>
-            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="section-divider mb-8"></div>
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-        <p>&copy; 2026 Tuyue Trademark Registration. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
   <style>
     .post-card { position: relative; overflow: hidden; transition: all 0.3s ease; }
     .post-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); opacity: 0; transition: opacity 0.3s; }
@@ -306,32 +51,325 @@
     .post-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 20px rgba(15,240,179,0.05); transform: translateY(-2px); }
     .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
   </style>
+    <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/">
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/">
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/">
 </head>
 <body class="min-h-screen bg-surface text-slate-200 font-body antialiased">
 
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand focus:text-surface focus:rounded-lg focus:font-semibold">Skip to content</a>
 
-  <nav class="fixed top-0 w-full z-50 glass border-b border-white/5" role="navigation" aria-label="Main navigation">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <a href="/ko/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-        <a href="/services.html" class="hover:text-brand transition-colors">Services</a>
-        <a href="/process.html" class="hover:text-brand transition-colors">Process</a>
-        <a href="/classes.html" class="hover:text-brand transition-colors">Classes</a>
-        <a href="/blog/" class="text-brand">Blog</a>
-        <a href="/about.html" class="hover:text-brand transition-colors">About</a>
-        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">Get Started</a>
+        <a href="/ko/services.html" class="hover:text-brand transition-colors">서비스</a>
+        <a href="/ko/process.html" class="hover:text-brand transition-colors">프로세스</a>
+        <a href="/ko/case-study.html" class="hover:text-brand transition-colors">사례</a>
+        <a href="/ko/classes.html" class="hover:text-brand transition-colors">분류</a>
+        <a href="/blog/ko/" class="block text-sm text-brand">블로그</a>
+        <a href="/ko/about.html" class="hover:text-brand transition-colors">회사 개요</a>
+        <a href="/ko/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">문의하기</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">KO</span></span>
+        </button>
+        <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a  class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a  class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ko">日本語</a>
+          <a  class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko" class="block px-4 py-2 text-sm text-brand font-semibold">한국어</a>
+        </div>
       </div>
       <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
     <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
-      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">Services</a>
-      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">Process</a>
-      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">Classes</a>
-      <a href="/blog/" class="block text-sm text-brand">Blog</a>
-      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">About</a>
-      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
+      <a href="/ko/services.html" class="hover:text-brand transition-colors">서비스</a>
+      <a href="/ko/process.html" class="hover:text-brand transition-colors">프로세스</a>
+      <a href="/ko/case-study.html" class="hover:text-brand transition-colors">사례</a>
+      <a href="/ko/classes.html" class="hover:text-brand transition-colors">분류</a>
+      <a href="/blog/ko/" class="block text-sm text-brand">블로그</a>
+      <a href="/ko/about.html" class="hover:text-brand transition-colors">회사 개요</a>
+      <a href="/ko/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">문의하기</a>
     </div>
   </nav>
+
+  <main id="main-content" class="pt-24">
+    <nav class="max-w-5xl mx-auto px-6 pt-8 pb-2" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/" class="hover:text-brand transition-colors">Home</a></li>
+        <li class="text-slate-600">/</li>
+        <li class="text-slate-300">ブログ</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-12 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-brand text-sm font-mono uppercase tracking-widest mb-3">インサイト</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">
+          中国商標<span class="text-neon">ブログ</span>
+        </h1>
+        <p class="mt-4 text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          中国市場参入を目指す国際企業向けの、商標登録、ブランド保護、知的財産戦略に関する専門的な洞察。
+        </p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+        <section class="py-12 px-6">
+      <div class="max-w-4xl mx-auto space-y-6">
+
+<a href="/blog/ko/madrid-vs-direct-filing-china.html" class="post-card glass rounded-2xl p-8 block group">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
+                <span class="text-xs text-slate-500">June 13, 2026</span>
+              </div>
+              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">マドリッド協定 vs 直接出願</h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">中国商標登録のマドリッド協定とCNIPA直接出願を比較。タイムライン、費用、リスクを確認。</p>
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <span class="px-2 py-0.5 rounded bg-white/5">マドリッド</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">直接出願</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">戦略</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      
+
+      <a href="/blog/ko/china-trademark-monitoring-protection.html" class="post-card glass rounded-2xl p-8 block group">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
+                <span class="text-xs text-slate-500">June 12, 2026</span>
+              </div>
+              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">中国商標モニタリングと保護戦略</h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">モニタリング、異議申立、税関記録、執行戦略で中国の登録商標を保護。</p>
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <span class="px-2 py-0.5 rounded bg-white/5">モニタリング</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">保護</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">執行</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        
+<a href="/blog/ko/common-reasons-trademark-rejection-china.html" class="post-card glass rounded-2xl p-8 block group">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
+                <span class="text-xs text-slate-500">June 11, 2026</span>
+              </div>
+              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">中国商標拒絶のよくある理由</h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">CNIPAが商標出願を拒絶する最も一般的な理由と回避方法を学ぶ。</p>
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <span class="px-2 py-0.5 rounded bg-white/5">拒絶</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">対策</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        
+<a href="/blog/ko/china-trademark-classes-complete-guide.html" class="post-card glass rounded-2xl p-8 block group">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
+                <span class="text-xs text-slate-500">June 10, 2026</span>
+              </div>
+              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">中国상표 분류 完全ガイド</h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">中国の全45ニース分類の完全ガイド。製品・サービスに適した分類を特定。</p>
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <span class="px-2 py-0.5 rounded bg-white/5">分類</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">ニース分類</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        
+<a href="/blog/ko/how-much-trademark-registration-cost-china.html" class="post-card glass rounded-2xl p-8 block group">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
+                <span class="text-xs text-slate-500">June 9, 2026</span>
+              </div>
+              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">中国商標登録の費用はいくら？</h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">中国商標登録はクラスあたり300元から。CNIPA手数料と代理人手数料の完全内訳。</p>
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <span class="px-2 py-0.5 rounded bg-white/5">費用</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">手数料</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        
+<a href="/blog/ko/how-long-trademark-registration-china.html" class="post-card glass rounded-2xl p-8 block group">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
+                <span class="text-xs text-slate-500">June 8, 2026</span>
+              </div>
+              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">中国商標登録にかかる期間は？</h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">中国商標登録は通常9〜12ヶ月。CNIPAプロセスの各段階の詳細タイムライン。</p>
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <span class="px-2 py-0.5 rounded bg-white/5">期間</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">タイムライン</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        
+<a href="/blog/ko/china-first-to-file-trademark-guide.html" class="post-card glass rounded-2xl p-8 block group">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
+                <span class="text-xs text-slate-500">June 7, 2026</span>
+              </div>
+              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">中国の先願主義ブランドスクワッティング対策</h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">中国の先願主義商標制度とブランドスクワッティング対策を解説。</p>
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <span class="px-2 py-0.5 rounded bg-white/5">先願主義</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">スクワッティング</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">対策</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        
+<a href="/blog/ko/who-can-register-trademark-in-china.html" class="post-card glass rounded-2xl p-8 block group">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
+                <span class="text-xs text-slate-500">June 6, 2026</span>
+              </div>
+              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">中国で商標登録ができるのは誰？国籍制限なし</h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">世界中の個人・企業が中国で商標登録可能。国籍制限なし。申請方法を解説。</p>
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <span class="px-2 py-0.5 rounded bg-white/5">国籍制限</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">申請資格</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        
+<a href="/blog/ko/china-trademark-registration-complete-guide-2026.html" class="post-card glass rounded-2xl p-8 block group">
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-brand/10 text-brand font-semibold tracking-wide uppercase">Guide</span>
+                <span class="text-xs text-slate-500">June 5, 2026</span>
+              </div>
+              <h2 class="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-brand transition-colors">中国商標登録 完全ガイド（2026年版）</h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-4">2026年中国商標登録のステップバイステップガイド。出願プロセス、費用、タイムライン、CNIPA要件を網羅。</p>
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <span class="px-2 py-0.5 rounded bg-white/5">商標登録</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">CNIPA</span>
+                <span class="px-2 py-0.5 rounded bg-white/5">先願主義</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-600 group-hover:text-brand transition-colors flex-shrink-0 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+        
+</div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/ko/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 中国での商標サービス専門家。</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">서비스</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">商標調査</a></li>
+            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">출원・심사対応</a></li>
+            <li><a href="/ko/classes.html" class="hover:text-brand transition-colors">상표 분류</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">会社情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/ko/about.html" class="hover:text-brand transition-colors">회사 개요</a></li>
+            <li><a href="/blog/ko/" class="block text-sm text-brand">블로그</a></li>
+            <li><a href="/ko/contact.html" class="hover:text-brand transition-colors">문의하기</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">法的情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/ko/privacy.html" class="hover:text-brand transition-colors">개인정보 처리방침</a></li>
+            <li><a href="/ko/cookie.html" class="hover:text-brand transition-colors">Cookieポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>&copy; 2026 Tuyue Trademark Registration. 全著作権所有。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/scripts/main.js" defer></script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>
