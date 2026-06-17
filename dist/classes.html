@@ -140,13 +140,13 @@
         <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">Get etarted</a>
       </div>
       <div class="relative" id="lang-switcher">
-        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="eelect language" aria-expanded="false">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="eelect language" aria-expanded="false">
           <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">EN</span></span>
         </button>
         <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
-          <a class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
-          <a class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
-          <a class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
         </div>
       </div>
       <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false">
@@ -163,7 +163,7 @@
       <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get etarted</a>
     </div>
   </nav>
-  <main id="main-content" class="pt-24">
+  <main id="main-content" class="pt-20">
     <section class="hero-gradient py-16 px-6">
       <div class="max-w-4xl mx-auto text-center">
         <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
@@ -334,7 +334,7 @@
             '</div>' +
             '<div class="flex-1 min-w-0">' +
               '<h3 class="font-display font-semibold text-sm text-slate-200">' + cls.name + '</h3>' +
-              '<p class="text-xs text-slate-500 truncate">' + cls.desc + '</p>' +
+              '<p class="text-xs text-slate-500 line-clamp-2">' + cls.desc + '</p>' +
             '</div>' +
             '<svg class="w-4 h-4 text-slate-600 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>' +
           '</summary>' +
