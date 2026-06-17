@@ -122,9 +122,8 @@
         <a href="/ja/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">お問い合わせ</a>
       </div>
       <div class="relative" id="lang-switcher">
-        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors inline-flex items-center" aria-label="言語選択" aria-expanded="false">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          JA
+        <button id="lang-btn" class="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="言語選択" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">JA</span></span>
         </button>
         <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
           <a  class="block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
@@ -146,31 +145,31 @@
       <a href="/ja/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">お問い合わせ</a>
     </div>
   </nav>
-  <section class="relative min-h-[80vh] flex items-center pt-24 pb-16 px-6 overflow-hidden">
-      <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
-      <p class="text-brand font-mono text-sm tracking-widest uppercase mb-4">RTMCN — 中国商標登録のエキスパート</p>
-      <h1 class="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
-        中国で商標を<br><span class="text-brand">保護</span>する
+  <main id="main-content" class="pt-24">
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-grid opacity-50"></div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div class="flex items-center gap-1 gap-2 glass rounded-full px-4 py-1.5 text-xs text-brand mb-8">
+        <span class="w-2 h-2 bg-brand rounded-full animate-pulse"></span>
+        中国商標保護を信頼されている企業 3社
+      </div>
+      <h1 class="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight text-balance">
+        中国で商標を<br><span class="text-neon">保護する</span>
       </h1>
-      <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
         先願主義のシステムでは、先に登録した者が権利を獲得します。ブランドが横取りされる前に、今すぐ行動してください。
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/ja/contact.html" class="btn-glow inline-block px-10 py-4 rounded-lg text-base font-semibold">
-          無料商標調査を開始
-        </a>
-        <a href="/ja/services.html" class="btn-outline inline-block px-10 py-4 rounded-lg text-base font-semibold">
-          詳しく見る
-        </a>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/ja/contact.html" class="btn-glow px-8 py-3.5 rounded-lg text-base font-semibold">無料商標調査を開始</a>
+        <a href="/ja/services.html" class="btn-outline px-8 py-3.5 rounded-lg text-base font-semibold">サービスを見る</a>
       </div>
-      <div class="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
-        <div><div class="font-display text-3xl font-bold text-brand">98%</div><p class="text-slate-500 text-xs mt-1">登録成功率</p></div>
-        <div><div class="font-display text-3xl font-bold text-neon">3,000+</div><p class="text-slate-500 text-xs mt-1">登録済み商標</p></div>
-        <div><div class="font-display text-3xl font-bold text-neon-blue">15+</div><p class="text-slate-500 text-xs mt-1">年の経験</p></div>
+      <div class="mt-16 flex flex-wrap justify-center gap-8 text-xs text-slate-500 uppercase tracking-wider">
+        <span>CNIPA Licensed</span>
       </div>
     </div>
   </section>
-  <main id="main-content" class="pt-24">
 
   <div class="section-divider max-w-4xl mx-auto"></div>
 
