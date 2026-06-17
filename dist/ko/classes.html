@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -10,12 +10,12 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>상표 분류 — Nice Classification(45분류)| RTMCN</title>
-  <meta name="description" content="중국 상표등록을 위한 니스 분류 완전 참조. CNIPA 기준 전 45분류의 상품・서비스 목록.">
+  <meta name="description" content="중국 상표등록을 위한 니스 분류 완전 참조. CNIPA 기준 전 45분류의 상품/서비스 목록.">
   <meta name="keywords" content="니스 분류, 상표 분류, CNIPA 분류, 중국 상표, 상표등록, Nice Classification, trademark classes">
   <link rel="canonical" href="https://registertrademarkchina.com/ko/classes.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:title" content="상표 분류 — 니스 분류(45분류)| RTMCN">
-  <meta property="og:description" content="중국 상표등록을 위한 니스 분류 완전 참조. 전 45분류의 상품・서비스 목록.">
+  <meta property="og:description" content="중국 상표등록을 위한 니스 분류 완전 참조. 전 45분류의 상품/서비스 목록.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://registertrademarkchina.com/ko/classes.html">
   <meta property="og:image" content="https://registertrademarkchina.com/og-image.png">
@@ -29,7 +29,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "상표 분류 — 니스 분류(45분류)",
-    "description": "중국 상표등록을 위한 니스 분류 완전 참조. CNIPA 기준 전 45분류의 상품・서비스 목록.",
+    "description": "중국 상표등록을 위한 니스 분류 완전 참조. CNIPA 기준 전 45분류의 상품/서비스 목록.",
     "url": "https://registertrademarkchina.com/ko/classes.html"
   }
   </script>
@@ -123,11 +123,11 @@
   <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/classes.html">
   <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/classes.html">
   <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/classes.html">
-  <script src="/scripts/classes-data-ja.js" defer></script>
+  <script src="/scripts/classes-data-ko.js" defer></script>
 </head>
 <body class="min-h-screen bg-surface text-slate-200 font-body antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand focus:text-surface focus:rounded-lg focus:font-semibold">본문으로 건너뛰기</a>
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="주 네비게이션">
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       <a href="/ko/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
@@ -149,7 +149,7 @@
           <a  class="block px-4 py-2 text-sm text-brand font-semibold" data-lang="ko">한국어</a>
         </div>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false">
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="모바일 메뉴 열기" aria-expanded="false">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -242,7 +242,7 @@
 
         <div class="text-center mb-12">
           <h2 class="font-display text-2xl md:text-3xl font-bold mb-2">서비스 <span class="text-neon">(35–45)</span></h2>
-          <p class="text-slate-500 text-sm">전문적・상업적 서비스 활동</p>
+          <p class="text-slate-500 text-sm">전문적/상업적 서비스 활동</p>
         </div>
         <div id="services-classes" class="space-y-3"></div>
       </div>
@@ -285,13 +285,13 @@
             '</div>' +
             '<div class="flex-1 min-w-0">' +
               '<h3 class="font-display font-semibold text-sm text-slate-200">' + cls.name + '</h3>' +
-              '<p class="text-xs text-slate-500 truncate">' + cls.desc.substring(0, 80) + '...</p>' +
+              '<p class="text-xs text-slate-500 truncate">' + cls.desc + '</p>' +
             '</div>' +
             '<svg class="w-4 h-4 text-slate-600 transition-transform group-open:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>' +
           '</summary>' +
           '<div class="px-4 pb-4 pt-0">' +
             '<p class="text-sm text-slate-400 mb-3 leading-relaxed">' + cls.desc + '</p>' +
-            '<h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">代表品目</h4>' +
+            '<h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">대표 품목</h4>' +
             '<ul class="text-sm text-slate-400 grid grid-cols-1 sm:grid-cols-2 gap-x-4">' + itemsHtml + '</ul>' +
           '</div>' +
         '</details>';
@@ -369,8 +369,8 @@
           <h4 class="font-display font-semibold text-sm mb-3">서비스</h4>
           <ul class="space-y-2 text-sm text-slate-500">
             <li><a href="/ko/services.html" class="hover:text-brand transition-colors">상표 검색</a></li>
-            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">출원・심사</a></li>
-            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">이의・방어</a></li>
+            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">출원/심사</a></li>
+            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">이의/방어</a></li>
             <li><a href="/ko/services.html" class="hover:text-brand transition-colors">브랜드 모니터링</a></li>
             <li><a href="/ko/classes.html" class="hover:text-brand transition-colors">상표 분류</a></li>
           </ul>
