@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -72,6 +72,10 @@
   <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/services.html">
   <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/services.html">
   <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/services.html">
+<style>
+.hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+</style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-surface text-slate-200 font-body antialiased">
 
@@ -115,16 +119,24 @@
       <a href="/ja/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">お問い合わせ</a>
     </div>
   </nav>
-  <main id="main-content" class="pt-20">
+  
 
-    <section class="hero-gradient py-16 px-6">
-      <div class="max-w-5xl mx-auto">
-        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
-          <a href="/ja/" class="hover:text-white transition-colors">ホーム</a>
-          <span class="mx-2">/</span>
-          <span class="text-slate-300">サービス</span>
-        </nav>
-        <h1 class="font-display text-3xl md:text-5xl font-bold">サービス</h1>
+
+<main id="main-content" class="pt-16">
+
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="パンくずリスト">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ja/" class="hover:text-brand transition-colors">ホーム</a></li>
+        <li class="text-slate-600">/</li>
+        <li class="text-slate-300">サービス</li>
+      </ol>
+    </nav>
+
+        <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-brand text-sm font-mono uppercase tracking-widest mb-3">サービス</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">サービス</h1>
+        <p class="mt-4 text-slate-400 max-w-2xl mx-auto leading-relaxed">中国におけるブランド保護の全段階をカバーする総合商標サービス。</p>
       </div>
     </section>
 
@@ -381,7 +393,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <a href="/ja/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"><span class="font-display font-bold text-lg">RTMCN</span></a>
+          <a href="/ja/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"></a>
           <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 中国における商標登録の専門サービス</p>
         </div>
         <div>

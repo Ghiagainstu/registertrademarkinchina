@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -43,6 +43,10 @@
   <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/about.html">
   <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/about.html">
   <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/about.html">
+<style>
+.hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+</style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-surface text-slate-200 font-body antialiased">
 
@@ -87,15 +91,23 @@
     </div>
   </nav>
 
-  <main id="main-content" class="pt-20">
-    <section class="hero-gradient py-16 px-6">
-      <div class="max-w-5xl mx-auto">
-        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
-          <a href="/ko/" class="hover:text-white transition-colors">홈</a>
-          <span class="mx-2">/</span>
-          <span class="text-slate-300">회사 개요</span>
-        </nav>
-        <h1 class="font-display text-3xl md:text-5xl font-bold">회사 개요</h1>
+  
+
+
+<main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li>
+        <li class="text-slate-600">/</li>
+        <li class="text-slate-300">회사 개요</li>
+      </ol>
+    </nav>
+
+        <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-brand text-sm font-mono uppercase tracking-widest mb-3">회사 정보</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">회사 개요</h1>
+        <p class="mt-4 text-slate-400 max-w-2xl mx-auto leading-relaxed">중국 상표 등록 및 브랜드 보호의 신뢰할 수 있는 파트너.</p>
       </div>
     </section>
 
@@ -105,7 +117,7 @@
     <section class="py-16 px-6">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16 reveal">
-          <p class="text-brand font-mono text-xs tracking-widest uppercase mb-3">私들의価値観</p>
+          <p class="text-brand font-mono text-xs tracking-widest uppercase mb-3">저희의 가치</p>
           <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">저희가 믿는 것</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
@@ -231,7 +243,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <a href="/ko/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"><span class="font-display font-bold text-lg">RTMCN</span></a>
+          <a href="/ko/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"></a>
           <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 중국 상표등록 전문 서비스</p>
         </div>
         <div>
@@ -262,7 +274,7 @@
       </div>
       <div class="section-divider mb-8"></div>
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-        <p>&copy; 2026 Tuyue Trademark Registration. All rights reserved.</p>
+        <p>&copy; 2026 Tuyue Trademark Registration. 모든 권리 보유.</p>
       </div>
     </div>
   </footer>

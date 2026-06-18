@@ -53,7 +53,7 @@
     .step { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem 0 0.75rem; }
     .step-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 700; font-size: 0.85rem; }
     .step-title { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 600; color: #e2e8f0; }
-    .glass { background: rgba(15,19,32,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
     .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
     .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
     .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
@@ -92,12 +92,13 @@
 <link href="https://registertrademarkchina.com/blog/ko/madrid-vs-direct-filing-china.html" hreflang="ko" rel="alternate"/>
 <link href="https://registertrademarkchina.com/blog/ja/madrid-vs-direct-filing-china.html" hreflang="ja" rel="alternate"/>
 <link href="https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html" hreflang="x-default" rel="alternate"/>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-950 text-slate-300 font-sans">
 <div id="reading-progress"></div>
 <nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation">
 <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-<a class="flex items-center gap-2 group" href="/ko/"><img alt="RTMCN - Tuyue Trademark Registration logo" class="h-6 w-auto" src="/images/logo-v1-preview.svg"/></a>
+<a class="flex items-center gap-2 group" href="/ko/"><img alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto" src="/images/logo-v1-preview.svg"/></a>
 <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
 <a class="hover:text-brand transition-colors" href="/ko/services.html">서비스</a>
 <a class="hover:text-brand transition-colors" href="/ko/process.html">프로세스</a>
@@ -131,16 +132,30 @@
 <a class="btn-glow px-5 py-2 rounded-lg text-sm" href="/ko/contact.html">문의하기</a>
 </div>
 </nav>
-<main class="pt-24" id="main-content">
+
+
+
+<main class="pt-16" id="main-content">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li><li class="text-slate-600">/</li>
+          <li><a href="/blog/ko/" class="hover:text-brand transition-colors">블로그</a></li><li class="text-slate-600">/</li>
+          <li class="text-slate-300">
+마드리드 협정 vs 직접 출원
+</li>
+        
+      </ol>
+    </nav>
+
+
 <section class="hero-gradient py-16 px-6">
 <div class="max-w-4xl mx-auto text-center">
-<nav aria-label="面包屑导航" class="text-sm text-slate-500 mb-6">
-<a class="hover:text-white transition-colors" href="/ko/">홈</a><span class="mx-2">/</span><a class="hover:text-white transition-colors" href="/blog/ko/">블로그</a><span class="mx-2">/</span><span class="text-slate-300">마드리드 vs 직접 출원</span>
-</nav>
-<h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">마드리드 vs 직접 출원: 중국 상표 출원 방법 비교</h1>
+        <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">마드리드 vs 직접 출원: 중국 상표 출원 방법 비교</h1>
 <p class="text-lg text-slate-400 max-w-3xl mx-auto">마드리드 의정서와 중국 직접 출원의 비교 분석.</p>
+    
 </div>
 </section>
+
 <div class="section-divider max-w-4xl mx-auto"></div>
 <section class="py-8 px-6">
 <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
@@ -158,9 +173,9 @@
 </div>
 </div>
 <div class="summary-tiles text-sm">
-<div class="rounded-xl border border-white/5 bg-transparent/[0.02] p-4"><span class="block text-slate-400 mb-1">마드리드의 장점</span><strong class="text-white">하나의 출원으로 다국가 커버</strong></div>
-<div class="rounded-xl border border-white/5 bg-transparent/[0.02] p-4"><span class="block text-slate-400 mb-1">직접 출원의 장점</span><strong class="text-white">중국시장 전용 관리와 간소한 절차</strong></div>
-<div class="rounded-xl border border-white/5 bg-transparent/[0.02] p-4"><span class="block text-slate-400 mb-1">대부분의 RTMCN 클라이언트에게 추천</span><strong class="text-white">처음에는 직접 출원, 필요해지면 마드리드 추가</strong></div>
+<div class="rounded-xl border border-white/5 bg-white/[0.02] p-4"><span class="block text-slate-400 mb-1">마드리드의 장점</span><strong class="text-white">하나의 출원으로 다국가 커버</strong></div>
+<div class="rounded-xl border border-white/5 bg-white/[0.02] p-4"><span class="block text-slate-400 mb-1">직접 출원의 장점</span><strong class="text-white">중국시장 전용 관리와 간소한 절차</strong></div>
+<div class="rounded-xl border border-white/5 bg-white/[0.02] p-4"><span class="block text-slate-400 mb-1">대부분의 RTMCN 클라이언트에게 추천</span><strong class="text-white">처음에는 직접 출원, 필요해지면 마드리드 추가</strong></div>
 </div>
 </section>
 <section class="section-block" id="two-paths">
@@ -244,7 +259,7 @@
 <div class="max-w-7xl mx-auto">
 <div class="grid md:grid-cols-4 gap-8 mb-8">
 <div>
-<a class="flex items-center gap-2" href="/ko/"><img alt="RTMCN logo" class="h-6 w-auto" src="/images/logo-v1-preview.svg"/><span class="font-display font-bold text-lg">RTMCN</span></a>
+<a class="flex items-center gap-2" href="/ko/"><img alt="RTMCN logo" class="h-6 w-auto" src="/images/logo-v1-preview.svg"/></a>
 <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 중국 상표등록 전문 서비스</p>
 </div>
 <div>
@@ -275,7 +290,7 @@
 </div>
 <div class="section-divider mb-8"></div>
 <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-<p>© 2026 Tuyue Trademark Registration. All rights reserved.</p>
+<p>© 2026 Tuyue Trademark Registration. 모든 권리 보유.</p>
 </div>
 </div>
 </footer>

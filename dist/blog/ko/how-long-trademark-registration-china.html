@@ -59,7 +59,7 @@
     .step { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem 0 0.75rem; }
     .step-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 700; font-size: 0.85rem; }
     .step-title { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 600; color: #e2e8f0; }
-    .glass { background: rgba(15,19,32,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
     .toc-link { transition: all 0.2s; }
     .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
     .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
@@ -99,12 +99,13 @@
 <link href="https://registertrademarkchina.com/blog/ko/how-long-trademark-registration-china.html" hreflang="ko" rel="alternate"/>
 <link href="https://registertrademarkchina.com/blog/ja/how-long-trademark-registration-china.html" hreflang="ja" rel="alternate"/>
 <link href="https://registertrademarkchina.com/blog/how-long-trademark-registration-china.html" hreflang="x-default" rel="alternate"/>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-950 text-slate-300 font-sans">
 <div id="reading-progress"></div>
 <nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation">
 <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-<a class="flex items-center gap-2 group" href="/ko/"><img alt="RTMCN - Tuyue Trademark Registration logo" class="h-6 w-auto" src="/images/logo-v1-preview.svg"/></a>
+<a class="flex items-center gap-2 group" href="/ko/"><img alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto" src="/images/logo-v1-preview.svg"/></a>
 <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
 <a class="hover:text-brand transition-colors" href="/ko/services.html">서비스</a>
 <a class="hover:text-brand transition-colors" href="/ko/process.html">프로세스</a>
@@ -138,16 +139,30 @@
 <a class="btn-glow px-5 py-2 rounded-lg text-sm" href="/ko/contact.html">문의하기</a>
 </div>
 </nav>
-<main class="pt-24" id="main-content">
+
+
+
+<main class="pt-16" id="main-content">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li><li class="text-slate-600">/</li>
+          <li><a href="/blog/ko/" class="hover:text-brand transition-colors">블로그</a></li><li class="text-slate-600">/</li>
+          <li class="text-slate-300">
+중국 상표등록에 소요되는 기간은?
+</li>
+        
+      </ol>
+    </nav>
+
+
 <section class="hero-gradient py-16 px-6">
 <div class="max-w-4xl mx-auto text-center">
-<nav aria-label="面包屑导航" class="text-sm text-slate-500 mb-6">
-<a class="hover:text-white transition-colors" href="/ko/">홈</a><span class="mx-2">/</span><a class="hover:text-white transition-colors" href="/blog/ko/">블로그</a><span class="mx-2">/</span><span class="text-slate-300">중국 상표 등록 소요 기간</span>
-</nav>
-<h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">중국 상표 등록 소요 기간</h1>
+        <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">중국 상표 등록 소요 기간</h1>
 <p class="text-lg text-slate-400 max-w-3xl mx-auto">중국 상표 등록은 보통 9-12개월. CNIPA 프로세스의 각 단계별 상세 타임라인.</p>
+    
 </div>
 </section>
+
 <div class="section-divider max-w-4xl mx-auto"></div>
 <section class="py-8 px-6">
 <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
@@ -417,15 +432,14 @@ li&gt;사전 상표 검색 필수
 <div class="glass rounded-2xl p-6">
 <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">목차</p>
 <a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-41709e41">핵심 포인트</a>
-<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-60cc8879">상표 등록 전체 타임라인</a>
-<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-0b27f5da">소요 기간에 영향을 미치는 요인</a>
-<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-bf1c7f9f">프로세스를 가속화하는 방법</a>
-<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-60aa7358">문제 발생 시 대응</a>
-<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-dea2c53a">실제 타임라인 예시</a>
-<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-15836395">RTMCN의 평균 처리 기간</a>
-<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-fdf89a31">상표 전략 계획</a>
-<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-8a1aef9b">다음 단계</a>
-<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-495006d8">출처 링크</a>
+<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-ed7d2ef6">상표 등록 전체 타임라인</a>
+<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-c3f5e8a1">소요 시간에 영향을 미치는 요인</a>
+<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-ddea820f">과정을 가속화하는 방법</a>
+<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-c7f3e9d2">문제가 발생하면?</a>
+<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-5d8f2a7b">실제 타임라인 사례</a>
+<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-8a1aef9b">RTMCN의 평균 처리 시간</a>
+<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-ddea820f2">상표 전략 계획</a>
+<a class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200" href="#section-8a1aef9b2">다음 단계</a>
 </div>
 <div class="glass rounded-2xl p-6">
 <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">관련 기사</p>
@@ -454,7 +468,7 @@ li&gt;사전 상표 검색 필수
 <div class="max-w-7xl mx-auto">
 <div class="grid md:grid-cols-4 gap-8 mb-8">
 <div>
-<a class="flex items-center gap-2" href="/ko/"><img alt="RTMCN logo" class="h-6 w-auto" src="/images/logo-v1-preview.svg"/><span class="font-display font-bold text-lg">RTMCN</span></a>
+<a class="flex items-center gap-2" href="/ko/"><img alt="RTMCN logo" class="h-6 w-auto" src="/images/logo-v1-preview.svg"/></a>
 <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 중국 상표등록 전문 서비스</p>
 </div>
 <div>
@@ -485,7 +499,7 @@ li&gt;사전 상표 검색 필수
 </div>
 <div class="section-divider mb-8"></div>
 <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-<p>© 2026 Tuyue Trademark Registration. All rights reserved.</p>
+<p>© 2026 Tuyue Trademark Registration. 모든 권리 보유.</p>
 </div>
 </div>
 </footer>

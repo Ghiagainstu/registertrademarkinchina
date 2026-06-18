@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -72,6 +72,10 @@
   <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/services.html">
   <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/services.html">
   <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/services.html">
+<style>
+.hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+</style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-surface text-slate-200 font-body antialiased">
 
@@ -115,16 +119,23 @@
       <a href="/ko/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">문의하기</a>
     </div>
   </nav>
-  <main id="main-content" class="pt-20">
+  
 
-    <section class="hero-gradient py-16 px-6">
-      <div class="max-w-5xl mx-auto">
-        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
-          <a href="/ko/" class="hover:text-white transition-colors">홈</a>
-          <span class="mx-2">/</span>
-          <span class="text-slate-300">서비스</span>
-        </nav>
-        <h1 class="font-display text-3xl md:text-5xl font-bold">서비스</h1>
+
+<main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li>
+        <li class="text-slate-600">/</li>
+        <li class="text-slate-300">서비스</li>
+      </ol>
+    </nav>
+
+        <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-brand text-sm font-mono uppercase tracking-widest mb-3">서비스</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">서비스</h1>
+        <p class="mt-4 text-slate-400 max-w-2xl mx-auto leading-relaxed">중국에서 브랜드 보호의 모든 단계를 아우르는 종합 상표 서비스.</p>
       </div>
     </section>
 
@@ -142,10 +153,10 @@
             출원前에 CNIPA데이터베이스를 철저히 검색합니다. 기존 상표와의 충돌 위험을 식별하고, 등록 가능성을 평가하는 상세 보고서를 제공합니다.
           </p>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>CNIPA 데이터베이스 완전 검색</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>유사 상표 위험 평가</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>등록 가능성 상세 보고서</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>分類推奨事項</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>CNIPA 데이터베이스 완전 검색
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>유사 상표 위험 평가
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>등록 가능성 상세 보고서
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>分類推奨事項</li>
           </ul>
         </div>
         <div class="glass rounded-2xl p-8 reveal">
@@ -177,10 +188,10 @@
             CNIPA에 대한 출원부터 심사 대응, 등록증 취득까지 전 프로세스를 엔드투엔드로 지원합니다. 상품/서비스의 분류를 최적화하고, 등록의 성공률을 최대화합니다.
           </p>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>상품/서비스의 최적 분류 선택</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>출원 서류의 준비 및 제출</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>심사관의 통지에 대한 대응</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>등록 증명서의 취득</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>상품/서비스의 최적 분류 선택
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-neon mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>출원 서류의 준비 및 제출
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-neon mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>심사관의 통지에 대한 대응
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-neon mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>등록 증명서의 취득</li>
           </ul>
         </div>
       </div>
@@ -200,10 +211,10 @@
             브랜드에 대한 이의신청 대응 또는 제3자 상표에 대한 이의신청을 지원합니다. 미사용 취소 신청이나 상표권 침해에 대한 대처도 맡겨주세요.
           </p>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>이의신청 제출 및 대응</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>미사용 취소 신청</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>무효 심판의 신청</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>침해 대응 조언</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-neon-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>이의신청 제출 및 대응
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-neon-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>미사용 취소 신청
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-neon-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>무효 심판의 신청
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-neon-blue mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>침해 대응 조언</li>
           </ul>
         </div>
         <div class="glass rounded-2xl p-8 reveal">
@@ -235,10 +246,10 @@
             CNIPA데이터베이스를 지속적으로 모니터링하고, 브랜드와 유사한 신규 상표 출원을 조기에 발견합니다. 신속한 통지로 적절한 조치를 취할 수 있습니다.
           </p>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>CNIPA 데이터베이스의 지속적 모니터링</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>유사 출원의 즉각적 통지</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>이의신청의 타임링管理</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>정기 리포트</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>CNIPA 데이터베이스의 지속적 모니터링
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>유사 출원의 즉각적 통지
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>이의신청의 타임링管理
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>정기 리포트</li>
           </ul>
         </div>
       </div>
@@ -258,10 +269,10 @@
             마드리드 프로토콜을(를) 활용하여 여러 국가에 대한 상표 출원을 효율적으로 수행합니다. 중국 지정을 포함한 국제출원 전략 수립부터 집행까지, 글로벌 브랜드 보호를 지원합니다.
           </p>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>마드리드 프로토콜 출원 지원</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>다국간 출원 전략의 수립</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>WIPO와의 조율</li>
-            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>우선권 주장의 관리</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>마드리드 프로토콜 출원 지원
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>다국간 출원 전략의 수립
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>WIPO와의 조율
+         class="flex items-start gap-2"><svg class="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/></svg>우선권 주장의 관리</li>
           </ul>
         </div>
         <div class="glass rounded-2xl p-8 reveal">
@@ -287,22 +298,22 @@
           <div class="glass rounded-2xl p-6 text-center">
             <div class="font-display text-3xl font-bold text-brand mb-2">¥2,000</div>
             <h4 class="font-semibold mb-2">상표 검색</h4>
-            <p class="text-slate-400 text-sm">분류당 포괄적 검색 (약 $280)</p>
+            <p class="text-slate-400 text-sm">분류당 포괄적 검색 (약 $295)</p>
           </div>
           <div class="glass rounded-2xl p-6 text-center">
             <div class="font-display text-3xl font-bold text-neon mb-2">¥5,000</div>
             <h4 class="font-semibold mb-2">출원/등록</h4>
-            <p class="text-slate-400 text-sm">1분류당 엔드투엔드 서비스(約$700)</p>
+            <p class="text-slate-400 text-sm">1분류당 엔드투엔드 서비스(約$590)</p>
           </div>
           <div class="glass rounded-2xl p-6 text-center">
             <div class="font-display text-3xl font-bold text-neon-blue mb-2">¥500/hr</div>
             <h4 class="font-semibold mb-2">이의신청 대응</h4>
-            <p class="text-slate-400 text-sm">時間制커시팅(約$70/hr)</p>
+            <p class="text-slate-400 text-sm">時間制커시팅(約$75/hr)</p>
           </div>
           <div class="glass rounded-2xl p-6 text-center">
             <div class="font-display text-3xl font-bold text-neon mb-2">¥300/mo</div>
             <h4 class="font-semibold mb-2">브랜드 모니터링</h4>
-            <p class="text-slate-400 text-sm">지속적인 감시서비스(約$40/mo)</p>
+            <p class="text-slate-400 text-sm">지속적인 감시서비스(約$45/mo)</p>
           </div>
         </div>
 
@@ -381,7 +392,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <a href="/ko/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"><span class="font-display font-bold text-lg">RTMCN</span></a>
+          <a href="/ko/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"></a>
           <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 중국 상표등록 전문 서비스</p>
         </div>
         <div>
@@ -412,7 +423,7 @@
       </div>
       <div class="section-divider mb-8"></div>
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-        <p>&copy; 2026 Tuyue Trademark Registration. All rights reserved.</p>
+        <p>&copy; 2026 Tuyue Trademark Registration. 모든 권리 보유.</p>
       </div>
     </div>
   </footer>

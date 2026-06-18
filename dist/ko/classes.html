@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -34,6 +34,7 @@
   }
   </script>
   <style>
+.hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
     details > summary { list-style: none; cursor: pointer; }
     details > summary::-webkit-details-marker { display: none; }
     details[open] > summary .chevron { transform: rotate(90deg); }
@@ -124,6 +125,7 @@
   <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/classes.html">
   <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/classes.html">
   <script src="/scripts/classes-data-ko.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-surface text-slate-200 font-body antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand focus:text-surface focus:rounded-lg focus:font-semibold">본문으로 건너뛰기</a>
@@ -163,66 +165,23 @@
       <a href="/ko/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">문의하기</a>
     </div>
   </nav>
-  <main id="main-content" class="pt-20">
-    <section class="hero-gradient py-16 px-6">
-      <div class="max-w-4xl mx-auto">
-        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
-          <a href="/ko/" class="hover:text-white transition-colors">홈</a><span class="mx-2">/</span><span class="text-slate-300">상표 분류</span>
-        </nav>
-        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">상표 분류</h1>
-      </div>
-    </section>
-<!-- Stats -->
-    <section class="px-6 pb-10">
-      <div class="max-w-3xl mx-auto grid grid-cols-3 gap-3">
-        <div class="stat-card">
-          <div class="stat-num text-neon">45</div>
-          <div class="stat-label">총 분류 수</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num text-blue-400">34</div>
-          <div class="stat-label">상품 분류</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num text-brand">11</div>
-          <div class="stat-label">서비스 분류</div>
-        </div>
-      </div>
-    </section>
+  
 
-    <!-- Search -->
-    <section class="px-6 pb-6">
-      <div class="max-w-3xl mx-auto">
-        <div class="relative">
-          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <input id="class-search" type="text" placeholder="분류, 상품, 서비스 검색..." class="w-full pl-12 pr-12 py-4 rounded-xl bg-[#0f1320] border border-white/10 text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand/40 text-sm transition-all" aria-label="Search trademark classes">
-          <button id="search-clear" class="absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/5 hover:bg-white/10 text-slate-500 hover:text-slate-300 items-center justify-center transition-colors" aria-label="Clear search">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-        </div>
-        <div class="flex items-center justify-between mt-3 text-sm">
-          <span id="search-result-count" class="text-slate-500 min-h-[1.25rem]"></span>
-          <div class="flex items-center gap-3">
-            <button id="expand-all" class="text-slate-500 hover:text-brand transition-colors text-xs font-medium uppercase tracking-wider">모두 펼치기</button>
-            <span class="text-slate-700 text-xs">|</span>
-            <button id="collapse-all" class="text-slate-500 hover:text-brand transition-colors text-xs font-medium uppercase tracking-wider">모두折畳</button>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Quick Nav -->
-    <section class="px-6 pb-10">
-      <div class="max-w-5xl mx-auto">
-        <div class="flex items-center gap-3 mb-4">
-          <h2 class="font-display text-sm font-semibold text-slate-300 uppercase tracking-wider">분류로 이동</h2>
-          <div class="flex-1 h-px bg-white/5"></div>
-        </div>
-        <div id="quick-nav" class="qn-grid grid grid-cols-9 gap-1.5"></div>
-        <div class="flex items-center gap-4 mt-3 text-xs text-slate-600">
-          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-blue-400/60"></span> 상품(1-34)</span>
-          <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-[#0ff0b3]/60"></span> 서비스(35-45)</span>
-        </div>
+<main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li>
+        <li class="text-slate-600">/</li>
+        <li class="text-slate-300">상표 분류</li>
+      </ol>
+    </nav>
+
+        <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-brand text-sm font-mono uppercase tracking-widest mb-3">분류</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">상표 분류</h1>
+        <p class="mt-4 text-slate-400 max-w-2xl mx-auto leading-relaxed">중국 상표 등록에 사용되는 니스 분류의 완전한 참조.</p>
       </div>
     </section>
 
@@ -362,7 +321,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <a href="/ko/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"><span class="font-display font-bold text-lg">RTMCN</span></a>
+          <a href="/ko/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"></a>
           <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 중국 상표등록 전문 서비스</p>
         </div>
         <div>
@@ -393,7 +352,7 @@
       </div>
       <div class="section-divider mb-8"></div>
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-        <p>&copy; 2026 Tuyue Trademark Registration. All rights reserved.</p>
+        <p>&copy; 2026 Tuyue Trademark Registration. 모든 권리 보유.</p>
       </div>
     </div>
   </footer>

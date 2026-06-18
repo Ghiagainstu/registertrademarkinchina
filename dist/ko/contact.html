@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -43,6 +43,10 @@
   <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/contact.html">
   <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/contact.html">
   <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/contact.html">
+<style>
+.hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+</style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-surface text-slate-200 font-body antialiased">
 
@@ -86,171 +90,33 @@
       <a href="/ko/contact.html" class="block text-sm text-brand">문의하기</a>
     </div>
   </nav>
-      </section>
+      
+
+
+</section>
 
     <div class="section-divider max-w-4xl mx-auto"></div>
 
-  <main id="main-content" class="pt-20">
-    <section class="hero-gradient py-16 px-6">
-      <div class="max-w-5xl mx-auto">
-        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
-          <a href="/ko/" class="hover:text-white transition-colors">홈</a>
-          <span class="mx-2">/</span>
-          <span class="text-slate-300">문의하기</span>
-        </nav>
-        <h1 class="font-display text-3xl md:text-5xl font-bold">문의하기</h1>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li>
+        <li class="text-slate-600">/</li>
+        <li class="text-slate-300">문의하기</li>
+      </ol>
+    </nav>
+
+        <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-brand text-sm font-mono uppercase tracking-widest mb-3">문의</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">문의하기</h1>
+        <p class="mt-4 text-slate-400 max-w-2xl mx-auto leading-relaxed">중국 상표 전략에 대한 무료 상담을 예약하세요.</p>
       </div>
     </section>
 
-    <!-- Contact Form & Info -->
-    <section class="py-16 px-6">
-      <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-12">
-        <!-- Form -->
-        <div class="md:col-span-3">
-          <div class="glass rounded-2xl p-8">
-            <h2 class="font-display text-2xl font-bold mb-6">문의 양식</h2>
-            <form action="https://formspree.io/f/mjgdborb" method="POST" class="space-y-6" id="contact-form">
-              <div class="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <label for="name" class="block text-sm font-medium text-slate-300 mb-2">이름 <span class="text-red-400">*</span></label>
-                  <input type="text" id="name" name="name" required placeholder="홍길동" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
-                </div>
-                <div>
-                  <label for="company" class="block text-sm font-medium text-slate-300 mb-2">회사명</label>
-                  <input type="text" id="company" name="company" placeholder="(주)샘플" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
-                </div>
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">이메일 <span class="text-red-400">*</span></label>
-                <input type="email" id="email" name="email" required placeholder="taro@example.com" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
-              </div>
-              <div>
-                <label for="country" class="block text-sm font-medium text-slate-300 mb-2">거주 국가</label>
-                <input type="text" id="country" name="country" placeholder="일본" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
-              </div>
-              <div>
-                <label for="trademark" class="block text-sm font-medium text-slate-300 mb-2">상표명</label>
-                <input type="text" id="trademark" name="trademark" placeholder="등록할 브랜드명" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
-              </div>
-              <div>
-                <label for="classes" class="block text-sm font-medium text-slate-300 mb-2">관심 있는 분류</label>
-                <input type="text" id="classes" name="classes" placeholder="예: 제9류(전자기기), 제35류(광고)" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
-              </div>
-              <div>
-                <label for="message" class="block text-sm font-medium text-slate-300 mb-2">메시지 <span class="text-red-400">*</span></label>
-                <textarea id="message" name="message" required rows="5" placeholder="상표등록에 대한 요청사항을 알려주세요..." class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors resize-none"></textarea>
-              </div>
-              <div>
-                <label for="referral" class="block text-sm font-medium text-slate-300 mb-2">이 사이트를 어떻게 찾으셨나요?</label>
-                <select id="referral" name="referral" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-slate-200 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-colors">
-                  <option value="" class="bg-slate-900">선택해 주세요</option>
-                  <option value="google" class="bg-slate-900">Google 검색</option>
-                  <option value="social" class="bg-slate-900">소셜 미디어</option>
-                  <option value="referral" class="bg-slate-900">추천</option>
-                  <option value="blog" class="bg-slate-900">블로그 기사</option>
-                  <option value="other" class="bg-slate-900">기타</option>
-                </select>
-              </div>
-              <button type="submit" class="btn-glow w-full px-8 py-4 rounded-lg text-base font-semibold">
-                보내기
-              </button>
-              <p class="text-slate-500 text-xs text-center">제출함으로써 당사의 <a href="/ko/privacy.html" class="text-brand hover:underline">개인정보 처리방침</a>에 동의한 것으로 간주됩니다.</p>
-            </form>
-          </div>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="md:col-span-2 space-y-6">
-          <div class="glass rounded-2xl p-8">
-            <h3 class="font-display text-lg font-semibold mb-6">연락처 정보</h3>
-            <div class="space-y-5">
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <div>
-                  <p class="text-sm font-medium">영업시간</p>
-                  <p class="text-sm text-slate-400">월~금 9:00-18:00 (중국 표준시)</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                <div>
-                  <p class="text-sm font-medium">응답 시간</p>
-                  <p class="text-sm text-slate-400">1영업일 이내</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
-                <div>
-                  <p class="text-sm font-medium">대응 지역</p>
-                  <p class="text-sm text-slate-400">러시아, 영국, 리투아니아</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                <div>
-                  <p class="text-sm font-medium">오피스</p>
-                  <p class="text-sm text-slate-400">Room 205, Building 2, No. 2000<br>Zhoujiazui Road, Yangpu District<br>Shanghai, China</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-brand mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
-                <div>
-                  <p class="text-sm font-medium">WhatsApp</p>
-                  <p class="text-sm text-slate-400 mb-2">QR코드로 WhatsApp에 연결</p>
-                  <img src="/whatsapp-qr.png" alt="Scan this QR code to contact us on WhatsApp" loading="lazy" class="w-32 h-32 rounded-lg border border-white/10 bg-white p-1">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="glass rounded-2xl p-8">
-            <h3 class="font-display text-lg font-semibold mb-3">무료 사전 조사</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              문의하기마다 중국에서의 브랜드명 이용 가능성을 평가하는 무료 예비상표 검색이(가) 포함됩니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-    <footer class="border-t border-white/5 py-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <a href="/ko/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"><span class="font-display font-bold text-lg">RTMCN</span></a>
-          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 중국 상표등록 전문 서비스</p>
-        </div>
-        <div>
-          <h4 class="font-display font-semibold text-sm mb-3">서비스</h4>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">상표 검색</a></li>
-            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">출원/심사</a></li>
-            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">이의/방어</a></li>
-            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">브랜드 모니터링</a></li>
-            <li><a href="/ko/classes.html" class="hover:text-brand transition-colors">상표 분류</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-display font-semibold text-sm mb-3">회사</h4>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="/ko/about.html" class="hover:text-brand transition-colors">회사 개요</a></li>
-            <li><a href="/blog/ko/" class="hover:text-brand transition-colors">블로그</a></li>
-            <li><a href="/ko/contact.html" class="hover:text-brand transition-colors">문의하기</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-display font-semibold text-sm mb-3">개인정보</h4>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="/ko/privacy.html" class="hover:text-brand transition-colors">개인정보 처리방침</a></li>
-            <li><a href="/ko/cookie.html" class="hover:text-brand transition-colors">쿠키 정책</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="section-divider mb-8"></div>
+    <div class="section-divider mb-8"></div>
       <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-        <p>&copy; 2026 Tuyue Trademark Registration. All rights reserved.</p>
+        <p>&copy; 2026 Tuyue Trademark Registration. 모든 권리 보유.</p>
       </div>
     </div>
   </footer>
@@ -287,6 +153,45 @@
       });
     })();</script>
   
+  <footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/ko/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — 중국 상표등록 전문 서비스</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">서비스</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">상표 검색</a></li>
+            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">출원/심사</a></li>
+            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">이의/방어</a></li>
+            <li><a href="/ko/services.html" class="hover:text-brand transition-colors">브랜드 모니터링</a></li>
+            <li><a href="/ko/classes.html" class="hover:text-brand transition-colors">상표 분류</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">회사</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/ko/about.html" class="hover:text-brand transition-colors">회사 개요</a></li>
+            <li><a href="/blog/ko/" class="hover:text-brand transition-colors">블로그</a></li>
+            <li><a href="/ko/contact.html" class="hover:text-brand transition-colors">문의하기</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">개인정보</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/ko/privacy.html" class="hover:text-brand transition-colors">개인정보 처리방침</a></li>
+            <li><a href="/ko/cookie.html" class="hover:text-brand transition-colors">쿠키 정책</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>&copy; 2026 Tuyue Trademark Registration. 모든 권리 보유.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
 
