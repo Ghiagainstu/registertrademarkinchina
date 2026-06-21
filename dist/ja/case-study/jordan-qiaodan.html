@@ -211,11 +211,3 @@
   </script>
 </body>
 </html>
-
-  <script src="/scripts/main.js" defer></script>
-  <script>
-    (function(){var btn=document.getElementById('lang-btn'),dd=document.getElementById('lang-dropdown');if(!btn||!dd)return;btn.addEventListener('click',function(e){e.stopPropagation();dd.classList.toggle('hidden')});document.addEventListener('click',function(){dd.classList.add('hidden')});dd.querySelectorAll('a[data-lang]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var l=a.dataset.lang,p=window.location.pathname,slug=p.split('/').pop();if(l==='en')window.location.href='/case-study/'+slug;else window.location.href='/'+l+'/case-study/'+slug})})})();
-    window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('reading-progress').style.width=d>0?(s/d)*100+'%':'0%';});
-  </script>
-</body>
-</html>
