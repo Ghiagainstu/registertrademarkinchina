@@ -1,365 +1,796 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- EN Main Pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://registertrademarkchina.com/</loc>
+    <loc>https://registertrademarkchina.com/404.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/404.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/404.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/404.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/404.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/case-study.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/classes.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/classes.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/classes.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/classes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/classes.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/cookie.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/cookie.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/index.html"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/about.html</loc>
+    <loc>https://registertrademarkchina.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/privacy.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/process.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/process.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/process.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/process.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/process.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/services.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/process.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/case-study.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/classes.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/cookie.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- EN Blog -->
-  <url>
-    <loc>https://registertrademarkchina.com/blog/</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/blog/china-trademark-registration-complete-guide-2026.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/blog/who-can-register-trademark-in-china.html</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://registertrademarkchina.com/blog/apple-ipad-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/apple-ipad-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/apple-ipad-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/apple-ipad-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/apple-ipad-trademark-china-case.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/blog/china-first-to-file-trademark-guide.html</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/blog/how-long-trademark-registration-china.html</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/blog/how-much-trademark-registration-cost-china.html</loc>
-    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-first-to-file-trademark-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-first-to-file-trademark-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-first-to-file-trademark-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-first-to-file-trademark-guide.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/blog/china-trademark-classes-complete-guide.html</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/blog/common-reasons-trademark-rejection-china.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-classes-complete-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-classes-complete-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-classes-complete-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-classes-complete-guide.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/blog/china-trademark-monitoring-protection.html</loc>
-    <lastmod>2026-06-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-monitoring-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-monitoring-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-monitoring-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-monitoring-protection.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/china-trademark-registration-complete-guide-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-registration-complete-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-registration-complete-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-registration-complete-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-registration-complete-guide-2026.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/common-reasons-trademark-rejection-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/common-reasons-trademark-rejection-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/common-reasons-trademark-rejection-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/common-reasons-trademark-rejection-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/common-reasons-trademark-rejection-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/hermes-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/hermes-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/hermes-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/hermes-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/hermes-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/how-long-trademark-registration-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/how-long-trademark-registration-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/how-long-trademark-registration-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/how-long-trademark-registration-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/how-long-trademark-registration-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/how-much-trademark-registration-cost-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/how-much-trademark-registration-cost-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/how-much-trademark-registration-cost-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/how-much-trademark-registration-cost-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/how-much-trademark-registration-cost-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/index.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html</loc>
-    <lastmod>2026-06-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/madrid-vs-direct-filing-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/madrid-vs-direct-filing-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- JA Main Pages -->
   <url>
-    <loc>https://registertrademarkchina.com/ja/</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/"/>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://registertrademarkchina.com/blog/michael-jordan-qiaodan-trademark-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/michael-jordan-qiaodan-trademark-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/michael-jordan-qiaodan-trademark-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/michael-jordan-qiaodan-trademark-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/michael-jordan-qiaodan-trademark-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/new-balance-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/new-balance-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/new-balance-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/new-balance-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/new-balance-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/tesla-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/tesla-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/tesla-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/tesla-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/tesla-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/who-can-register-trademark-in-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/who-can-register-trademark-in-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/who-can-register-trademark-in-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/who-can-register-trademark-in-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/who-can-register-trademark-in-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/apple-ipad-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/apple-ipad-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/apple-ipad-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/apple-ipad-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/apple-ipad-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/china-first-to-file-trademark-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-first-to-file-trademark-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-first-to-file-trademark-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-first-to-file-trademark-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-first-to-file-trademark-guide.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/china-trademark-classes-complete-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-classes-complete-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-classes-complete-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-classes-complete-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-classes-complete-guide.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/china-trademark-monitoring-protection.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-monitoring-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-monitoring-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-monitoring-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-monitoring-protection.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/china-trademark-registration-complete-guide-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-registration-complete-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-registration-complete-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-registration-complete-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-registration-complete-guide-2026.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/common-reasons-trademark-rejection-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/common-reasons-trademark-rejection-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/common-reasons-trademark-rejection-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/common-reasons-trademark-rejection-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/common-reasons-trademark-rejection-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/hermes-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/hermes-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/hermes-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/hermes-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/hermes-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/how-long-trademark-registration-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/how-long-trademark-registration-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/how-long-trademark-registration-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/how-long-trademark-registration-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/how-long-trademark-registration-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/how-much-trademark-registration-cost-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/how-much-trademark-registration-cost-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/how-much-trademark-registration-cost-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/how-much-trademark-registration-cost-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/how-much-trademark-registration-cost-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/index.html"/>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/madrid-vs-direct-filing-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/madrid-vs-direct-filing-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/madrid-vs-direct-filing-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/michael-jordan-qiaodan-trademark-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/michael-jordan-qiaodan-trademark-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/michael-jordan-qiaodan-trademark-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/michael-jordan-qiaodan-trademark-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/michael-jordan-qiaodan-trademark-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/new-balance-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/new-balance-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/new-balance-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/new-balance-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/new-balance-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/tesla-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/tesla-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/tesla-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/tesla-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/tesla-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ja/who-can-register-trademark-in-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/who-can-register-trademark-in-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/who-can-register-trademark-in-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/who-can-register-trademark-in-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/who-can-register-trademark-in-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/apple-ipad-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/apple-ipad-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/apple-ipad-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/apple-ipad-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/apple-ipad-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/china-first-to-file-trademark-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-first-to-file-trademark-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-first-to-file-trademark-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-first-to-file-trademark-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-first-to-file-trademark-guide.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/china-trademark-classes-complete-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-classes-complete-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-classes-complete-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-classes-complete-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-classes-complete-guide.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/china-trademark-monitoring-protection.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-monitoring-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-monitoring-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-monitoring-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-monitoring-protection.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/china-trademark-registration-complete-guide-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-registration-complete-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-registration-complete-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-registration-complete-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-registration-complete-guide-2026.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/common-reasons-trademark-rejection-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/common-reasons-trademark-rejection-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/common-reasons-trademark-rejection-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/common-reasons-trademark-rejection-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/common-reasons-trademark-rejection-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/hermes-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/hermes-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/hermes-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/hermes-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/hermes-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/how-long-trademark-registration-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/how-long-trademark-registration-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/how-long-trademark-registration-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/how-long-trademark-registration-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/how-long-trademark-registration-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/how-much-trademark-registration-cost-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/how-much-trademark-registration-cost-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/how-much-trademark-registration-cost-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/how-much-trademark-registration-cost-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/how-much-trademark-registration-cost-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/index.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/madrid-vs-direct-filing-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/madrid-vs-direct-filing-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/madrid-vs-direct-filing-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/madrid-vs-direct-filing-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/michael-jordan-qiaodan-trademark-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/michael-jordan-qiaodan-trademark-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/michael-jordan-qiaodan-trademark-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/michael-jordan-qiaodan-trademark-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/michael-jordan-qiaodan-trademark-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/new-balance-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/new-balance-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/new-balance-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/new-balance-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/new-balance-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/tesla-trademark-china-case.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/tesla-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/tesla-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/tesla-trademark-china-case.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/tesla-trademark-china-case.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/blog/ko/who-can-register-trademark-in-china.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/who-can-register-trademark-in-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/who-can-register-trademark-in-china.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/who-can-register-trademark-in-china.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/who-can-register-trademark-in-china.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/case-study/apple-ipad.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/apple-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/apple-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/apple-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/apple-ipad.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/case-study/hermes.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/hermes.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/hermes.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/hermes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/hermes.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/case-study/jordan-qiaodan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/jordan-qiaodan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/jordan-qiaodan.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/jordan-qiaodan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/jordan-qiaodan.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/case-study/new-balance.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/new-balance.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/new-balance.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/new-balance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/new-balance.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/case-study/tesla.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/tesla.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/tesla.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/tesla.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/tesla.html"/>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/ja/about.html</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/about.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/about.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/about.html"/>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/about.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/ja/services.html</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/services.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/services.html"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/services.html"/>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/ja/process.html</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/process.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/process.html"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/process.html"/>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/ja/case-study.html</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study.html"/>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/ja/classes.html</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/classes.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/classes.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/classes.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/classes.html"/>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/classes.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/ja/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/contact.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/contact.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/contact.html"/>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/contact.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- JA Blog -->
-  <url>
-    <loc>https://registertrademarkchina.com/blog/ja/</loc>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ja/china-trademark-registration-complete-guide-2026.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ja/cookie.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/cookie.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/ja/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/index.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ja/who-can-register-trademark-in-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ja/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/privacy.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/ja/process.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/process.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/process.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/process.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/process.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ja/china-first-to-file-trademark-guide.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ja/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/services.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ja/how-long-trademark-registration-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ja/case-study/apple-ipad.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/apple-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/apple-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/apple-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/apple-ipad.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ja/how-much-trademark-registration-cost-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ja/case-study/hermes.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/hermes.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/hermes.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/hermes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/hermes.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ja/china-trademark-classes-complete-guide.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ja/case-study/jordan-qiaodan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/jordan-qiaodan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/jordan-qiaodan.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/jordan-qiaodan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/jordan-qiaodan.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ja/common-reasons-trademark-rejection-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ja/case-study/new-balance.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/new-balance.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/new-balance.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/new-balance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/new-balance.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ja/china-trademark-monitoring-protection.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ja/case-study/tesla.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/tesla.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/tesla.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/tesla.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/tesla.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/blog/ja/madrid-vs-direct-filing-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- KO Main Pages -->
-  <url>
-    <loc>https://registertrademarkchina.com/ko/</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/"/>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/ko/about.html</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/about.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/about.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/about.html"/>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/about.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/ko/services.html</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/services.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/services.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/services.html"/>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://registertrademarkchina.com/ko/process.html</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/process.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/process.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/process.html"/>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/ko/case-study.html</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study.html"/>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/ko/classes.html</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/classes.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/classes.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/classes.html"/>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/classes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/classes.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://registertrademarkchina.com/ko/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/contact.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/contact.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/contact.html"/>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/contact.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- KO Blog -->
-  <url>
-    <loc>https://registertrademarkchina.com/blog/ko/</loc>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ko/china-trademark-registration-complete-guide-2026.html</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://registertrademarkchina.com/ko/cookie.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/cookie.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ko/who-can-register-trademark-in-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ko/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/index.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ko/china-first-to-file-trademark-guide.html</loc>
-    <lastmod>2026-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://registertrademarkchina.com/ko/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/privacy.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ko/how-long-trademark-registration-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ko/process.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/process.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/process.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/process.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/process.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ko/how-much-trademark-registration-cost-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ko/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/services.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ko/china-trademark-classes-complete-guide.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ko/case-study/apple-ipad.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/apple-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/apple-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/apple-ipad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/apple-ipad.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ko/common-reasons-trademark-rejection-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ko/case-study/hermes.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/hermes.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/hermes.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/hermes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/hermes.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ko/china-trademark-monitoring-protection.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ko/case-study/jordan-qiaodan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/jordan-qiaodan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/jordan-qiaodan.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/jordan-qiaodan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/jordan-qiaodan.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://registertrademarkchina.com/blog/ko/madrid-vs-direct-filing-china.html</loc>
-    <lastmod>2026-06-13</lastmod>
+    <loc>https://registertrademarkchina.com/ko/case-study/new-balance.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/new-balance.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/new-balance.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/new-balance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/new-balance.html"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://registertrademarkchina.com/ko/case-study/tesla.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/case-study/tesla.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/ja/case-study/tesla.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/ko/case-study/tesla.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/case-study/tesla.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
