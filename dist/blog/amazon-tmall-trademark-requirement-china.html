@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -48,12 +48,12 @@
     .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
     #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
     @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
     .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
     .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
     .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
     .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
     .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
-    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
   </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
@@ -89,39 +89,46 @@
   <div id="reading-progress"></div>
   <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"></a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
-        <a href="/services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Services</a>
-        <a href="/classes.html" class="text-sm text-slate-400 hover:text-white transition-colors">Classes</a>
-        <a href="/blog/" class="text-sm text-brand font-medium">Blog</a>
-        <a href="/about.html" class="text-sm text-slate-400 hover:text-white transition-colors">About</a>
-        <a href="/contact.html" class="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">Services</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">Process</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">Case Study</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">Classes</a>
+        <a href="/blog/" class="text-brand">Blog</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">About</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">Get Started</a>
       </div>
-      <div class="flex items-center gap-3">
-        <div class="relative">
-          <button id="lang-btn" class="flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors px-2 py-1 rounded" aria-expanded="false" aria-haspopup="true">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
-            <span>EN</span>
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-32 glass rounded-lg shadow-xl py-1 z-50">
-            <a href="#" data-lang="en" class="block px-4 py-2 text-sm text-brand bg-white/5">English</a>
-            <a href="#" data-lang="ja" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-white/5">日本語</a>
-            <a href="#" data-lang="ko" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-white/5">한국어</a>
-          </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">EN</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
         </div>
-        <a href="/contact.html" class="btn-glow px-4 py-2 rounded-lg text-sm hidden md:inline-block">Free Consultation</a>
       </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">Services</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">Process</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">Case Study</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">Classes</a>
+      <a href="/blog/" class="block text-sm text-brand">Blog</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">About</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
     </div>
   </nav>
-
   <main id="main-content" class="pt-16">
     <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="Breadcrumb">
       <ol class="flex items-center gap-2 text-sm text-slate-500">
-        <li><a href="/" class="hover:text-brand transition-colors">Home</a></li><li class="text-slate-600">/</li>
-        <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li><li class="text-slate-600">/</li>
-        <li class="text-slate-300">Selling on Amazon China or Tmall? You Need a Trademark First</li>
+          <li><a href="/" class="hover:text-brand transition-colors">Home</a></li><li class="text-slate-600">/</li>
+          <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li><li class="text-slate-600">/</li>
+          <li class="text-slate-300">Selling on Amazon China or Tmall? You Need a Trademark First</li>
       </ol>
     </nav>
 
@@ -135,25 +142,21 @@
     <div class="section-divider max-w-4xl mx-auto"></div>
     <section class="py-12 px-6">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
-        <div class="lg:col-span-3 article-body">
-<p>﻿---</p>
-<p>language: &quot;en&quot;</p>
-<p>category: &quot;guide&quot;</p>
-<p>status: &quot;draft&quot;</p>
-<p>publish_date: &quot;2026-06-28&quot;</p>
-<p>create_date: &quot;2026-06-23&quot;</p>
-<p>blog_link: &quot;https://registertrademarkchina.com/blog/amazon-tmall-trademark-requirement-china.html&quot;</p>
-<p>source_link: &quot;&quot;</p>
-<p>source_date: &quot;&quot;</p>
-<p>tags: [Amazon, Tmall, JD, e-commerce, China-trademark, marketplace, brand-registry, platform-requirement]</p>
-<p>---</p>
-<p># Selling on Amazon China or Tmall? You Need a Trademark First</p>
+        <div class="lg:col-span-3">
+<div class="article-body">
+<section class="section-block glass rounded-2xl border border-white/5">
 <h2 id="key-takeaway">Key Takeaway</h2>
 <p>If you want to sell on China&#x27;s major e-commerce platforms — Tmall, JD.com, Douyin Shop, or even Amazon&#x27;s China-facing operations — a <strong>registered trademark in China is mandatory</strong>. No trademark, no storefront. This isn&#x27;t just a recommendation; it&#x27;s a platform requirement. Getting your <a href="/blog/china-trademark-registration-complete-guide-2026.html">trademark registered</a> before applying for marketplace access can save you months of delays.</p>
+</section>
+
+<section class="section-block">
 <h2 id="the-e-commerce-gateway-to-china">The E-Commerce Gateway to China</h2>
 <p>China&#x27;s e-commerce market is the largest in the world, with over <strong>1 trillion USD in annual online sales</strong>. For international brands, platforms like Tmall, JD.com, and Douyin Shop (formerly TikTok Shop) represent the fastest path to Chinese consumers.</p>
 <p>But there&#x27;s a catch: <strong>every major Chinese e-commerce platform requires a registered Chinese trademark</strong> before you can open an official store. This isn&#x27;t optional — it&#x27;s a hard requirement built into the platform onboarding process.</p>
 <p>If you&#x27;re planning to sell in China through e-commerce, your trademark application needs to happen <strong>before</strong> your marketplace application. The <a href="/blog/china-trademark-registration-complete-guide-2026.html">registration process</a> takes 9-12 months, so plan accordingly.</p>
+</section>
+
+<section class="section-block">
 <h2 id="platform-by-platform-requirements">Platform-by-Platform Requirements</h2>
 <h3>Tmall (天猫)</h3>
 <p>Tmall is China&#x27;s premium B2C platform, owned by Alibaba. Requirements include:</p>
@@ -187,6 +190,9 @@
 <li>Trademark must be in the country where you&#x27;re registering</li>
 <li>For China operations specifically, a CNIPA-registered mark is required</li>
 </ul>
+</section>
+
+<section class="section-block">
 <h2 id="why-platforms-require-trademarks">Why Platforms Require Trademarks</h2>
 <h3>Consumer Protection</h3>
 <p>China&#x27;s e-commerce platforms are legally responsible for the products sold on their platforms. Requiring trademarks helps them:</p>
@@ -200,6 +206,9 @@
 <p>Platforms like Tmall have invested heavily in premium brand experiences. Trademark requirements ensure that only legitimate brands access these premium placements, protecting both brands and consumers.</p>
 <h3>Platform Liability</h3>
 <p>Under Chinese law, platforms can be held liable for trademark infringement occurring on their sites. Requiring registered trademarks shifts some of this risk to sellers.</p>
+</section>
+
+<section class="section-block">
 <h2 id="the-timeline-problem">The Timeline Problem</h2>
 <h3>Trademark Registration: 9-12 Months</h3>
 <p>The CNIPA trademark registration process takes approximately <a href="/blog/china-trademark-registration-complete-guide-2026.html">9-12 months</a> from application to certificate. This includes:</p>
@@ -213,6 +222,9 @@
 <p>After receiving your trademark certificate, the platform application and review process takes an additional 1-3 months.</p>
 <h3>Total Timeline: 10-15 Months</h3>
 <p>From trademark filing to live storefront, expect 10-15 months minimum. If you haven&#x27;t started the trademark process, <strong>start now</strong> — even before you&#x27;ve finalized your marketplace strategy.</p>
+</section>
+
+<section class="section-block">
 <h2 id="strategy-file-your-trademark-now">Strategy: File Your Trademark Now</h2>
 <h3>Don&#x27;t Wait for Perfect Timing</h3>
 <p>Many brands delay trademark filing until they&#x27;re &quot;ready&quot; to enter China. By then, they&#x27;ve already lost 9-12 months. File your trademark application as soon as you begin considering China e-commerce — you can always decide not to enter, but you can&#x27;t speed up the registration timeline.</p>
@@ -225,6 +237,9 @@
 </ul>
 <h3>Register Both English and Chinese Names</h3>
 <p>Chinese consumers search in Chinese. If your brand only has an English trademark, you&#x27;re invisible to a large portion of the market. Register your <a href="/blog/coca-cola-chinese-name-trademark-china.html">Chinese brand name</a> separately.</p>
+</section>
+
+<section class="section-block">
 <h2 id="how-rtmcn-can-help">How RTMCN Can Help</h2>
 <p>At RTMCN, we help international e-commerce sellers navigate China&#x27;s trademark and marketplace requirements. Our <a href="/services.html">services</a> include:</p>
 <ul>
@@ -234,6 +249,9 @@
 <li><strong>Brand registry support:</strong> We provide documentation for Tmall, JD.com, and other platform applications</li>
 <li><strong>Ongoing monitoring:</strong> We watch for conflicting filings that could affect your platform presence</li>
 </ul>
+</section>
+
+<section class="section-block">
 <h2 id="next-steps">Next Steps</h2>
 <p>Every month you delay trademark filing is a month you can&#x27;t sell on Chinese platforms. Start the process today.</p>
 <p><strong>Action items:</strong></p>
@@ -245,112 +263,110 @@
 <p><a href="/contact.html">Get a Free Consultation →</a></p>
 <p>---</p>
 <p>*No trademark = no storefront. <a href="https://registertrademarkchina.com/contact.html">Contact RTMCN</a> to start your China e-commerce journey today.*</p>
+        </section>
         </div>
-        <aside class="toc-sidebar lg:col-span-1 sticky top-24 self-start">
-          <div class="glass rounded-2xl p-5">
-            <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Table of Contents</h3>
-            <nav class="space-y-1">
-            <a href="#key-takeaway" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">Key Takeaway</a>
-            <a href="#the-e-commerce-gateway-to-china" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">The E-Commerce Gateway to China</a>
-            <a href="#platform-by-platform-requirements" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">Platform-by-Platform Requirements</a>
-            <a href="#why-platforms-require-trademarks" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">Why Platforms Require Trademarks</a>
-            <a href="#the-timeline-problem" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">The Timeline Problem</a>
-            <a href="#strategy-file-your-trademark-now" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">Strategy: File Your Trademark Now</a>
-            <a href="#how-rtmcn-can-help" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">How RTMCN Can Help</a>
-            <a href="#next-steps" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">Next Steps</a>
-            </nav>
-          </div>
-          <div class="glass rounded-2xl p-5 mt-6">
-            <h3 class="text-sm font-semibold text-white mb-3">Need Help?</h3>
-            <p class="text-slate-500 text-sm mb-4">Get a free trademark search and consultation.</p>
-            <a href="/contact.html" class="btn-glow block text-center px-4 py-2.5 rounded-lg text-sm">Free Consultation</a>
+</div>
+<aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">In This Article</p>
+              <a href="#key-takeaway" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Key Takeaway</a>
+              <a href="#the-e-commerce-gateway-to-china" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">The E-Commerce Gateway to China</a>
+              <a href="#platform-by-platform-requirements" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Platform-by-Platform Requirements</a>
+              <a href="#why-platforms-require-trademarks" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Why Platforms Require Trademarks</a>
+              <a href="#the-timeline-problem" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">The Timeline Problem</a>
+              <a href="#strategy-file-your-trademark-now" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Strategy: File Your Trademark Now</a>
+              <a href="#how-rtmcn-can-help" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">How RTMCN Can Help</a>
+              <a href="#next-steps" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Next Steps</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">Related Articles</p>
+              <a href="/blog/how-long-trademark-registration-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">How Long Does Trademark Registration Take</a>
+              <a href="/blog/china-trademark-classes-complete-guide.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">China Trademark Classes Complete Guide</a>
+              <a href="/blog/china-trademark-renewal-guide.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">China Trademark Renewal Guide</a>
+
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">Need help with China trademark registration?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">Free Consultation</a>
+            </div>
           </div>
         </aside>
       </div>
     </section>
-
-    <div class="section-divider max-w-4xl mx-auto"></div>
-    <section class="py-16 px-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="font-display text-2xl font-bold text-white mb-8 text-center">Related Articles</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <a href="/blog/logo-vs-word-mark-china.html" class="glass rounded-xl p-5 hover:border-brand/20 transition-all group block">
-            <h4 class="text-white font-semibold group-hover:text-brand transition-colors mb-2">How to Trademark a Logo vs a Word Mark in China: Which Should You Choose?</h4>
-            <p class="text-slate-500 text-sm">Learn the difference between word marks, design marks, and combination marks in China. Find out why filing separately gi...</p>
-          </a>
-          <a href="/blog/coca-cola-chinese-name-trademark-china.html" class="glass rounded-xl p-5 hover:border-brand/20 transition-all group block">
-            <h4 class="text-white font-semibold group-hover:text-brand transition-colors mb-2">How Coca-Cola Almost Got a Terrible Chinese Name — And What It Teaches About Brand Protection</h4>
-            <p class="text-slate-500 text-sm">Before Coca-Cola became Ke Kou Ke Le (delicious happiness), it was sold as tadpole chewing wax. Learn why proactive Chin...</p>
-          </a>
-          <a href="/blog/free-china-trademark-search-guide.html" class="glass rounded-xl p-5 hover:border-brand/20 transition-all group block">
-            <h4 class="text-white font-semibold group-hover:text-brand transition-colors mb-2">How to Search China&#x27;s Trademark Database for Free: A Complete Guide</h4>
-            <p class="text-slate-500 text-sm">CNIPA&#x27;s trademark database is free to search but entirely in Chinese. This guide walks you through how to search, what t...</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-16 px-6">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="font-display text-3xl font-bold text-white mb-4">Need Help With Your China Trademark?</h2>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">Need Help With Your China Trademark?</h2>
         <p class="text-slate-400 mb-8">Our experts will guide you through the entire process.</p>
-        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-lg">Get a Free Consultation</a>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">Get a Free Consultation</a>
       </div>
     </section>
   </main>
-
-  <footer class="border-t border-white/5 py-12 px-6">
+<footer class="border-t border-white/5 py-12 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"></a>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
           <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — professional trademark services in China.</p>
         </div>
         <div>
-          <h4 class="text-white font-semibold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/services.html" class="text-slate-500 hover:text-brand transition-colors">Trademark Search</a></li>
-            <li><a href="/services.html" class="text-slate-500 hover:text-brand transition-colors">Filing & Registration</a></li>
-            <li><a href="/services.html" class="text-slate-500 hover:text-brand transition-colors">Monitoring & Protection</a></li>
-            <li><a href="/classes.html" class="text-slate-500 hover:text-brand transition-colors">Trademark Classes</a></li>
+          <h4 class="font-display font-semibold text-sm mb-3">Services</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Trademark Search</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Filing &amp; Prosecution</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">Trademark Classes</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white font-semibold mb-4">Company</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/about.html" class="text-slate-500 hover:text-brand transition-colors">About Us</a></li>
-            <li><a href="/contact.html" class="text-slate-500 hover:text-brand transition-colors">Contact</a></li>
+          <h4 class="font-display font-semibold text-sm mb-3">Company</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">About Us</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">Contact</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white font-semibold mb-4">Legal</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/privacy.html" class="text-slate-500 hover:text-brand transition-colors">Privacy Policy</a></li>
-            <li><a href="/cookie.html" class="text-slate-500 hover:text-brand transition-colors">Cookie Policy</a></li>
+          <h4 class="font-display font-semibold text-sm mb-3">Legal</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-white/5 pt-8 text-center text-slate-600 text-sm">
-        &copy; 2026 Tuyue Trademark Registration. All rights reserved.
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>&copy; 2026 Tuyue Trademark Registration. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
+  <script src="/scripts/main.js" defer></script>
   <script>
-    (function() {
-      const bar = document.getElementById('reading-progress');
-      window.addEventListener('scroll', function() {
-        const h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (window.scrollY / h * 100) + '%';
-      }, { passive: true });
-
-      const sections = [];
-      document.querySelectorAll('.article-body h2[id]').forEach(h => {
-        sections.push({ id: h.id, el: h });
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
       });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
       const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
       function update() {
-        let current = sections[0] ? sections[0].id : '';
+        let current = sections[0].id;
         for (const s of sections) {
           if (s.el.getBoundingClientRect().top <= 120) current = s.id;
         }
@@ -369,35 +385,36 @@
       });
     });
   </script>
-<script>
-  (function() {
-    var btn = document.getElementById('lang-btn');
-    var dropdown = document.getElementById('lang-dropdown');
-    if (!btn || !dropdown) return;
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      dropdown.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
-    });
-    document.addEventListener('click', function() {
-      dropdown.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-    dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        var lang = link.dataset.lang;
-        var slug = 'amazon-tmall-trademark-requirement-china';
-        var newPath;
-        if (lang === 'en') {
-          newPath = '/blog/' + slug + '.html';
-        } else {
-          newPath = '/blog/' + lang + '/' + slug + '.html';
-        }
-        window.location.href = newPath;
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
       });
-    });
-  })();
-</script>
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -48,12 +48,12 @@
     .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
     #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
     @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
     .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
     .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
     .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
     .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
     .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
-    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
   </style>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
@@ -89,39 +89,46 @@
   <div id="reading-progress"></div>
   <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"></a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-sm text-slate-400 hover:text-white transition-colors">Home</a>
-        <a href="/services.html" class="text-sm text-slate-400 hover:text-white transition-colors">Services</a>
-        <a href="/classes.html" class="text-sm text-slate-400 hover:text-white transition-colors">Classes</a>
-        <a href="/blog/" class="text-sm text-brand font-medium">Blog</a>
-        <a href="/about.html" class="text-sm text-slate-400 hover:text-white transition-colors">About</a>
-        <a href="/contact.html" class="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">Services</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">Process</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">Case Study</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">Classes</a>
+        <a href="/blog/" class="text-brand">Blog</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">About</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">Get Started</a>
       </div>
-      <div class="flex items-center gap-3">
-        <div class="relative">
-          <button id="lang-btn" class="flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors px-2 py-1 rounded" aria-expanded="false" aria-haspopup="true">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
-            <span>EN</span>
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-          </button>
-          <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-32 glass rounded-lg shadow-xl py-1 z-50">
-            <a href="#" data-lang="en" class="block px-4 py-2 text-sm text-brand bg-white/5">English</a>
-            <a href="#" data-lang="ja" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-white/5">日本語</a>
-            <a href="#" data-lang="ko" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-white/5">한국어</a>
-          </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">EN</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
         </div>
-        <a href="/contact.html" class="btn-glow px-4 py-2 rounded-lg text-sm hidden md:inline-block">Free Consultation</a>
       </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">Services</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">Process</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">Case Study</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">Classes</a>
+      <a href="/blog/" class="block text-sm text-brand">Blog</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">About</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
     </div>
   </nav>
-
   <main id="main-content" class="pt-16">
     <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="Breadcrumb">
       <ol class="flex items-center gap-2 text-sm text-slate-500">
-        <li><a href="/" class="hover:text-brand transition-colors">Home</a></li><li class="text-slate-600">/</li>
-        <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li><li class="text-slate-600">/</li>
-        <li class="text-slate-300">How Coca-Cola Almost Got a Terrible Chinese Name — And What It Teaches About Brand Protection</li>
+          <li><a href="/" class="hover:text-brand transition-colors">Home</a></li><li class="text-slate-600">/</li>
+          <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li><li class="text-slate-600">/</li>
+          <li class="text-slate-300">How Coca-Cola Almost Got a Terrible Chinese Name — And What It Teaches About Brand Protection</li>
       </ol>
     </nav>
 
@@ -135,21 +142,14 @@
     <div class="section-divider max-w-4xl mx-auto"></div>
     <section class="py-12 px-6">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
-        <div class="lg:col-span-3 article-body">
-<p>﻿---</p>
-<p>language: &quot;en&quot;</p>
-<p>category: &quot;case-study&quot;</p>
-<p>status: &quot;draft&quot;</p>
-<p>publish_date: &quot;2026-06-23&quot;</p>
-<p>create_date: &quot;2026-06-23&quot;</p>
-<p>blog_link: &quot;https://registertrademarkchina.com/blog/coca-cola-chinese-name-trademark-china.html&quot;</p>
-<p>source_link: &quot;&quot;</p>
-<p>source_date: &quot;1928&quot;</p>
-<p>tags: [Coca-Cola, Chinese-name, brand-naming, China-trademark, brand-protection, marketing, localization]</p>
-<p>---</p>
-<p># How Coca-Cola Almost Got a Terrible Chinese Name — And What It Teaches About Brand Protection</p>
+        <div class="lg:col-span-3">
+<div class="article-body">
+<section class="section-block glass rounded-2xl border border-white/5">
 <h2 id="key-takeaway">Key Takeaway</h2>
 <p>Before Coca-Cola became &quot;Ke Kou Ke Le&quot; (可口可乐) — one of the most celebrated brand translations in history — Chinese shopkeepers were selling it under names like &quot;Ke Kou Ke La&quot; (蝌蚪啃蜡), meaning &quot;tadpole chewing wax.&quot; Coca-Cola&#x27;s proactive Chinese naming strategy saved the brand from a marketing disaster. Every international brand entering China faces the same risk: if you don&#x27;t choose your Chinese name, someone else will.</p>
+</section>
+
+<section class="section-block">
 <h2 id="from-tadpole-chewing-wax-to-delicious-happiness">From &quot;Tadpole Chewing Wax&quot; to &quot;Delicious Happiness&quot;</h2>
 <h3>The Early Chaos</h3>
 <p>When Coca-Cola first entered the Chinese market in the 1920s, there was no official Chinese name. Local merchants improvised phonetic transliterations that were technically accurate but disastrous in meaning:</p>
@@ -169,6 +169,9 @@
 <li><strong>First-mover advantage is real.</strong> Whoever registers the Chinese name owns it. If you don&#x27;t choose proactively, the market will choose for you — and you may not like the result.</li>
 </ul>
 <p>This is why brands like <a href="/blog/starbucks-xingbake-trademark-china.html">Starbucks invested in &quot;Xingbake&quot;</a> and <a href="/blog/nike-chinese-name-trademark-china.html">Nike secured &quot;Nai Ke&quot;</a>. The Chinese name IS your brand in China.</p>
+</section>
+
+<section class="section-block">
 <h2 id="the-trademark-implications">The Trademark Implications</h2>
 <h3>Register Early, Register Everything</h3>
 <p>Coca-Cola&#x27;s naming success would have been meaningless without trademark protection. The company registered &quot;可口可乐&quot; as a trademark across all relevant <a href="/classes.html">classes</a> — not just beverages, but also merchandise, advertising, and related categories.</p>
@@ -184,6 +187,9 @@
 <p><strong>1. Squatters register first.</strong> Under China&#x27;s <a href="/blog/china-first-to-file-trademark-guide.html">first-to-file system</a>, whoever files first owns the mark. A squatter who registers your Chinese name before you do can block your market entry entirely.</p>
 <p><strong>2. Consumers create unofficial names.</strong> If you don&#x27;t provide an official Chinese name, consumers and media will create one for you. These organic names may be unflattering, culturally inappropriate, or impossible to trademark.</p>
 <p><strong>3. Competitors exploit the gap.</strong> Without a registered Chinese name, competitors can use similar-sounding names to redirect your brand traffic. This is especially damaging in e-commerce, where Chinese-language search is dominant.</p>
+</section>
+
+<section class="section-block">
 <h2 id="lessons-from-coca-cola-for-international-brands">Lessons from Coca-Cola for International Brands</h2>
 <h3>1. Chinese Naming Is a Strategic Investment</h3>
 <p>Coca-Cola didn&#x27;t just translate its name — it hired linguists, cultural consultants, and marketing experts to craft the perfect Chinese identity. This investment has protected the brand for nearly 100 years.</p>
@@ -219,6 +225,9 @@
 <p>Coca-Cola&#x27;s defensive strategy includes registering variations, abbreviations, and similar-sounding names. This &quot;trademark moat&quot; prevents competitors from creating confusingly similar brands.</p>
 <h3>5. Monitor the Market Continuously</h3>
 <p>Even after registration, squatters and imitators file new trademark applications. Coca-Cola monitors the CNIPA database and opposes conflicting filings within the 3-month publication window. This ongoing vigilance is essential for maintaining brand exclusivity.</p>
+</section>
+
+<section class="section-block">
 <h2 id="how-rtmcn-can-help">How RTMCN Can Help</h2>
 <p>At RTMCN, we help international brands develop winning Chinese names and protect them through comprehensive trademark registration. Our <a href="/services.html">services</a> include:</p>
 <ul>
@@ -228,6 +237,9 @@
 <li><strong>Ongoing monitoring:</strong> We watch for conflicting filings and file oppositions within the critical 3-month window</li>
 <li><strong>Market entry advisory:</strong> We guide you through the complete China market entry process</li>
 </ul>
+</section>
+
+<section class="section-block">
 <h2 id="next-steps">Next Steps</h2>
 <p>Coca-Cola&#x27;s Chinese naming success was deliberate and strategic. Your brand deserves the same level of care.</p>
 <p><strong>Start here:</strong></p>
@@ -239,110 +251,108 @@
 <p><a href="/contact.html">Get a Free Consultation →</a></p>
 <p>---</p>
 <p>*Don&#x27;t let your brand become &quot;tadpole chewing wax.&quot; <a href="https://registertrademarkchina.com/contact.html">Contact RTMCN</a> to craft and protect your perfect Chinese brand name.*</p>
+        </section>
         </div>
-        <aside class="toc-sidebar lg:col-span-1 sticky top-24 self-start">
-          <div class="glass rounded-2xl p-5">
-            <h3 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Table of Contents</h3>
-            <nav class="space-y-1">
-            <a href="#key-takeaway" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">Key Takeaway</a>
-            <a href="#from-tadpole-chewing-wax-to-delicious-happiness" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">From &quot;Tadpole Chewing Wax&quot; to &quot;Delicious Happiness&quot;</a>
-            <a href="#the-trademark-implications" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">The Trademark Implications</a>
-            <a href="#lessons-from-coca-cola-for-international-brands" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">Lessons from Coca-Cola for International Brands</a>
-            <a href="#how-rtmcn-can-help" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">How RTMCN Can Help</a>
-            <a href="#next-steps" class="toc-link block py-1.5 pl-3 border-l-2 border-transparent text-sm text-slate-500 hover:text-brand hover:border-brand/30 transition-all">Next Steps</a>
-            </nav>
-          </div>
-          <div class="glass rounded-2xl p-5 mt-6">
-            <h3 class="text-sm font-semibold text-white mb-3">Need Help?</h3>
-            <p class="text-slate-500 text-sm mb-4">Get a free trademark search and consultation.</p>
-            <a href="/contact.html" class="btn-glow block text-center px-4 py-2.5 rounded-lg text-sm">Free Consultation</a>
+</div>
+<aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">In This Article</p>
+              <a href="#key-takeaway" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Key Takeaway</a>
+              <a href="#from-tadpole-chewing-wax-to-delicious-happiness" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">From &quot;Tadpole Chewing Wax&quot; to &quot;Delicious Happiness&quot;</a>
+              <a href="#the-trademark-implications" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">The Trademark Implications</a>
+              <a href="#lessons-from-coca-cola-for-international-brands" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Lessons from Coca-Cola for International Brands</a>
+              <a href="#how-rtmcn-can-help" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">How RTMCN Can Help</a>
+              <a href="#next-steps" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Next Steps</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">Related Articles</p>
+              <a href="/blog/free-china-trademark-search-guide.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Free China Trademark Search Guide</a>
+              <a href="/blog/trademark-registered-by-someone-else-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Someone Registered Your Trademark in China</a>
+              <a href="/blog/madrid-vs-direct-filing-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Madrid Protocol vs Direct Filing</a>
+
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">Need help with China trademark registration?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">Free Consultation</a>
+            </div>
           </div>
         </aside>
       </div>
     </section>
-
-    <div class="section-divider max-w-4xl mx-auto"></div>
-    <section class="py-16 px-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="font-display text-2xl font-bold text-white mb-8 text-center">Related Articles</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <a href="/blog/disney-mickey-trademark-china.html" class="glass rounded-xl p-5 hover:border-brand/20 transition-all group block">
-            <h4 class="text-white font-semibold group-hover:text-brand transition-colors mb-2">Disney&#x27;s Trademark Nightmare in China: How Mickey Mouse Got Away</h4>
-            <p class="text-slate-500 text-sm">Disney spent years fighting Chinese trademark squatters who registered Mickey Mouse and other character names. Learn wha...</p>
-          </a>
-          <a href="/blog/nike-chinese-name-trademark-china.html" class="glass rounded-xl p-5 hover:border-brand/20 transition-all group block">
-            <h4 class="text-white font-semibold group-hover:text-brand transition-colors mb-2">Nike&#x27;s Chinese Name Problem Nobody Talks About</h4>
-            <p class="text-slate-500 text-sm">Nike&#x27;s Chinese name Nai Ke was nearly lost to squatters across multiple trademark classes. Learn why English registratio...</p>
-          </a>
-          <a href="/blog/logo-vs-word-mark-china.html" class="glass rounded-xl p-5 hover:border-brand/20 transition-all group block">
-            <h4 class="text-white font-semibold group-hover:text-brand transition-colors mb-2">How to Trademark a Logo vs a Word Mark in China: Which Should You Choose?</h4>
-            <p class="text-slate-500 text-sm">Learn the difference between word marks, design marks, and combination marks in China. Find out why filing separately gi...</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-16 px-6">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="font-display text-3xl font-bold text-white mb-4">Need Help With Your China Trademark?</h2>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">Need Help With Your China Trademark?</h2>
         <p class="text-slate-400 mb-8">Our experts will guide you through the entire process.</p>
-        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-lg">Get a Free Consultation</a>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">Get a Free Consultation</a>
       </div>
     </section>
   </main>
-
-  <footer class="border-t border-white/5 py-12 px-6">
+<footer class="border-t border-white/5 py-12 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN logo" class="h-8 w-auto"></a>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
           <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — professional trademark services in China.</p>
         </div>
         <div>
-          <h4 class="text-white font-semibold mb-4">Services</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/services.html" class="text-slate-500 hover:text-brand transition-colors">Trademark Search</a></li>
-            <li><a href="/services.html" class="text-slate-500 hover:text-brand transition-colors">Filing & Registration</a></li>
-            <li><a href="/services.html" class="text-slate-500 hover:text-brand transition-colors">Monitoring & Protection</a></li>
-            <li><a href="/classes.html" class="text-slate-500 hover:text-brand transition-colors">Trademark Classes</a></li>
+          <h4 class="font-display font-semibold text-sm mb-3">Services</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Trademark Search</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Filing &amp; Prosecution</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">Trademark Classes</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white font-semibold mb-4">Company</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/about.html" class="text-slate-500 hover:text-brand transition-colors">About Us</a></li>
-            <li><a href="/contact.html" class="text-slate-500 hover:text-brand transition-colors">Contact</a></li>
+          <h4 class="font-display font-semibold text-sm mb-3">Company</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">About Us</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">Contact</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white font-semibold mb-4">Legal</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/privacy.html" class="text-slate-500 hover:text-brand transition-colors">Privacy Policy</a></li>
-            <li><a href="/cookie.html" class="text-slate-500 hover:text-brand transition-colors">Cookie Policy</a></li>
+          <h4 class="font-display font-semibold text-sm mb-3">Legal</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-white/5 pt-8 text-center text-slate-600 text-sm">
-        &copy; 2026 Tuyue Trademark Registration. All rights reserved.
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>&copy; 2026 Tuyue Trademark Registration. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
+  <script src="/scripts/main.js" defer></script>
   <script>
-    (function() {
-      const bar = document.getElementById('reading-progress');
-      window.addEventListener('scroll', function() {
-        const h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (window.scrollY / h * 100) + '%';
-      }, { passive: true });
-
-      const sections = [];
-      document.querySelectorAll('.article-body h2[id]').forEach(h => {
-        sections.push({ id: h.id, el: h });
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
       });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
       const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
       function update() {
-        let current = sections[0] ? sections[0].id : '';
+        let current = sections[0].id;
         for (const s of sections) {
           if (s.el.getBoundingClientRect().top <= 120) current = s.id;
         }
@@ -361,35 +371,36 @@
       });
     });
   </script>
-<script>
-  (function() {
-    var btn = document.getElementById('lang-btn');
-    var dropdown = document.getElementById('lang-dropdown');
-    if (!btn || !dropdown) return;
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      dropdown.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
-    });
-    document.addEventListener('click', function() {
-      dropdown.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-    dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        var lang = link.dataset.lang;
-        var slug = 'coca-cola-chinese-name-trademark-china';
-        var newPath;
-        if (lang === 'en') {
-          newPath = '/blog/' + slug + '.html';
-        } else {
-          newPath = '/blog/' + lang + '/' + slug + '.html';
-        }
-        window.location.href = newPath;
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
       });
-    });
-  })();
-</script>
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
 </body>
 </html>
