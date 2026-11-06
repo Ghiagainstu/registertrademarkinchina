@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>異議申立期間2ヶ月対応：外国ブランドのための商標ウォッチングSOP | RTMCN</title>
+  <meta name="description" content="2027年1月1日から中国の異議申立期間は2ヶ月に短縮されます。監視範囲、アラート頻度、社内決裁、常備証拠パックまで実務手順を解説します。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-opposition-watch-sop-2-months.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-opposition-watch-sop-2-months.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-opposition-watch-sop-2-months.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-opposition-watch-sop-2-months.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/ja/china-trademark-opposition-watch-sop-2-months.html" />
+  <meta property="og:title" content="異議申立期間2ヶ月対応：外国ブランドのための商標ウォッチングSOP" />
+  <meta property="og:description" content="2027年1月1日から中国の異議申立期間は2ヶ月に短縮されます。監視範囲、アラート頻度、社内決裁、常備証拠パックまで実務手順を解説します。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ja/china-trademark-opposition-watch-sop-2-months.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="異議申立期間2ヶ月対応：外国ブランドのための商標ウォッチングSOP" />
+  <meta name="twitter:description" content="2027年1月1日から中国の異議申立期間は2ヶ月に短縮されます。監視範囲、アラート頻度、社内決裁、常備証拠パックまで実務手順を解説します。" />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "異議申立期間2ヶ月対応：外国ブランドのための商標ウォッチングSOP",
+    "description": "2027年1月1日から中国の異議申立期間は2ヶ月に短縮されます。監視範囲、アラート頻度、社内決裁、常備証拠パックまで実務手順を解説します。",
+    "datePublished": "2026-11-06",
+    "dateModified": "2026-11-06",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/ja/china-trademark-opposition-watch-sop-2-months.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "異議申立期間2ヶ月対応：外国ブランドのための商標ウォッチングSOP"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">サービス</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">プロセス</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">事例紹介</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">区分一覧</a>
+        <a href="/blog/" class="text-brand">ブログ</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">概要</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">お問い合わせ</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">JA</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">サービス</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">プロセス</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">事例紹介</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">区分一覧</a>
+      <a href="/blog/" class="block text-sm text-brand">ブログ</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">概要</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">お問い合わせ</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="パンくずリスト">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ja/" class="hover:text-brand transition-colors">ホーム</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/ja/" class="hover:text-brand transition-colors">ブログ</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">異議申立期間2ヶ月対応：外国ブランドのための商標ウォッチングSOP</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">異議申立期間2ヶ月対応：外国ブランドのための商標ウォッチングSOP</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">2026年法第36条は異議申立期間を3ヶ月から2ヶ月に短縮します。登録簿の定期確認では間に合わず、担当者と事前授権を定めた運用プロセスが必要になります。</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="why-two-months-changes-everything">なぜ2ヶ月で運用全体が変わるのか</h2>
+<p class="leading-relaxed text-slate-300 mb-6"><strong>2027年1月1日</strong>施行の2026年商標法第36条は、異議申立期間を初步審定公告の日から<strong>2ヶ月</strong>と定めました（2019年法第33条の3ヶ月から短縮）。起算点は公告を行った日であり、自社が出願に気づいた日ではありません。</p>
+<p class="leading-relaxed text-slate-300 mb-6">CNIPA移行措置（草案）第4条は判断基準を<strong>公告日</strong>に置いています。国内出願は商標公報の公告日、中国を指定する国際登録はWIPO公告日です。2027年1月1日より前に公告された案件は3ヶ月、同日以降は2ヶ月となり、年をまたいで進行中の期間がリセットされることはありません。</p>
+<p class="leading-relaxed text-slate-300 mb-6">つまり检知、社内決裁、証拠収集、翻訳、必要な認証、現地代理人への指示を8週間以内に完了させる必要があります。四半期ごとに登録簿を確認する運用では、最初の社内会議が終わる前に異議申立の機会を失います。</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>草案の扱い：</strong>移行措置は2026年11月12日まで意見募集中で、最終版は変更され得ます。社内期限を確定する前に最終条文を確認してください。</p></div>
+<h2 id="backwards-timeline">公告日から逆算したタイムライン</h2>
+<table>
+<thead><tr><th>時点</th><th>対応</th><th>担当</th></tr></thead>
+<tbody>
+<tr><td>継続・週次</td><td>重点区分・サブクラス・中国語表記変形を公報で監視。アラートは担当者付きの受信箱に集約</td><td>ウォッチング提供者／知財担当</td></tr>
+<tr><td>Day 0〜2</td><td>公告を検知し、同一・類似・音写・関連会社・元代理店などの抵触を分類</td><td>現地代理人</td></tr>
+<tr><td>Day 3〜5</td><td>事前合意した基準で可否判断。高リスク案件は予算を自動執行</td><td>ブランド側（事前授権）</td></tr>
+<tr><td>Day 6〜14</td><td>証拠パックを組み、外国語資料を翻訳、署名・委任状を整備</td><td>現地代理人＋ブランド側</td></tr>
+<tr><td>Day 15〜30</td><td>電子申請で異議を提出。補充証拠の権利を留保する</td><td>中国商標代理機構</td></tr>
+<tr><td>予備</td><td>休暇、国際郵送、認証、社内エスカレーションに備え最低4週間を残す</td><td>運用責任者</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">55日目の提出は法的には可能ですが、余裕がありません。SOPの目的は、提出ではなく<strong>意思決定</strong>をボトルネックにしないことです。</p>
+<h2 id="watch-configuration">ウォッチング設定チェックリスト</h2>
+<ul>
+<li><strong>監視対象標識：</strong>英字標、公式中国語名、一般的な音写、消費者が付けた通称、ピンイン、略称、図形商標、製品ラインごとの中国語名。</li>
+<li><strong>範囲：</strong>登録済区分、将来参入し得る隣接区分、実際に使用するCNIPAサブクラス、業種ごとにハイジャッカーが出願しやすい区分。</li>
+<li><strong>出願人名：</strong>自社法人名、販売店、元代理店、OEM工場、既知の出願人。かつて取引関係があった相手による出願は、関係を立証できれば悪意を主張しやすくなります。</li>
+<li><strong>頻度：</strong>最低でも週次。最重要3区分は日次またはリアルタイム通知。月次の抽出調査では2ヶ月の法定期間に対応できません。</li>
+<li><strong>エスカレーション：</strong>決裁者と代理担当を各1名指名し、中国代理人に委任状を常備し、期限まで10営業日を切った場合は予防的異議を出す旨を事前指示しておく。</li>
+<li><strong>記録：</strong>公告日、検知日、決裁日、受理票の日付をログ化。期限超過を争われた際の証拠になります。</li>
+</ul>
+<p class="leading-relaxed text-slate-300 mb-6">監視体制全体は<a href="/blog/ja/china-trademark-monitoring-protection.html">商標モニタリングガイド</a>もご参照ください。</p>
+<h2 id="evidence-pack">常備しておく証拠パック</h2>
+<p class="leading-relaxed text-slate-300 mb-6">異議は「有名だから」ではなく資料で勝ちます。抵触出願の情報を足すだけで提出できる状態を維持してください。</p>
+<ul>
+<li>在先権利：本国登録、中国登録、先の出願、優先権証明書。</li>
+<li>中国内の知名度：日付入り広告、報道、展示会出展、EC画面、販売店契約、抵触出願より前の販売記録。</li>
+<li>相手方の悪意：他ブランドに類似する多数出願、過去の取引関係、商標を売り戻す申し出、販売店・製造業者による出願。</li>
+<li>主体資料：有効な委任状と登記事項証明、およびその訳文。</li>
+</ul>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>電子申請の実務：</strong>CNIPA商標局の公式FAQによれば、网上申請でアップロードする証拠は<strong>PDF</strong>形式、異議申請書の「法律依拠・事実依拠」欄は<strong>全角2000字以内</strong>です。補充証拠は申請時にその権利を留保する選択をした場合のみ可能で、<strong>3ヶ月以内</strong>に提出します。被異議申立人の答弁期限は通知受領から<strong>30日</strong>、補充証拠は答弁書で申告のうえ答弁書提出から3ヶ月以内です。</p></div>
+<h2 id="filing-mechanics">提出後のカレンダー</h2>
+<table>
+<thead><tr><th>段階</th><th>期限・規則</th></tr></thead>
+<tbody>
+<tr><td>異議審理</td><td>公告期間満了から12ヶ月以内に決定、特殊情况は6ヶ月延長可（第38条）</td></tr>
+<tr><td>被異議申立人の答弁</td><td>通知受領から30日（CNIPA電子申請FAQ）</td></tr>
+<tr><td>補充証拠</td><td>申告のうえ3ヶ月以内、PDFのみ（同FAQ）</td></tr>
+<tr><td>審理中止</td><td>第41条は他案件の結果を待つ必要がある場合の中止を明文化。引用権利が無効審判中の場合に有効</td></tr>
+<tr><td>不服</td><td>異議決定に不服の場合は15日以内に復審を請求（第38条）</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">予算にはCNIPA官費、現地代理費、翻訳費、必要に応じた公証・アポスティーユを含めます。料金表は改定されるため、第三者のまとめではなく代理人に当期の金額を確認してください。</p>
+<h2 id="common-failures">繰り返し見られる5つの失敗</h2>
+<ol>
+<li>英字標のみを監視し、中国語音写での出願を見逃す。</li>
+<li>販売店や顧客からの偶然の連絡に依存する。</li>
+<li>基準も代理決裁者もないまま本社承認を待つ。</li>
+<li>委任状の期限切れや登記住所の変更に気づかない。</li>
+<li>2ヶ月を「裁判所のように延長できる期限」と誤認する。法定期間であり交渉の余地はありません。</li>
+</ol>
+<p class="leading-relaxed text-slate-300 mb-6">最も安価な対策は手続面です。代理人の事前授権、公告日のログ、週次ウォッチ。他の4項目は<a href="/blog/ja/china-trademark-law-2027-foreign-brands.html">2027年までの対応リスト</a>をご覧ください。</p>
+<h2 id="sources">出典と注意書き</h2>
+<p class="leading-relaxed text-slate-300 mb-6">一次資料：『中華人民共和国商標法（2026年改正）』第36条・第38条・第41条（CNIPA、2026年6月26日）、CNIPA移行措置草案通知（2026年9月28日）、CNIPA商標局『商標異議・撤三・無効宣告の网上申請に関するよくある質問』。移行措置は草案です。本記事は一般情報であり法的助言ではありません。</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>2ヶ月対応のウォッチングを設計しますか？</strong> <a href="/contact.html">監視範囲と事前授権プロセスについてご相談ください</a>。</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">この記事の内容</p>
+<a href="#why-two-months-changes-everything" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">なぜ2ヶ月で運用全体が変わるのか</a>
+<a href="#backwards-timeline" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">公告日から逆算したタイムライン</a>
+<a href="#watch-configuration" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">ウォッチング設定チェックリスト</a>
+<a href="#evidence-pack" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">常備しておく証拠パック</a>
+<a href="#filing-mechanics" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">提出後のカレンダー</a>
+<a href="#common-failures" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">繰り返し見られる5つの失敗</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">出典と注意書き</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">関連記事</p>
+<a href="/blog/ja/china-trademark-law-2026-revision-changes.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">旧法・新法の条項対比</a>
+<a href="/blog/ja/china-trademark-law-2027-foreign-brands.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">2027年までにやるべきこと</a>
+<a href="/blog/ja/china-trademark-monitoring-protection.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">商標モニタリングと保護戦略</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">中国での商標登録についてご相談ですか？</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">無料相談</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">中国商標のご相談はこちら</h2>
+        <p class="text-slate-400 mb-8">専門スタッフが手続き全体をサポートします。</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">無料相談を申し込む</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">途悦商標登録 — 中国における専門商標サービス。</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">サービス</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">商標検索</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">出願・審査</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">商標区分</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">会社情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">私たちについて</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">ブログ</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">法的情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">プライバシーポリシー</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookieポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 途悦商標登録. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

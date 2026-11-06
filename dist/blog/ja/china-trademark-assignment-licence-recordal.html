@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>中国商標の譲渡とライセンス届出：工場に登録された商標を取り戻す | RTMCN</title>
+  <meta name="description" content="製造業者・販売店・元代理店に先に登録された場合、譲渡の方が訴訟より簡単なことがあります。2026年法の譲渡審査、ライセンス届出の効力、捨てるべき4つの誤解を解説します。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-assignment-licence-recordal.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-assignment-licence-recordal.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-assignment-licence-recordal.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-assignment-licence-recordal.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/ja/china-trademark-assignment-licence-recordal.html" />
+  <meta property="og:title" content="中国商標の譲渡とライセンス届出：工場に登録された商標を取り戻す" />
+  <meta property="og:description" content="製造業者・販売店・元代理店に先に登録された場合、譲渡の方が訴訟より簡単なことがあります。2026年法の譲渡審査、ライセンス届出の効力、捨てるべき4つの誤解を解説します。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ja/china-trademark-assignment-licence-recordal.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="中国商標の譲渡とライセンス届出：工場に登録された商標を取り戻す" />
+  <meta name="twitter:description" content="製造業者・販売店・元代理店に先に登録された場合、譲渡の方が訴訟より簡単なことがあります。2026年法の譲渡審査、ライセンス届出の効力、捨てるべき4つの誤解を解説します。" />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "中国商標の譲渡とライセンス届出：工場に登録された商標を取り戻す",
+    "description": "製造業者・販売店・元代理店に先に登録された場合、譲渡の方が訴訟より簡単なことがあります。2026年法の譲渡審査、ライセンス届出の効力、捨てるべき4つの誤解を解説します。",
+    "datePublished": "2026-11-06",
+    "dateModified": "2026-11-06",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/ja/china-trademark-assignment-licence-recordal.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "中国商標の譲渡とライセンス届出：工場に登録された商標を取り戻す"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">サービス</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">プロセス</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">事例紹介</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">区分一覧</a>
+        <a href="/blog/" class="text-brand">ブログ</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">概要</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">お問い合わせ</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">JA</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">サービス</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">プロセス</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">事例紹介</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">区分一覧</a>
+      <a href="/blog/" class="block text-sm text-brand">ブログ</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">概要</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">お問い合わせ</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="パンくずリスト">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ja/" class="hover:text-brand transition-colors">ホーム</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/ja/" class="hover:text-brand transition-colors">ブログ</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">中国商標の譲渡とライセンス届出：工場に登録された商標を取り戻す</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">中国商標の譲渡とライセンス届出：工場に登録された商標を取り戻す</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">外国法人は中国商標を保有でき、審査中の出願も譲渡でき、譲渡は通常署名入りの譲渡声明で足ります。ただし2026年法に重要な但し書きが加わりました。</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="four-myths">ブランドを足止めする4つの誤解</h2>
+<p class="leading-relaxed text-slate-300 mb-6">工場、販売店、元代理店が商標を登録した場合、相手から「譲渡はできない」と主張されることがよくあります。国際実務で繰り返し報告される同じ4つの主張は、いずれも正しくありません。</p>
+<ol>
+<li><strong>「中国商標を保有できるのは中国法人だけ」</strong>——外国法人は多数の中国登録を保有しており、所有権に国籍制限はありません。</li>
+<li><strong>「放棄して再出願するしかない」</strong>——費用と時間がかかり、第三者が出願できる空白を生みます。通常は譲渡の申請で足ります。</li>
+<li><strong>「審査中の出願は譲渡できない」</strong>——可能です。もっとも後に拒絶されれば譲受人は何も取得しません。</li>
+<li><strong>「双方の法人資料に領事認証が必要」</strong>——譲渡人・譲受人の身分証明は必要ですが、商標譲渡でそれらの領事認証が一般的に要求されるわけではありません。</li>
+</ol>
+<p class="leading-relaxed text-slate-300 mb-6">手続自体は、譲渡声明と身分証明をCNIPAに提出するのが通常です。難しいのは多くの場合、保有者との条件交渉という商業面であって、手続面ではありません。<a href="/blog/ja/trademark-registered-by-someone-else-china.html">4つの回復オプション</a>も併せてご覧ください。</p>
+<h2 id="article-46">2026年の但し書き：譲渡はもはや純粋な形式審査ではない</h2>
+<p class="leading-relaxed text-slate-300 mb-6">改正法第46条は譲渡規則を維持しつつ第三項を追加しました。<strong>混同を生じさせ、または他の不良な影響を及ぼすおそれのある譲渡は認可しない</strong>というもので、2019年法にはなかった実体審査の層です。</p>
+<p class="leading-relaxed text-slate-300 mb-6">買い戻しの実務では、譲渡書類に単に「譲渡する」と書くだけでは足りません。当事者間の関係、事業上の根拠、譲渡人が保有する関連・類似商標の扱い、消費者が混同しないよう商品と流通をどう分けるかを説明すべきです。類似商標の一群を保有している場合は、気づいた1件だけでなく一群全体の譲渡または抹消を契約で求めます。</p>
+<p class="leading-relaxed text-slate-300 mb-6">第47条は集団商標・証明商標について、譲受人に対応する主体資格と監督能力を要求する並行規則を置きます。第53条も紛争設計上重要で、無効宣告は原則として既に履行済みの譲渡・ライセンス契約に遡及しません（登録人の悪意がある場合を除く）。</p>
+<h2 id="licence-recordal">ライセンス届出とその実際の効力</h2>
+<table>
+<thead><tr><th>項目</th><th>2026年法（第55条）の規則</th></tr></thead>
+<tbody>
+<tr><td>品質管理</td><td>許諾者は被許諾者の商品品質を監督し、被許諾者はその品質を保証する</td></tr>
+<tr><td>法定解除権</td><td>被許諾者が品質保証義務を履行しない場合、<strong>許諾者はライセンス契約を解除できる</strong>。契約に解除条項がなくても認められる法定の権利</td></tr>
+<tr><td>表示</td><td>許諾商標を付した商品には、被許諾者の名称と商品の産地を表示しなければならない</td></tr>
+<tr><td>届出</td><td>ライセンスは商標管理部門に届け出て公告する。<strong>届出のないライセンスは善意の第三者に対抗できない</strong></td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">したがって届出は単なる形式ではありません。被許諾者の地位を第三者に対して防御可能にし、ブランド所有者ではなく被許諾者が店舗を運営する場合にプラットフォーム知財ポータルが頻繁に求める書類にもなります。さらに、被許諾者の販売を<a href="/blog/ja/china-trademark-non-use-cancellation-evidence.html">不使用取消に対する使用証拠</a>として使う際に必要な「許諾関係の立証」も生みます。</p>
+<p class="leading-relaxed text-slate-300 mb-6">ライセンス形態は一般に独占・排他・普通に分けられます。いずれでも、地域、期間、商品、再許諾、品質検査権、監査権、終了時の在庫・包装の扱い、紛争解決を明記してください。</p>
+<h2 id="decision-table">譲渡・ライセンス・無効・再出願のどれを選ぶか</h2>
+<table>
+<thead><tr><th>手段</th><th>適合する場面</th><th>主な代償</th></tr></thead>
+<tbody>
+<tr><td>譲渡／買い戻し</td><td>保有者が特定でき交渉に応じる、発売日が動かせない</td><td>最速だが行為を報いることになり、第46条対応の説明資料が必要</td></tr>
+<tr><td>ライセンス＋届出</td><td>帰属を争いつつ即座に市場参入したい</td><td>所有権は移らず、届出と品質条項が不可欠</td></tr>
+<tr><td>無効宣告／異議</td><td>悪意と在先権利の証拠が揃っており、急ぐ必要がない</td><td>法的には最も強いが期間が最も長い</td></tr>
+<tr><td>別の新規商標を出願</td><td>元の商標を商業上諦められる</td><td>リブランディング費用がかかり、旧商標は相手に残る</td></tr>
+</tbody>
+</table>
+<h2 id="prevention">OEM関係で問題を予防する</h2>
+<ul>
+<li>ブランド、包装、製品ロードマップを工場・販売店に開示する<strong>前に</strong>中国で出願する。</li>
+<li>製造契約に自己登録禁止条項を明示し、出願された場合は譲渡する義務と実効性のある違約金を定める。</li>
+<li>終了時の在庫、金型、半製品、包装を区分して扱い、各カテゴリーに処分方法と期限を設定する。</li>
+<li>許諾生産数量、照合義務、監査権を定義する。一般的な「超過生産しない」という約束より、説明できない数量について工場に不利益推定を置く方が有効です。</li>
+<li>ライセンス・譲渡書類を実際の登録商品と整合させ、名称・住所・代理人の変更は速やかに手続する（第57条は登録事項の是正なき変更に罰則を定めます）。</li>
+</ul>
+<h2 id="sources">出典と注意書き</h2>
+<p class="leading-relaxed text-slate-300 mb-6">一次資料：『中華人民共和国商標法（2026年改正）』第46条・第47条・第53条・第55条・第57条（CNIPA、2026年6月26日）、CNIPA『商標法改正の主要内容』（2026年7月10日）、外国法人への中国商標譲渡およびOEM契約条項に関する実務解説。必要書類・審査実務は改正実施条例でさらに細分化される可能性があります。本記事は一般情報であり法的助言ではありません。係属中の紛争は個別の事実関係に基づく助言が必要です。</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>工場に登録された商標を取り戻しますか？</strong> <a href="/contact.html">譲渡書類、届出、第46条対応の申請についてご相談ください</a>。</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">この記事の内容</p>
+<a href="#four-myths" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">ブランドを足止めする4つの誤解</a>
+<a href="#article-46" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">2026年の但し書き：譲渡はもはや純粋な形式審査ではない</a>
+<a href="#licence-recordal" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">ライセンス届出とその実際の効力</a>
+<a href="#decision-table" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">譲渡・ライセンス・無効・再出願のどれを選ぶか</a>
+<a href="#prevention" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">OEM関係で問題を予防する</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">出典と注意書き</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">関連記事</p>
+<a href="/blog/ja/trademark-registered-by-someone-else-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">商標を先に登録された場合</a>
+<a href="/blog/ja/china-trademark-law-2026-revision-changes.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">旧法・新法の条項対比</a>
+<a href="/blog/ja/china-trademark-enforcement-routes-after-registration.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">登録後の4つの執行ルート</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">中国での商標登録についてご相談ですか？</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">無料相談</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">中国商標のご相談はこちら</h2>
+        <p class="text-slate-400 mb-8">専門スタッフが手続き全体をサポートします。</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">無料相談を申し込む</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">途悦商標登録 — 中国における専門商標サービス。</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">サービス</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">商標検索</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">出願・審査</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">商標区分</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">会社情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">私たちについて</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">ブログ</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">法的情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">プライバシーポリシー</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookieポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 途悦商標登録. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>
