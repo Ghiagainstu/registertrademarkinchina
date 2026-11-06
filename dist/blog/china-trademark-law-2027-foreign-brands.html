@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>China's New Trademark Law Takes Effect 1 January 2027: What Foreign Brands Should Do Now | RTMCN</title>
+  <meta name="description" content="China's revised Trademark Law takes effect on 1 January 2027. A practical guide for foreign brand owners: what changes, whether filing before year-end helps, and the five actions to take now." />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-law-2027-foreign-brands.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-law-2027-foreign-brands.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-law-2027-foreign-brands.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-law-2027-foreign-brands.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/china-trademark-law-2027-foreign-brands.html" />
+  <meta property="og:title" content="China's New Trademark Law Takes Effect 1 January 2027: What Foreign Brands Should Do Now" />
+  <meta property="og:description" content="China's revised Trademark Law takes effect on 1 January 2027. A practical guide for foreign brand owners: what changes, whether filing before year-end helps, and the five actions to take now." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/china-trademark-law-2027-foreign-brands.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="China's New Trademark Law Takes Effect 1 January 2027: What Foreign Brands Should Do Now" />
+  <meta name="twitter:description" content="China's revised Trademark Law takes effect on 1 January 2027. A practical guide for foreign brand owners: what changes, whether filing before year-end helps, and the five actions to take now." />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "China's New Trademark Law Takes Effect 1 January 2027: What Foreign Brands Should Do Now",
+    "description": "China's revised Trademark Law takes effect on 1 January 2027. A practical guide for foreign brand owners: what changes, whether filing before year-end helps, and the five actions to take now.",
+    "datePublished": "2026-11-06",
+    "dateModified": "2026-11-06",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/china-trademark-law-2027-foreign-brands.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "China's New Trademark Law Takes Effect 1 January 2027: What Foreign Brands Should Do Now"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">Services</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">Process</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">Case Study</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">Classes</a>
+        <a href="/blog/" class="text-brand">Blog</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">About</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">Get Started</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">EN</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">Services</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">Process</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">Case Study</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">Classes</a>
+      <a href="/blog/" class="block text-sm text-brand">Blog</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">About</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/" class="hover:text-brand transition-colors">Home</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">China's New Trademark Law Takes Effect 1 January 2027: What Foreign Brands Should Do Now</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">China's New Trademark Law Takes Effect 1 January 2027: What Foreign Brands Should Do Now</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">China's first full rewrite of its Trademark Law since 1983 takes effect on 1 January 2027. Here is what actually changes for foreign brand owners — and what to do in the remaining weeks.</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="the-short-answer">The Short Answer: Keep Filing Early — But Not to "Lock In" the Old Law</h2>
+<p class="leading-relaxed text-slate-300 mb-6">On 26 June 2026, China adopted a completely revised Trademark Law. It takes effect on <strong>1 January 2027</strong>. This is the first full rewrite since 1983: the statute grows from 8 chapters and 73 articles to <strong>9 chapters and 87 articles</strong>, with a new chapter devoted to registrability conditions.</p>
+<p class="leading-relaxed text-slate-300 mb-6">If you own a foreign brand with Chinese trademark rights, or are about to file, the practical answer is: <strong>keep filing early, but do not file purely to "lock in" the old rules.</strong> Under the CNIPA's draft transition measures published on 28 September 2026, an application filed before 1 January 2027 but decided on or after that date is handled under the new law.</p>
+<p class="leading-relaxed text-slate-300 mb-6">What early filing still buys you is the one thing that has always mattered most in China: <strong>the earliest filing date</strong>. China remains a first-to-file jurisdiction. The 2027 law changes examination standards, procedural deadlines and enforcement powers — it does not change who wins when two parties claim the same mark.</p>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>Status note:</strong> The revised law is enacted and its effective date is fixed. The CNIPA's <em>Measures for Handling Business Matters Following the Revised Trademark Law</em> are still a <strong>draft</strong> (public comment closed 12 November 2026) and may change before the final text is issued. We flag draft-based statements below.</p></div>
+<h2 id="key-dates">Four Dates That Matter</h2>
+<table>
+<thead><tr><th>Date</th><th>What happens</th><th>Why it matters to you</th></tr></thead>
+<tbody>
+<tr><td>26 June 2026</td><td>NPC Standing Committee adopts the revised Trademark Law</td><td>The text is final; the 9-chapter / 87-article structure is fixed</td></tr>
+<tr><td>28 September 2026</td><td>CNIPA publishes draft transition measures and a draft Examination and Review Guidelines</td><td>Shows how pending cases and new filing types are intended to be handled</td></tr>
+<tr><td>12 November 2026</td><td>Public comment on the draft measures closes</td><td>Final measures may differ; re-check before relying on transition detail</td></tr>
+<tr><td><strong>1 January 2027</strong></td><td>Revised Trademark Law (and, if adopted, the transition measures) take effect</td><td>New opposition window, new registrable signs, new cancellation powers</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">Source: CNIPA, <em>Main Contents of the Revision to the PRC Trademark Law</em> (10 July 2026) and the CNIPA notice of 28 September 2026.</p>
+<h2 id="what-changes">What Changes for Foreign Applicants</h2>
+<table>
+<thead><tr><th>Change</th><th>2026 law article</th><th>Practical effect</th></tr></thead>
+<tbody>
+<tr><td>Opposition window</td><td>Art. 36</td><td><strong>3 months &rarr; 2 months</strong> after preliminary publication</td></tr>
+<tr><td>Refusal review</td><td>Art. 37</td><td>15 days to request review; CNIPA decides within 9 months (extendable by 3)</td></tr>
+<tr><td>Registrable signs</td><td>Art. 14</td><td><strong>Dynamic (motion) marks</strong> added alongside words, devices, colours and sounds</td></tr>
+<tr><td>Bad-faith / speculative filings</td><td>Arts. 19, 54</td><td>Applications with no intent to use that clearly exceed normal business needs are refused; warning plus fine up to RMB 100,000</td></tr>
+<tr><td>Misleading use</td><td>Art. 56</td><td>Fines up to 5&times; illegal turnover (or RMB 250,000); CNIPA may revoke the registration if not corrected</td></tr>
+<tr><td>Idle marks</td><td>Art. 57</td><td><strong>CNIPA may cancel a mark on its own initiative</strong> after 3 consecutive years of non-use</td></tr>
+<tr><td>Well-known marks</td><td>Art. 21</td><td>Cross-class protection no longer requires the mark to be registered in China</td></tr>
+<tr><td>Online use</td><td>Art. 2</td><td>Use through the internet and information networks expressly counts as trademark use</td></tr>
+<tr><td>Trademark agents</td><td>Arts. 65&ndash;68</td><td>Filing/recordal duties and penalties tightened; unrecorded agencies face fines</td></tr>
+<tr><td>Damages</td><td>Art. 77</td><td>Reasonable costs of stopping infringement expressly included in damages</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">For the full old-versus-new comparison with article numbers, see <a href="/blog/china-trademark-law-2026-revision-changes.html">China Trademark Law 2026 Revision: Old Rules vs New Rules</a>.</p>
+<h2 id="should-you-file-before-2027">Should You Rush to File Before 31 December 2026?</h2>
+<p class="leading-relaxed text-slate-300 mb-6">This is the question most brand owners are asking in November 2026. The honest answer has two parts.</p>
+<h3>No — a pre-2027 filing date does not freeze the old examination rules</h3>
+<p class="leading-relaxed text-slate-300 mb-6">The draft transition measures follow a general principle of <strong>"substantive issues under the old law, procedural issues under the new law"</strong>. For registration, opposition, refusal review and other applications filed before 1 January 2027 where CNIPA issues its decision on or after that date, the draft provides that the new law applies. For invalidation or cancellation actions against marks already registered before 2027, procedural questions follow the new law while substantive questions follow the law in force when the mark was registered.</p>
+<h3>Yes — an earlier filing date still protects you under first-to-file</h3>
+<p class="leading-relaxed text-slate-300 mb-6">Priority between competing claimants is decided by who filed first, not by which statute was in force. Filing now still secures your position against a squatter, a distributor or a factory that files tomorrow. The new law's stronger bad-faith provisions are a useful additional remedy, but they are not a substitute for being first.</p>
+<h3>One date is genuinely decisive: the publication date</h3>
+<p class="leading-relaxed text-slate-300 mb-6">Under Article 4 of the draft measures, the length of the opposition window is determined by the <strong>publication date</strong>, not the filing date: for domestic applications, the date of preliminary publication in the Trademark Gazette; for international registrations designating China, the WIPO publication date. Applications published before 1 January 2027 keep the 3-month window; those published on or after that date get 2 months. A window that straddles the year boundary is <strong>not restarted</strong>. This is the single most operationally important transition rule for any brand running a watch service.</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>Do not rely on the draft as final.</strong> The measures were still open for comment until 12 November 2026. Confirm the final text before setting internal deadlines or advising a client on a live opposition.</p></div>
+<h2 id="action-checklist">Five Things to Do Before 1 January 2027</h2>
+<ol>
+<li><strong>Audit your portfolio for "no intent to use" exposure.</strong> Article 19 refuses applications that lack intent to use and clearly exceed normal business needs. Broad defensive portfolios remain permissible in principle, but every class should have a documented business rationale, expansion plan, anti-counterfeit purpose or sub-class logic behind it.</li>
+<li><strong>Upgrade your watch service to a 2-month response cycle.</strong> A monthly gazette review plus slow internal approval is no longer safe. Move to weekly monitoring of your key classes and Chinese-character variants, pre-authorise local counsel, and keep an evidence package ready so an opposition can be filed within days of publication. See our <a href="/blog/china-trademark-monitoring-protection.html">monitoring guide</a>.</li>
+<li><strong>Build a use-evidence file now.</strong> Because CNIPA can cancel idle marks on its own initiative, dated invoices, platform listings with capture dates, packaging, customs records, distributor agreements and exhibition materials should be archived by mark and by class from day one.</li>
+<li><strong>Check your Chinese-character coverage.</strong> English and Chinese marks are separate rights in China. Confirm that your official Chinese name, common transliterations and consumer-coined nicknames are registered in the classes that matter. Our <a href="/blog/china-trademark-classes-complete-guide.html">classification guide</a> explains how sub-classes affect scope.</li>
+<li><strong>Re-vet your agent.</strong> Articles 65&ndash;68 require agencies and their practitioners to be recorded with CNIPA and add penalties for conflicts of interest and knowingly assisting bad-faith filings. Ask your agent for its recordal status and who is personally signing your filings.</li>
+</ol>
+<h2 id="what-does-not-change">What Does Not Change</h2>
+<ul>
+<li><strong>First-to-file.</strong> China does not award rights to the first user. A foreign registration has no effect in China.</li>
+<li><strong>Territorial scope.</strong> A CNIPA registration covers mainland China. Separate filings are needed for Hong Kong, China; Macao, China; and Taiwan, China.</li>
+<li><strong>The local-agent requirement.</strong> Foreign applicants without a domicile or place of business in China still file through a Chinese trademark agency.</li>
+<li><strong>10-year terms and renewals.</strong> Registrations remain valid for 10 years and are renewable; see our <a href="/blog/china-trademark-renewal-guide.html">renewal guide</a>.</li>
+<li><strong>The Madrid route.</strong> You can still designate China through WIPO, though CNIPA examines under Chinese law. Compare both paths in <a href="/blog/madrid-vs-direct-filing-china.html">Madrid vs direct filing</a>.</li>
+</ul>
+<h2 id="faq">Frequently Asked Questions</h2>
+<h3>Will my pending application be examined under the old law?</h3>
+<p class="leading-relaxed text-slate-300 mb-6">Under the September 2026 draft, if CNIPA decides the case on or after 1 January 2027, the new law generally applies to a pre-2027 application. Treat this as the planning assumption, then confirm against the final measures.</p>
+<h3>Can I still oppose a mark published in December 2026?</h3>
+<p class="leading-relaxed text-slate-300 mb-6">Under the draft, a mark published before 1 January 2027 keeps the 3-month opposition window and the clock is not restarted by the new law. Do not, however, wait until the last week — evidence preparation and translation take time.</p>
+<h3>Does the new law remove squatters automatically?</h3>
+<p class="leading-relaxed text-slate-300 mb-6">No. The bad-faith provisions, the active cancellation power and the wider well-known mark protection are stronger tools, but they are invoked in proceedings. Monitoring and early filing remain the cheapest protection. If a squatter already holds a registration, see <a href="/blog/trademark-registered-by-someone-else-china.html">your four recovery options</a>.</p>
+<h2 id="sources">Sources and Caveats</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Primary sources: the full text of the <em>Trademark Law of the PRC (2026 Revision)</em> published by CNIPA (26 June 2026); CNIPA's <em>Main Contents of the Revision</em> (10 July 2026); and the CNIPA notice of 28 September 2026 on the draft transition measures and draft Examination and Review Guidelines. Article numbers in this article refer to the 2026 law. This article is general information, not legal advice; outcomes depend on the specific facts and on the final implementing rules.</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>Need a portfolio review before the 1 January deadline?</strong> <a href="/contact.html">Talk to our team</a> about a pre-2027 audit and a 2-month watch configuration.</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">In This Article</p>
+<a href="#the-short-answer" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">The Short Answer: Keep Filing Early — But Not to "Lock In" the Old Law</a>
+<a href="#key-dates" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Four Dates That Matter</a>
+<a href="#what-changes" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">What Changes for Foreign Applicants</a>
+<a href="#should-you-file-before-2027" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Should You Rush to File Before 31 December 2026?</a>
+<a href="#action-checklist" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Five Things to Do Before 1 January 2027</a>
+<a href="#what-does-not-change" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">What Does Not Change</a>
+<a href="#faq" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Frequently Asked Questions</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Sources and Caveats</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">Related Articles</p>
+<a href="/blog/china-trademark-law-2026-revision-changes.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Old vs New: 2026 Trademark Law Comparison</a>
+<a href="/blog/china-trademark-monitoring-protection.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Trademark Monitoring and Protection</a>
+<a href="/blog/trademark-registered-by-someone-else-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">If Someone Registered Your Mark First</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">Need help with China trademark registration?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">Free Consultation</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">Need Help With Your China Trademark?</h2>
+        <p class="text-slate-400 mb-8">Our experts will guide you through the entire process.</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">Get a Free Consultation</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — professional trademark services in China.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Services</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Trademark Search</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Filing &amp; Prosecution</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">Trademark Classes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Company</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">About Us</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Legal</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 Tuyue Trademark Registration. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

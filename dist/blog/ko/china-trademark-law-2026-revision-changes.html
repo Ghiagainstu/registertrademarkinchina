@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="/styles/tailwind.css" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>중국 상표법 2026년 개정: 구법·신법 조항 대조와 실무 영향 | RTMCN</title>
+  <meta name="description" content="2027년 1월 1일 시행되는 중국 개정 상표법을 2019년 법과 조항별로 대조하고, 조문 번호·경과 조치 초안·외국 브랜드 대응 목록을 정리했습니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-law-2026-revision-changes.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-law-2026-revision-changes.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-law-2026-revision-changes.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-law-2026-revision-changes.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/ko/china-trademark-law-2026-revision-changes.html" />
+  <meta property="og:title" content="중국 상표법 2026년 개정: 구법·신법 조항 대조와 실무 영향" />
+  <meta property="og:description" content="2027년 1월 1일 시행되는 중국 개정 상표법을 2019년 법과 조항별로 대조하고, 조문 번호·경과 조치 초안·외국 브랜드 대응 목록을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ko/china-trademark-law-2026-revision-changes.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-06" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="중국 상표법 2026년 개정: 구법·신법 조항 대조와 실무 영향" />
+  <meta name="twitter:description" content="2027년 1월 1일 시행되는 중국 개정 상표법을 2019년 법과 조항별로 대조하고, 조문 번호·경과 조치 초안·외국 브랜드 대응 목록을 정리했습니다." />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "중국 상표법 2026년 개정: 구법·신법 조항 대조와 실무 영향",
+    "description": "2027년 1월 1일 시행되는 중국 개정 상표법을 2019년 법과 조항별로 대조하고, 조문 번호·경과 조치 초안·외국 브랜드 대응 목록을 정리했습니다.",
+    "datePublished": "2026-11-06",
+    "dateModified": "2026-11-06",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/ko/china-trademark-law-2026-revision-changes.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "중국 상표법 2026년 개정: 구법·신법 조항 대조와 실무 영향"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">서비스</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">프로세스</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">사례 연구</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">클래스 안내</a>
+        <a href="/blog/" class="text-brand">블로그</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">소개</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">문의하기</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">KO</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">서비스</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">프로세스</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">사례 연구</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">클래스 안내</a>
+      <a href="/blog/" class="block text-sm text-brand">블로그</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">소개</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">문의하기</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/ko/" class="hover:text-brand transition-colors">블로그</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">중국 상표법 2026년 개정: 구법·신법 조항 대조와 실무 영향</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">중국 상표법 2026년 개정: 구법·신법 조항 대조와 실무 영향</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">중국 상표법 2026년 개정은 2027년 1월 1일 시행됩니다. 외국 브랜드에 영향을 주는 모든 변경 사항을 조항 번호와 필요한 조치에 연결한 허브 페이지입니다.</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="at-a-glance">한눈에 보기</h2>
+<p class="leading-relaxed text-slate-300 mb-6"><strong>2026년 6월 26일</strong> 통과되어 <strong>2027년 1월 1일</strong> 시행되는 개정 중국 상표법은 1983년 이후 첫 전면 개정입니다. 8장 73조에서 <strong>9장 87조</strong>로 확대되고 등록 요건을 다루는 별도의 장이 신설되었습니다. 제도의 무게중심은 "누가 먼저 등록했는가"에서 "누가 성실하게 실제로 사용하는가"로 이동합니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">외국 브랜드에는 권리 행사 측면에서 대체로 유리하지만, 포트폴리오 관리의 컴플라이언스 기준은 높아집니다. 아래에 조항별 대조표를 정리했습니다. 의사결정 중심의 해설은 <a href="/blog/ko/china-trademark-law-2027-foreign-brands.html">「2027년 1월 1일 전에 외국 브랜드가 해야 할 일」</a>을 참고하십시오.</p>
+<h2 id="side-by-side">구법·신법 대조표</h2>
+<table>
+<thead><tr><th>항목</th><th>2026년 12월 31일까지 (2019년 법)</th><th>2027년 1월 1일부터 (2026년 법)</th></tr></thead>
+<tbody>
+<tr><td>공고 후 이의신청</td><td>3개월 (제33조)</td><td><strong>2개월 (제36조)</strong></td></tr>
+<tr><td>거절 불복 심판</td><td>수령 후 15일 내 청구 (제34조)</td><td>15일. 9개월 내 결정, 3개월 연장 가능 (제37조)</td></tr>
+<tr><td>등록 가능 표지</td><td>문자·도형·기호·숫자·입체·색채 조합·소리 (제8조)</td><td>여기에 <strong>동적 표지</strong> 추가 (제14조)</td></tr>
+<tr><td>사용 의사 없는 출원</td><td>사용을 목적으로 하지 않는 악의 출원 거절 (제4조)</td><td>사용 의사가 없고 정상적 경영 수요를 명백히 초과하면 거절. 기망·부정 수단 금지 (제19조)</td></tr>
+<tr><td>출원인에 대한 제재</td><td>법률상 과태료 없음</td><td>악의 출원으로 불량한 영향을 초래하면 경고 + 최고 <strong>10만 위안</strong> (제54조)</td></tr>
+<tr><td>등록상표의 오인 사용</td><td>전용 제재 없음</td><td>위법 매출액 5배 이하 / 25만 위안 이하, 미시정 시 등록 취소 (제56조)</td></tr>
+<tr><td>불사용 취소</td><td>3년 연속 미사용 시 누구나 청구 가능 (제49조)</td><td>제3자 청구에 더해 <strong>CNIPA 직권 취소 가능</strong> (제57조)</td></tr>
+<tr><td>저명상표</td><td>중국에 등록된 저명상표에 한해 이종 보호 (제13조)</td><td><strong>중국 등록 여부와 무관하게</strong> 이종 보호 (제21조)</td></tr>
+<tr><td>인정 vs 확인</td><td>저명상표 "인정"</td><td>"확인"으로 변경. 부정경쟁 사건에서도 확인 가능 (제63조)</td></tr>
+<tr><td>네트워크상 사용</td><td>명시 규정 없음</td><td>정보네트워크를 통한 사용 명시 (제2조)</td></tr>
+<tr><td>1년 재출원 제한</td><td>취소·무효·미갱신 후 적용 (제50조)</td><td>권리자의 자발적 말소로 한정 (제49조)</td></tr>
+<tr><td>상표 대리 기관</td><td>일반적 의무 규정 (제68조)</td><td>등록·담당자 서명·이해상충·제재 정비 (제65~68조)</td></tr>
+<tr><td>손해배상</td><td>법정 산정 규칙</td><td>권리 행사에 소요된 합리적 비용 명시 (제77조)</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">2026년 법은 조항 번호가 전면 재배열되었습니다. 2019년 법 조항 번호를 인용한 오래된 해설은 오독의 원인이 되므로 어느 판의 조항인지 반드시 확인하십시오.</p>
+<h2 id="six-changes">외국 브랜드에 가장 중요한 여섯 가지</h2>
+<h3>1. 2개월 이의신청 기간은 대응 체인 전체를 압축합니다</h3>
+<p class="leading-relaxed text-slate-300 mb-6">제36조는 공고 후 이의신청 기간을 3개월에서 2개월로 줄입니다. 탐지, 사내 승인, 증거 수집, 번역, 현지 대리인 지시가 더 짧은 기간 안에 끝나야 합니다. 등록부를 가끔 확인하는 방식으로는 기한을 놓칩니다. <a href="/blog/ko/china-trademark-monitoring-protection.html">지속적 워칭 프로그램</a>이 선택이 아닌 요건이 됩니다.</p>
+<h3>2. CNIPA가 제3자 청구 없이 미사용 상표를 취소할 수 있습니다</h3>
+<p class="leading-relaxed text-slate-300 mb-6">제57조는 정당한 사유 없이 3년 연속 사용되지 않은 상표의 직권 취소를 추가했습니다. 등록을 사용하지 않는 도용자에게는 효과적인 무기이지만, 정당한 외국 브랜드가 보유한 휴면 방어 등록도 리스크에 노출됩니다. 제2조가 네트워크상 사용을 명시했으므로 날짜가 있는 EC 화면, 소셜 계정, 온라인 광고를 사용 증거에 포함할 수 있습니다.</p>
+<h3>3. 악의 출원을 세 겹으로 규제합니다</h3>
+<p class="leading-relaxed text-slate-300 mb-6">제19조가 투기적 출원을 거절하고, 제54조가 최고 10만 위안의 과태료를 더하며, 제65~68조가 관여한 대리 기관에 의무와 제재를 부과합니다. 또한 제36조는 "기망이나 그 밖의 부정한 수단에 의한 출원"을 공고 단계의 독립된 이의 사유로 편입해, 등록 후 무효심판까지 기다리지 않고 주장할 수 있게 했습니다.</p>
+<h3>4. 동적 표지가 등록 가능해집니다</h3>
+<p class="leading-relaxed text-slate-300 mb-6">제14조는 동적 표지와 그 조합을 등록 가능 표지에 추가합니다. 기존에 저작권이나 부정경쟁법에 의존하던 애니메이션 로고, 앱 로딩 시퀀스, UI 전환을 상표로 보호할 수 있습니다. 심사 지침 초안은 20MB 이하 MP4, 3~9장의 JPEG 정지 화면, 사용 태양에 대한 설명을 요구합니다.</p>
+<h3>5. 미등록 저명상표도 이종 보호를 받습니다</h3>
+<p class="leading-relaxed text-slate-300 mb-6">제21조는 비유사 상품·서비스를 차단하는 전제였던 "중국 내 등록" 요건을 없앴습니다. 제63조는 부정경쟁 절차에서의 저명성 확인도 허용합니다. 중국 내 인지도가 출원보다 앞선 외국 브랜드에 직결되는 변경이지만, 인지도를 입증할 강한 증거는 여전히 필수입니다.</p>
+<h3>6. 오인을 유발하는 사용은 권리자 본인의 리스크가 됩니다</h3>
+<p class="leading-relaxed text-slate-300 mb-6">제56조는 품질·산지·원료·공정에 대해 공중을 오인시키는 상표 사용을 제재하며 과태료와 등록 취소 대상으로 삼습니다. "Swiss Made", "의료용 등급", "친환경" 등의 표시를 중국용 포장·EC 화면·광고에 사용한다면, 라이선시나 OEM 파트너가 표지를 부착하는 경우까지 포함해 근거를 갖추어야 합니다.</p>
+<h2 id="transition-measures">경과 조치 초안이 더하는 규칙</h2>
+<table>
+<thead><tr><th>초안 조항</th><th>규칙</th><th>실무적 해석</th></tr></thead>
+<tbody>
+<tr><td>제1~2조</td><td>소급 불적용, 실체는 구법·절차는 신법</td><td>2027년 이전 출원이라도 그날 이후 결정되면 신법. 2027년 이전 등록에 대한 무효·취소는 실체가 구법</td></tr>
+<tr><td>제3조</td><td>동적 표지 출원 서류</td><td>20MB 이하 MP4, 3~9장 JPEG, 사용에 의한 식별력 증거는 통지 후 15일 내 제출</td></tr>
+<tr><td>제4조</td><td>이의신청 기간은 공고일로 판단</td><td>국내는 상표공보 공고일, 국제등록은 WIPO 공고일. 2027년 이전 3개월, 이후 2개월. 진행 중 기간은 재기산하지 않음</td></tr>
+<tr><td>제6~7조</td><td>격리 기간과 직권 취소</td><td>지방 상표 관리 부문이 미사용 상표를 조사해 CNIPA에 단계적으로 보고</td></tr>
+<tr><td>제9~10조</td><td>구 시행조례보다 신법 우선, 조치는 2027년 1월 1일 시행</td><td>경과기에 현행 시행조례가 개정법보다 우선한다고 전제할 수 없음</td></tr>
+</tbody>
+</table>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>초안 상태에 유의하십시오.</strong> 본 조치는 2026년 9월 28일 의견 수렴이 시작되어 2026년 11월 12일 마감되며, 심사심리 지침 초안도 함께 공개되었습니다. 계류 사건에서 경과 규칙에 근거하기 전에 최종안을 반드시 확인하십시오.</p></div>
+<h2 id="your-action-list">대응 체크리스트</h2>
+<ul>
+<li>2027년 1월 1일 전까지: <a href="/blog/ko/china-trademark-law-2027-foreign-brands.html">5단계 사전 감사</a>를 실행하고 워칭을 2개월 체계로 재설정하십시오.</li>
+<li>출원 자격·필요 서류·현지 대리인 요건은 <a href="/blog/ko/who-can-register-trademark-in-china.html">「중국에서 상표를 등록할 수 있는 사람」</a>에서 확인하십시오.</li>
+<li>현행 절차와 기간은 <a href="/blog/ko/china-trademark-registration-complete-guide-2026.html">완전 가이드</a>와 <a href="/blog/ko/how-long-trademark-registration-china.html">소요 기간 가이드</a>에서 확인하십시오.</li>
+<li>제19조로 거절 사유가 추가된 점을 반영해 <a href="/blog/ko/common-reasons-trademark-rejection-china.html">주요 거절 사유</a>의 전제를 갱신하십시오.</li>
+<li>도용자가 이미 등록을 마쳤다면 <a href="/blog/ko/trademark-registered-by-someone-else-china.html">이의·무효·협상·리브랜딩 비교</a>를 참고하십시오.</li>
+</ul>
+<h2 id="sources-and-caveats">출처·상태·유의사항</h2>
+<ul>
+<li>전문: 『중화인민공화국 상표법(2026년 개정)』, CNIPA, 2026년 6월 26일.</li>
+<li>공식 해설: CNIPA 『중화인민공화국 상표법 개정 주요 내용』, 2026년 7월 10일.</li>
+<li>경과: CNIPA 『개정 후 상표법 시행에 따른 업무 처리 방안(의견수렴고)』 및 『상표 심사심리 지침(의견수렴고)』 공고, 2026년 9월 28일.</li>
+<li>시행일과 장 구성은 전국인대 및 최고인민법원의 2026년 7~8월 공개 자료에서도 확인했습니다.</li>
+</ul>
+<p class="leading-relaxed text-slate-300 mb-6">조항 번호는 별도 표기가 없으면 2026년 법 기준입니다. 이 페이지는 일반 정보이며 법률 자문이 아닙니다. 최종 확인일: 2026년 11월 6일.</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>자사 포트폴리오 기준으로 검토하시겠습니까?</strong> <a href="/contact.html">중국 상표 팀에 무료로 문의하세요</a>.</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">이 글의 내용</p>
+<a href="#at-a-glance" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">한눈에 보기</a>
+<a href="#side-by-side" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">구법·신법 대조표</a>
+<a href="#six-changes" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">외국 브랜드에 가장 중요한 여섯 가지</a>
+<a href="#transition-measures" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">경과 조치 초안이 더하는 규칙</a>
+<a href="#your-action-list" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">대응 체크리스트</a>
+<a href="#sources-and-caveats" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">출처·상태·유의사항</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">관련 글</p>
+<a href="/blog/ko/china-trademark-law-2027-foreign-brands.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">2027년 전에 외국 브랜드가 해야 할 일</a>
+<a href="/blog/ko/china-trademark-registration-complete-guide-2026.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">중국 상표 등록 완전 가이드</a>
+<a href="/blog/ko/common-reasons-trademark-rejection-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">상표 등록이 거절되는 주요 이유</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">중국 상표 등록에 도움이 필요하신가요?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">무료 상담</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">중국 상표, 전문가와 상담하세요</h2>
+        <p class="text-slate-400 mb-8">전체 절차를 전문가가 안내해 드립니다.</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">무료 상담 신청</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">투웨 상표 등록 — 중국 내 전문 상표 서비스.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">서비스</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">상표 검색</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">출원 및 심사</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">상표 클래스</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">회사 소개</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">회사 소개</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">블로그</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">문의하기</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">법적 고지</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">개인정보처리방침</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">쿠키 정책</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 투웨 상표 등록. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>
