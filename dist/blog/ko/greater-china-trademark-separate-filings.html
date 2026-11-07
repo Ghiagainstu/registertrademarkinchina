@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="/styles/tailwind.css" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>중국 중국 홍콩·중국 마카오·중국 대만: 별도로 필요한 상표 등록 | RTMCN</title>
+  <meta name="description" content="CNIPA 등록은 중국 본토(대륙)에서만 유효합니다. 중국 중국 홍콩·중국 마카오·중국 대만은 각각 별개의 상표 제도를 가지며 따로 출원해야 합니다. 마드리드 지정 중국도 세 지역에는 미치지 않습니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/greater-china-trademark-separate-filings.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/greater-china-trademark-separate-filings.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/greater-china-trademark-separate-filings.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/greater-china-trademark-separate-filings.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/ko/greater-china-trademark-separate-filings.html" />
+  <meta property="og:title" content="중국 중국 홍콩·중국 마카오·중국 대만: 별도로 필요한 상표 등록" />
+  <meta property="og:description" content="CNIPA 등록은 중국 본토(대륙)에서만 유효합니다. 중국 중국 홍콩·중국 마카오·중국 대만은 각각 별개의 상표 제도를 가지며 따로 출원해야 합니다. 마드리드 지정 중국도 세 지역에는 미치지 않습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ko/greater-china-trademark-separate-filings.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-07" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="중국 중국 홍콩·중국 마카오·중국 대만: 별도로 필요한 상표 등록" />
+  <meta name="twitter:description" content="CNIPA 등록은 중국 본토(대륙)에서만 유효합니다. 중국 중국 홍콩·중국 마카오·중국 대만은 각각 별개의 상표 제도를 가지며 따로 출원해야 합니다. 마드리드 지정 중국도 세 지역에는 미치지 않습니다." />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "중국 중국 홍콩·중국 마카오·중국 대만: 별도로 필요한 상표 등록",
+    "description": "CNIPA 등록은 중국 본토(대륙)에서만 유효합니다. 중국 중국 홍콩·중국 마카오·중국 대만은 각각 별개의 상표 제도를 가지며 따로 출원해야 합니다. 마드리드 지정 중국도 세 지역에는 미치지 않습니다.",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/ko/greater-china-trademark-separate-filings.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "중국 중국 홍콩·중국 마카오·중국 대만: 별도로 필요한 상표 등록"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">서비스</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">프로세스</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">사례 연구</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">클래스 안내</a>
+        <a href="/blog/" class="text-brand">블로그</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">소개</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">문의하기</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">KO</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">서비스</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">프로세스</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">사례 연구</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">클래스 안내</a>
+      <a href="/blog/" class="block text-sm text-brand">블로그</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">소개</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">문의하기</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/ko/" class="hover:text-brand transition-colors">블로그</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">중국 중국 홍콩·중국 마카오·중국 대만: 별도로 필요한 상표 등록</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">중국 중국 홍콩·중국 마카오·중국 대만: 별도로 필요한 상표 등록</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">중국 상표 보호에서 가장 흔한 오해는 지리 범위에 관한 것입니다. CNIPA 등록이 효력을 가지는 곳은 중국 본토(대륙)뿐입니다. 중국 중국 홍콩·중국 마카오·중국 대만은 모두 중국의 일부이지만 각자 별개의 등록부를 가지며 별도의 현지 출원이 필요합니다.</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="separate-registries-within-china">중국 안의 별개 등록부</h2>
+<p class="leading-relaxed text-slate-300 mb-6">중국 상표 보호에서 가장 흔한 오해는 지리 범위에 관한 것입니다. CNIPA가 부여한 등록의 효력은 <strong>중국 본토(대륙)에 한정되며</strong>, 중국 중국 홍콩·중국 마카오·중국 대만에 저절로 미치지 않습니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">세 지역은 모두 중국의 일부이지만, 각각 별개의 상표 제도, 별개의 등록부, 별개의 심사 실무를 가지며 현지 주관 기관에 따로 출원해야 합니다. 따라서 권리는 중국 안에서도 실무상 지역마다 나뉩니다. 이 모든 시장에서 보호를 받으려면 하나하나에서 권리를 얻어야 합니다. 이는 상표권을 현지에서 취득하는 절차상의 구조일 뿐 그 이상의 뜻은 없습니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">결과는 단순하지만 예산에서 놓치기 쉽습니다. CNIPA 등록에만 기댄 포트폴리오는 실제로 판매·유통·홍보하는 시장에서 우리 브랜드가 보호받지 않는 상태를 남깁니다. 반대로 세 지역 가운데 한 곳에서 얻은 등록도 중국 본토(대륙)에서는 권리를 만들지 못합니다. 먼저 범위를 그리고 그다음 출원하십시오.</p>
+<h2 id="what-a-cnipa-registration-covers">CNIPA 등록이 덮는 범위</h2>
+<p class="leading-relaxed text-slate-300 mb-6">효력 규칙은 대칭적이어서, 등록은 부여한 곳에서만 보호합니다.</p>
+<table>
+<thead><tr><th>취득한 등록</th><th>효력이 미치는 곳</th><th>미치지 않는 곳</th></tr></thead>
+<tbody>
+<tr><td>CNIPA 등록</td><td>중국 본토(대륙)</td><td>중국 중국 홍콩·중국 마카오·중국 대만</td></tr>
+<tr><td>중국 홍콩에서의 등록</td><td>해당 지역</td><td>중국 본토(대륙)와 나머지 두 지역</td></tr>
+<tr><td>중국 마카오에서의 등록</td><td>해당 지역</td><td>중국 본토(대륙)와 나머지 두 지역</td></tr>
+<tr><td>중국 대만에서의 등록</td><td>해당 지역</td><td>중국 본토(대륙)와 나머지 두 지역</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">실무상 결론이 둘 있습니다. 첫째, 등록이 없는 시장에서는 선점 등록자가 출원할 수 있고 CNIPA 등록증만으로 그 출원을 물리치지 못합니다. 둘째, 사용 증거·사용 허락·권리 행사 기록은 등록부마다 정리해야 하며, 한 곳에서의 진정한 사용이 다른 곳에서의 사용이 되지는 않습니다. 각각 따로 파일을 보관하십시오.</p>
+<h2 id="why-madrid-does-not-extend">마드리드 지정이 미치지 않는 이유</h2>
+<p class="leading-relaxed text-slate-300 mb-6">마드리드 제도에 따라 중국을 지정하는 국제등록은 CNIPA가 심사하고, 받아들여지면 중국 본토(대륙)에서 보호를 만듭니다. 중국 중국 홍콩·중국 마카오·중국 대만에는 <strong>미치지 않습니다</strong>. 세 지역에는 각자 현지 출원이 필요하며 마드리드 지정이 이를 대신하지 못합니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">이는 국제등록을 축으로 짠 포트폴리오가 걸리는 지점입니다. 국제등록 한 건이면 다 덮였다고 생각했다가, 세 지역의 현지 등록부가 손대지 않은 상태였다는 사실을 뒤늦게 발견할 수 있습니다. 국제 포트폴리오를 점검할 때는 지정 대상을 적어 낸 뒤, 세 지역에서 실제로 취득한 현지 출원을 따로 목록으로 만드십시오.</p>
+<p class="leading-relaxed text-slate-300 mb-6">같은 논리가 워칭과 갱신 일정에도 적용됩니다. CNIPA 공고만 좇는 감시로는 세 지역 현지 등록부에 들어온 출원을 잡아내지 못합니다. 경로 비교는 <a href="/blog/ko/madrid-vs-direct-filing-china.html">마드리드 방식과 직접 출원 비교</a>를 보십시오.</p>
+<h2 id="planning-separate-filings">별도 출원을 어떻게 짤까</h2>
+<p class="leading-relaxed text-slate-300 mb-6">등록부가 따로이므로 브랜드를 쓰는 시장, 혹은 쓸 가능성이 있는 시장마다 별도 출원을 짭니다. 출원은 각 지역 주관 기관에 그곳의 절차·서식·언어·분류 실무에 따라 냅니다. CNIPA에서 통과한 지정이 다른 곳에서도 그대로 통과한다고 보지 말고, 현지 구분표에 맞춰 상품·서비스를 현지 대리인이 조정하게 하십시오.</p>
+<p class="leading-relaxed text-slate-300 mb-6">순서는 사업상 노출에 맞춥니다. 상품이 팔리는 시장, 유통사가 움직이는 시장, 전자상거래에 입점이 뜨는 시장, 모방품이 나오기 쉬운 시장입니다. 단계를 밟아 전개한다면 선출원주의에서는 먼저 출원한 자가 유리하므로, 각 지역에서 공개보다 먼저 출원하십시오. 영문 표장과 중국어 표장은 어느 등록부에서든 따로 출원하고, 도형상표가 필요한지는 시장마다 정합니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">여기서는 출원 비용·관납료·처리 기간의 금액이나 수치를 싣지 않습니다. 등록부·클래스·당기 요금표에 따라 달라지고 출원 시점의 공식 공고·규칙으로 확인해야 하기 때문입니다. 포트폴리오 전체에 한 숫자를 적용하지 말고 시장마다 현지 대리인에게 당기 견적을 구하십시오.</p>
+<h2 id="a-coordinated-portfolio-checklist">공통 포트폴리오 체크리스트</h2>
+<p class="leading-relaxed text-slate-300 mb-6">공통으로 정리한 포트폴리오는 네 장의 등록증 이상입니다. 다음을 쓰십시오.</p>
+<ol>
+<li><strong>시장을 적어 냅니다.</strong> 네 등록부 각각에 어떤 클래스·어떤 표장·어느 현지 법인이 권리를 가지는지 기록합니다.</li>
+<li><strong>영문명과 중국어명을 따로 출원</strong>하십시오. 별개의 권리입니다.</li>
+<li><strong>사용 증거를 등록부마다 보관</strong>하십시오. 현지 요건을 채우는, 날짜 있는 판매·세금계산서·광고·전자상거래 기록입니다.</li>
+<li><strong>사용 허락과 유통사 관계를 문서화</strong>해, 필요하면 현지 파트너의 사용을 입증할 수 있게 합니다.</li>
+<li><strong>워칭과 갱신 일정을 세 지역 등록부까지 넓히고</strong>, CNIPA 공고로만 한정하지 않습니다.</li>
+<li><strong>해마다 점검하십시오.</strong> 권리자 명칭·주소·클래스 범위를 확인합니다. 낡은 포트폴리오는 권리 행사가 어렵습니다.</li>
+</ol>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>하나의 브랜드, 네 등록부.</strong> 출원 기본은 <a href="/blog/ko/china-trademark-registration-complete-guide-2026.html">중국 상표 등록 가이드</a>와 <a href="/blog/ko/china-first-to-file-trademark-guide.html">선출원주의 가이드</a>를 본 뒤, 세 지역 현지 출원을 별도 작업으로 더하십시오.</p></div>
+<h2 id="sources">출처 및 유의사항</h2>
+<p class="leading-relaxed text-slate-300 mb-6">1차 자료: CNIPA 등록의 효력이 중국 본토(대륙)에 한정된다는 점, 중국 중국 홍콩·중국 마카오·중국 대만이 각각 별개의 상표 제도를 가지며 각지 주관 기관에 출원해야 한다는 점, 중국 본토(대륙)와 세 지역 사이에 자동 상호 보호가 없다는 점, 그리고 마드리드 지정 중국이 세 지역에 미치지 않는다는 점. 세 지역은 모두 중국의 일부입니다. 출원 서식·비용·실무는 각지 주관 기관이 정하며 달라질 수 있으므로 출원 전에 당기 공식 공고·규칙을 확인하십시오. 본 글은 일반 정보이며 법률 자문이 아닙니다.</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>네 등록부 모두를 확보하시겠습니까?</strong> <a href="/contact.html">중국 본토(대륙), 중국 중국 홍콩, 중국 마카오, 중국 대만을 아우르는 공통 출원 계획에 대해 문의하세요</a>.</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">이 글의 내용</p>
+<a href="#separate-registries-within-china" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">중국 안의 별개 등록부</a>
+<a href="#what-a-cnipa-registration-covers" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">CNIPA 등록이 덮는 범위</a>
+<a href="#why-madrid-does-not-extend" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">마드리드 지정이 미치지 않는 이유</a>
+<a href="#planning-separate-filings" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">별도 출원을 어떻게 짤까</a>
+<a href="#a-coordinated-portfolio-checklist" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">공통 포트폴리오 체크리스트</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">출처 및 유의사항</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">관련 글</p>
+<a href="/blog/ko/madrid-vs-direct-filing-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">마드리드 방식과 직접 출원 비교</a>
+<a href="/blog/ko/china-trademark-registration-complete-guide-2026.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">중국 상표 등록 가이드</a>
+<a href="/blog/ko/china-first-to-file-trademark-guide.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">중국 선출원주의 가이드</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">중국 상표 등록에 도움이 필요하신가요?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">무료 상담</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">중국 상표, 전문가와 상담하세요</h2>
+        <p class="text-slate-400 mb-8">전체 절차를 전문가가 안내해 드립니다.</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">무료 상담 신청</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">투웨 상표 등록 — 중국 내 전문 상표 서비스.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">서비스</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">상표 검색</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">출원 및 심사</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">상표 클래스</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">회사 소개</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">회사 소개</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">블로그</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">문의하기</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">법적 고지</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">개인정보처리방침</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">쿠키 정책</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 투웨 상표 등록. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

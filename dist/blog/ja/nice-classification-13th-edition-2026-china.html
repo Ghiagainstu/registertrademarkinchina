@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>ニス分類第13版（2026年）：中国の出願に影響する区分の移動 | RTMCN</title>
+  <meta name="description" content="2026年1月1日から中国は第13版を適用します。眼鏡・発熱衣類・救援車両・クリームケーキが移動し、第42類にAIの役務が加わり、第3類の精油は用途で分かれました。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/nice-classification-13th-edition-2026-china.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/nice-classification-13th-edition-2026-china.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/nice-classification-13th-edition-2026-china.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/nice-classification-13th-edition-2026-china.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/ja/nice-classification-13th-edition-2026-china.html" />
+  <meta property="og:title" content="ニス分類第13版（2026年）：中国の出願に影響する区分の移動" />
+  <meta property="og:description" content="2026年1月1日から中国は第13版を適用します。眼鏡・発熱衣類・救援車両・クリームケーキが移動し、第42類にAIの役務が加わり、第3類の精油は用途で分かれました。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ja/nice-classification-13th-edition-2026-china.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-07" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ニス分類第13版（2026年）：中国の出願に影響する区分の移動" />
+  <meta name="twitter:description" content="2026年1月1日から中国は第13版を適用します。眼鏡・発熱衣類・救援車両・クリームケーキが移動し、第42類にAIの役務が加わり、第3類の精油は用途で分かれました。" />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ニス分類第13版（2026年）：中国の出願に影響する区分の移動",
+    "description": "2026年1月1日から中国は第13版を適用します。眼鏡・発熱衣類・救援車両・クリームケーキが移動し、第42類にAIの役務が加わり、第3類の精油は用途で分かれました。",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/ja/nice-classification-13th-edition-2026-china.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "ニス分類第13版（2026年）：中国の出願に影響する区分の移動"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">サービス</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">プロセス</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">事例紹介</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">区分一覧</a>
+        <a href="/blog/" class="text-brand">ブログ</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">概要</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">お問い合わせ</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">JA</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">サービス</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">プロセス</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">事例紹介</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">区分一覧</a>
+      <a href="/blog/" class="block text-sm text-brand">ブログ</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">概要</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">お問い合わせ</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="パンくずリスト">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ja/" class="hover:text-brand transition-colors">ホーム</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/ja/" class="hover:text-brand transition-colors">ブログ</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">ニス分類第13版（2026年）：中国の出願に影響する区分の移動</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">ニス分類第13版（2026年）：中国の出願に影響する区分の移動</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">中国は2026年1月1日からニス分類第13版を採用し、CNIPAも『類似商品・役務区分表』を第13版に合わせて調整しました。第12版で書かれた指定商品の中には、今は別の類に入るものがあります。</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="the-cutover-date">2026年1月1日の切替</h2>
+<p class="leading-relaxed text-slate-300 mb-6">中国は<strong>2026年1月1日</strong>から<strong>ニス分類第13版（2026年テキスト）</strong>を採用しました。同日より前に出願された案件は引き続き第12版で審査され、商品・役務の分類は出願日に効力を持つ版に従います。2026年の出願チェックリストは、まずこの切替日を軸に組み立てます。</p>
+<p class="leading-relaxed text-slate-300 mb-6">ニス分類は国際共通の骨組みですが、中国で実際に使われるのはCNIPAの『類似商品・役務区分表』で、第13版に基づいて調整済みです。審査官が商品の類似を判断するのはこちらの表で、類の見出しより細かく分かれています。古い一覧から作った指定は、類番号自体が正しく見えても中身がずれている場合があります。</p>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>類番号ではなく版を確認してください。</strong> 過去の出願の指定を再利用する前に、どの版で書かれたかを確かめ、現行の区分表で項目の文言を読み直します。公式文言ではっきりしない点は、継続を決めつけず代理人に当期の公告・規則を確認させてください。</p></div>
+<h2 id="goods-that-moved-class">類が移った商品</h2>
+<p class="leading-relaxed text-slate-300 mb-6">第13版では、日常使う商品がいくつか類を移りました。数年前に組んだポートフォリオを今まさに広げたり見直したりするとき、見落としやすい変更です。</p>
+<table>
+<thead><tr><th>商品</th><th>移動前</th><th>移動後</th><th>補足</th></tr></thead>
+<tbody>
+<tr><td>眼鏡および付属品（レンズ、フレーム、サングラス、コンタクトレンズ）</td><td>第9類</td><td>第10類</td><td>スマートグラスは第9類のまま</td></tr>
+<tr><td>電気加熱式の衣類（発熱靴下を含む）</td><td>第11類</td><td>第25類</td><td>衣類と同じ扱いに</td></tr>
+<tr><td>緊急救援車両（消防車、救命艇など）</td><td>第9類</td><td>第12類</td><td>車両と同じ扱いに</td></tr>
+<tr><td>バタークリーム、クリームケーキ</td><td>第29類</td><td>第30類</td><td>菓子・焼き菓子と同じ扱いに</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">最も影響が広いのは眼鏡です。第9類で組んだブランドは第10類の手当てが要る一方、スマートグラスは元の類に留まります。眼鏡の分野まるごとが移ったと扱わないでください。項目の文言を読み、スマートグラスの例外を念頭に置き、登録済みだけでなく係属中の出願も含めて不足を洗い出します。</p>
+<h2 id="new-and-split-entries">追加された項目と分かれた項目</h2>
+<p class="leading-relaxed text-slate-300 mb-6">もう二つは移動ではなく、追加と分割です。<strong>第42類に「人工知能をサービスとして提供する役務（AIaaS）」が加わり</strong>、これまで幅広いコンピュータ・ソフトウェア項目に押し込めていた役務に専用の置き場所ができました。AI基盤、モデル提供、機械学習の役務を扱う場合、従来の幅広い文言より新しい項目の方が指定をすっきり書けるか確認します。</p>
+<p class="leading-relaxed text-slate-300 mb-6"><strong>第3類の精油は用途別に分かれました。</strong> 一つの包括項目ではなく、化粧・芳香といった用途か、それ以外かで分類が変わります。実務上は、第3類の指定に用途を明記する必要があるということです。同じ製品でも、どう書き、どう売るかで該当項目が変わり得ます。</p>
+<p class="leading-relaxed text-slate-300 mb-6">どちらにも共通するのは、実際の商品・役務を書き、それから現行項目を探す順序です。古い書式のありがちな文言を写して、審査官が読み替えてくれるのを期待してはいけません。</p>
+<h2 id="what-the-change-does-not-do">この改定が変えないこと</h2>
+<p class="leading-relaxed text-slate-300 mb-6">分類の改定は、それだけで過去の出願を書き換えるわけではありません。出願はその日に効力を持つ版で審査されるため、2026年1月1日の線が効きます。切替前の出願は第12版のまま、切替後の出願は第13版です。後に表が変わったからといって、係属中の出願が自動で組み替わることはありません。</p>
+<p class="leading-relaxed text-slate-300 mb-6">影響が出るのは、その後に出す・広げるもの全部です。新規出願、後の指定、更新で指定を見直す場面、防御出願で選ぶ範囲などです。類似の読み方にも影響します。調整後の区分表では、旧表と項目のまとまりが違う場合があるため、移動した商品を含む抵触分析は第12版の前提で作ったものを見直します。</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>経過措置は公式に確認してください。</strong> 本記事は分類の変更と出願日を基準とする一般原則を述べるもので、係属案件や既登録について詳しい経過規定を示すものではありません。実際の出願に関わる判断は、第三者のまとめではなくCNIPAの当期の公告・規則に拠ってください。</p></div>
+<h2 id="a-2026-filing-checklist">2026年の出願チェックリスト</h2>
+<p class="leading-relaxed text-slate-300 mb-6">2026年の出願を整える短いチェックリストです。</p>
+<ol>
+<li><strong>適用される版を出願日から確認</strong>し、記録に残します。</li>
+<li><strong>現行のCNIPA区分表を項目ごとに読み直し</strong>、サブクラスの文言まで、過去の指定を使い回さないようにします。</li>
+<li><strong>移動した商品を組み替えます。</strong> 眼鏡、発熱衣類、救援車両、バタークリーム・クリームケーキを洗い出し、新しい類が要るか、スマートグラスの例外に当たるかを確認します。</li>
+<li><strong>追加・分割された項目を使います。</strong> 第42類のAIを役務として提供するもの、第3類の用途を明記した精油の文言です。</li>
+<li><strong>防御出願とウォッチングの範囲を更新</strong>し、商品が出た類だけでなく移った先の類も監視に含めます。</li>
+<li><strong>第12版で作った抵触分析を再検索</strong>し、代理人のひな形とチェックリストも更新します。</li>
+</ol>
+<p class="leading-relaxed text-slate-300 mb-6">区分の全体像は<a href="/blog/ja/china-trademark-classes-complete-guide.html">中国商標区分の完全ガイド</a>と<a href="/blog/ja/china-trademark-registration-complete-guide-2026.html">登録ガイド</a>をご覧ください。項目の置き場所に迷う場合は、出願前に現行の公式文言での確認を書面で求めてください。</p>
+<h2 id="sources">出典と注意書き</h2>
+<p class="leading-relaxed text-slate-300 mb-6">一次資料：2026年1月1日から中国が採用したニス分類第13版（2026年テキスト）、第13版に基づくCNIPA『類似商品・役務区分表』の調整、および本記事で述べた類の移動・第42類へのAI役務の追加・第3類精油の用途別分割。項目の文言と経過上の取扱いは、出願前にCNIPAの当期の公告・規則・区分表で確認してください。本記事は一般情報であり、個別の法律助言ではありません。</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>指定がどの版に属するか不安ですか？</strong> <a href="/contact.html">現行のCNIPA区分表に照らして商品・役務一覧を点検します</a>。</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">この記事の内容</p>
+<a href="#the-cutover-date" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">2026年1月1日の切替</a>
+<a href="#goods-that-moved-class" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">類が移った商品</a>
+<a href="#new-and-split-entries" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">追加された項目と分かれた項目</a>
+<a href="#what-the-change-does-not-do" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">この改定が変えないこと</a>
+<a href="#a-2026-filing-checklist" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">2026年の出願チェックリスト</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">出典と注意書き</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">関連記事</p>
+<a href="/blog/ja/china-trademark-classes-complete-guide.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">中国商標区分の完全ガイド</a>
+<a href="/blog/ja/china-trademark-law-2027-foreign-brands.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">2027年までに外国ブランドがやるべきこと</a>
+<a href="/blog/ja/china-trademark-registration-complete-guide-2026.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">中国商標登録ガイド</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">中国での商標登録についてご相談ですか？</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">無料相談</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">中国商標のご相談はこちら</h2>
+        <p class="text-slate-400 mb-8">専門スタッフが手続き全体をサポートします。</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">無料相談を申し込む</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">途悦商標登録 — 中国における専門商標サービス。</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">サービス</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">商標検索</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">出願・審査</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">商標区分</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">会社情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">私たちについて</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">ブログ</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">法的情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">プライバシーポリシー</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookieポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 途悦商標登録. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

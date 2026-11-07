@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>中国の拒絶復審：15日の期限と実務の答え方 | RTMCN</title>
+  <meta name="description" content="拒絶で動き出す二つの時計。国内出願の15日、マドリッド指定の15日・30日、そして復審を有利にする六つの主張を整理します。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-refusal-review-15-days.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-refusal-review-15-days.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-refusal-review-15-days.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-refusal-review-15-days.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/ja/china-trademark-refusal-review-15-days.html" />
+  <meta property="og:title" content="中国の拒絶復審：15日の期限と実務の答え方" />
+  <meta property="og:description" content="拒絶で動き出す二つの時計。国内出願の15日、マドリッド指定の15日・30日、そして復審を有利にする六つの主張を整理します。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ja/china-trademark-refusal-review-15-days.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-07" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="中国の拒絶復審：15日の期限と実務の答え方" />
+  <meta name="twitter:description" content="拒絶で動き出す二つの時計。国内出願の15日、マドリッド指定の15日・30日、そして復審を有利にする六つの主張を整理します。" />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "中国の拒絶復審：15日の期限と実務の答え方",
+    "description": "拒絶で動き出す二つの時計。国内出願の15日、マドリッド指定の15日・30日、そして復審を有利にする六つの主張を整理します。",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/ja/china-trademark-refusal-review-15-days.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "中国の拒絶復審：15日の期限と実務の答え方"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">サービス</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">プロセス</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">事例紹介</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">区分一覧</a>
+        <a href="/blog/" class="text-brand">ブログ</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">概要</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">お問い合わせ</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">JA</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">サービス</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">プロセス</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">事例紹介</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">区分一覧</a>
+      <a href="/blog/" class="block text-sm text-brand">ブログ</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">概要</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">お問い合わせ</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="パンくずリスト">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ja/" class="hover:text-brand transition-colors">ホーム</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/ja/" class="hover:text-brand transition-colors">ブログ</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">中国の拒絶復審：15日の期限と実務の答え方</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">中国の拒絶復審：15日の期限と実務の答え方</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">拒絶は出願の終わりではありませんが、短い期限の始まりです。改正法では復審請求が15日、マドリッド指定中国ではWIPO通知の受領から15日または30日という別の時計が動きます。</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="two-clocks">二つの時計：国内の15日とマドリッド経由</h2>
+<p class="leading-relaxed text-slate-300 mb-6">拒絶は出願の終わりではなく、期限の始まりです。2026年改正商標法第37条は、拒絶に不服の出願人に<strong>15日以内</strong>の復審請求を認め、CNIPAは<strong>9ヶ月以内</strong>（<strong>3ヶ月</strong>延長可）に決定すると定めます。15日を過ぎると元の出願について拒絶が確定するため、最初の仕事は主張作りではなく期限管理です。</p>
+<p class="leading-relaxed text-slate-300 mb-6">中国を指定する国際登録は、混同されやすい別の時計で動きます。WIPOが仮拒絶を通知した場合、復審請求の期間は保持者がその通知を受け取った日から起算され、職権による拒絶は<strong>15日</strong>、異議に基づく拒絶は<strong>30日</strong>です。これはWIPOの公式な期間表および2011年第19号情報通知によるものです。国内の15日と同じ規定と決めつけず、どちらの拒絶かを見極めてから起算してください。</p>
+<table>
+<thead><tr><th>経路</th><th>起算点</th><th>復審請求の期間</th></tr></thead>
+<tbody>
+<tr><td>中国の国内出願（第37条）</td><td>拒絶通知の受領</td><td>15日</td></tr>
+<tr><td>マドリッド指定・職権拒絶</td><td>保持者がWIPOの仮拒絶通知を受領</td><td>15日</td></tr>
+<tr><td>マドリッド指定・異議に基づく拒絶</td><td>保持者がWIPOの仮拒絶通知を受領</td><td>30日</td></tr>
+</tbody>
+</table>
+<h2 id="what-happens-after-you-file">請求後に何が起きるか</h2>
+<p class="leading-relaxed text-slate-300 mb-6">復審請求が受理されると、本案と添付資料に基づいて審理されます。第37条の9ヶ月・延長3ヶ月は当局の決定目標であり、こちらが埋める期限ではありません。注意すべきは証拠側で、マドリッド関連の復審では補充証拠を<strong>復審請求の日から3ヶ月以内</strong>に提出するものとWIPOの期間資料に示されています。</p>
+<p class="leading-relaxed text-slate-300 mb-6">この構造は準備を報います。標識が違うとだけ書いた請求では、記録に全件を載せる好機を逃します。引用商標がある場合、標識の非類似、商品・役務の非類似、その両方、あるいは使用を裏付けにした共存を主張するのかを早めに決めます。選んだ筋書きが、請求後の数週間で集める証拠を決めます。</p>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>三つを別々に予定表へ。</strong> 復審請求の期限、補充証拠の期限、決定が見込まれる時期です。起算点がそれぞれ違い、混同は避けられる損失の典型です。</p></div>
+<h2 id="the-six-argument-menu">六つの主張の選択肢</h2>
+<p class="leading-relaxed text-slate-300 mb-6">中国の拒絶に対する対応は、実務解説ではおおむね六つに整理され、多くの案件で複数を併用します。</p>
+<ol>
+<li><strong>標識と商品を争う。</strong> 出願商標が引用商標と類似しない、または指定商品・役務が類似しないことを、該当するサブクラスにも触れつつ整理して示します。</li>
+<li><strong>共存または使用による識別力に拠る。</strong> 真実の並行使用、市場での認知、使用により得た識別力の資料を入れ、混同のおそれが小さいことを示します。</li>
+<li><strong>引用登録を崩す。</strong> 引用登録が3年連続で使われていないなら、不使用取消で障害を元から除くことを検討します。</li>
+<li><strong>同意書を取る。</strong> 先行権利者との共存合意や同意は、主張だけでは解けない引用を片付けられます。</li>
+<li><strong>一部拒絶を受け入れる。</strong> 阻まれた商品が一部なら、指定を狭めて残りの出願日を守る選択があります。</li>
+<li><strong>並行して中国の国内出願を出す。</strong> マドリッド指定なら、直接の国内出願が国際拒絶の行方に左右されない権利を残します。</li>
+</ol>
+<h2 id="building-the-evidence-file">証拠ファイルの作り方</h2>
+<p class="leading-relaxed text-slate-300 mb-6">復審は資料で決まります。共存合意や同意書はきちんと作成・翻訳し、対象の商標と商品を正確に特定します。使用による識別力には、日付入りの広告、販売記録、EC画面、報道、流通資料を揃え、出願標識が中国で自社の事業を指し示すことを、単に存在するというだけでなく示します。</p>
+<p class="leading-relaxed text-slate-300 mb-6">引用商標への不使用取消では証拠の争点が変わります。問題は指定商品について真実の使用があったかどうかなので、出願日、そこから遡る3年の枠、使用が求められる商品を押さえます。取消と復審は別手続なので、取消の状況が復審の記録に反映されるよう連携させます。</p>
+<p class="leading-relaxed text-slate-300 mb-6">拒絶通知、該当する場合はWIPO通知、復審請求、全添付資料、提出日の一覧を一つのファイルにまとめます。後に審判や裁判へ移る場合、この時系列が案件の背骨になります。拒絶の背景は<a href="/blog/ja/common-reasons-trademark-rejection-china.html">中国で拒絶される主な理由</a>をご覧ください。</p>
+<h2 id="a-madrid-specific-playbook">マドリッド特有の実務</h2>
+<p class="leading-relaxed text-slate-300 mb-6">マドリッド制度で中国に入った保持者にとって、最も役に立つ予防策は並行する中国の国内出願であることが多くあります。国際指定の行方に左右されない別個の権利ができ、国際登録では採れない狭い指定や分割の方針も選べます。国内出願で同じ範囲にするか、商品を絞るか、別の中国語標にするかは代理人と詰めます。</p>
+<p class="leading-relaxed text-slate-300 mb-6">一部拒絶は、ただちに不服を申し立てるのではなく、意識した判断が要ります。阻まれたのが指定の一部だけなら、範囲を狭めて残りの早い出願日を確保しつつ、別途しっかりした主張を組み立てる、という選び方もあります。逆に阻まれた商品が事業の中心なら、並行出願と引用への取消を組み合わせる手間を払う価値があります。</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>WIPO通知が時計を動かします。</strong> 記録上の保持者住所が監視され、通知の到着日がその日のうちに控えられるようにしてください。15日・30日の期間には、権限、翻訳、証拠をゼロから揃え直す余裕がありません。拒絶が出る前から現地代理人に委任状を預けておきます。</p></div>
+<h2 id="sources">出典と注意書き</h2>
+<p class="leading-relaxed text-slate-300 mb-6">一次資料：『中華人民共和国商標法（2026年改正）』第37条（2026年6月26日採択、2027年1月1日施行）、WIPOの指定締約国における仮拒絶への対応期間表、WIPO 2011年第19号情報通知。マドリッドの期間は保持者がWIPO通知を受領した時から起算され、職権拒絶と異議に基づく拒絶で異なります。当期のWIPO期間表と公式公告・規則を代理人に確認してください。本記事は一般情報であり、個別の法律助言ではありません。</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>期限が迫る拒絶をお持ちですか？</strong> <a href="/contact.html">復審の方針と並行出願についてご相談ください</a>。</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">この記事の内容</p>
+<a href="#two-clocks" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">二つの時計：国内の15日とマドリッド経由</a>
+<a href="#what-happens-after-you-file" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">請求後に何が起きるか</a>
+<a href="#the-six-argument-menu" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">六つの主張の選択肢</a>
+<a href="#building-the-evidence-file" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">証拠ファイルの作り方</a>
+<a href="#a-madrid-specific-playbook" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">マドリッド特有の実務</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">出典と注意書き</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">関連記事</p>
+<a href="/blog/ja/common-reasons-trademark-rejection-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">中国で拒絶される主な理由</a>
+<a href="/blog/ja/madrid-vs-direct-filing-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">マドリッド方式と直接出願の比較</a>
+<a href="/blog/ja/china-trademark-law-2026-revision-changes.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">旧法・新法の条項対比</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">中国での商標登録についてご相談ですか？</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">無料相談</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">中国商標のご相談はこちら</h2>
+        <p class="text-slate-400 mb-8">専門スタッフが手続き全体をサポートします。</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">無料相談を申し込む</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">途悦商標登録 — 中国における専門商標サービス。</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">サービス</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">商標検索</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">出願・審査</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">商標区分</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">会社情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">私たちについて</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">ブログ</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">法的情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">プライバシーポリシー</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookieポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 途悦商標登録. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

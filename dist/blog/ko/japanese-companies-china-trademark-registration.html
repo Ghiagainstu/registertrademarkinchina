@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="/styles/tailwind.css" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>일본 기업이 중국에서 상표를 등록하기 위한 국가별 가이드 | RTMCN</title>
+  <meta name="description" content="중국에 출원하는 일본 기업을 위한 실무 가이드. 현지 대리인 필수 요건, 6개월 우선권, 마드리드와 직접 출원, 중국어 표기, 공문서 인증, 2027년 시행 개정 사항을 정리했습니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/japanese-companies-china-trademark-registration.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/japanese-companies-china-trademark-registration.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/japanese-companies-china-trademark-registration.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/japanese-companies-china-trademark-registration.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/ko/japanese-companies-china-trademark-registration.html" />
+  <meta property="og:title" content="일본 기업이 중국에서 상표를 등록하기 위한 국가별 가이드" />
+  <meta property="og:description" content="중국에 출원하는 일본 기업을 위한 실무 가이드. 현지 대리인 필수 요건, 6개월 우선권, 마드리드와 직접 출원, 중국어 표기, 공문서 인증, 2027년 시행 개정 사항을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ko/japanese-companies-china-trademark-registration.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-07" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="일본 기업이 중국에서 상표를 등록하기 위한 국가별 가이드" />
+  <meta name="twitter:description" content="중국에 출원하는 일본 기업을 위한 실무 가이드. 현지 대리인 필수 요건, 6개월 우선권, 마드리드와 직접 출원, 중국어 표기, 공문서 인증, 2027년 시행 개정 사항을 정리했습니다." />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "일본 기업이 중국에서 상표를 등록하기 위한 국가별 가이드",
+    "description": "중국에 출원하는 일본 기업을 위한 실무 가이드. 현지 대리인 필수 요건, 6개월 우선권, 마드리드와 직접 출원, 중국어 표기, 공문서 인증, 2027년 시행 개정 사항을 정리했습니다.",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/ko/japanese-companies-china-trademark-registration.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "일본 기업이 중국에서 상표를 등록하기 위한 국가별 가이드"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">서비스</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">프로세스</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">사례 연구</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">클래스 안내</a>
+        <a href="/blog/" class="text-brand">블로그</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">소개</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">문의하기</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">KO</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">서비스</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">프로세스</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">사례 연구</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">클래스 안내</a>
+      <a href="/blog/" class="block text-sm text-brand">블로그</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">소개</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">문의하기</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/ko/" class="hover:text-brand transition-colors">블로그</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">일본 기업이 중국에서 상표를 등록하기 위한 국가별 가이드</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">일본 기업이 중국에서 상표를 등록하기 위한 국가별 가이드</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">한자 문화권을 공유해도 등록부는 별개입니다. 일본에서 익숙한 브랜드도 중국에서는 중국어 명칭을 제3자가 먼저 출원해 둔 경우가 있습니다. 아래 규정은 일본 출원인을 포함한 모든 외국 출원인에게 적용됩니다.</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="the-local-agent-rule">먼저 확인할 현지 대리인 규정</h2>
+<p class="leading-relaxed text-slate-300 mb-6">중국에 상주하는 주소나 영업소가 없는 외국 출원인은 중국 국내에 적법하게 설립·등록된 상표 대리 기관을 통해 출원해야 합니다. 2026년 상표법 제11조도 이 규정을 이어갑니다. 이후 모든 절차가 대리인을 거치므로 가장 먼저 대리 관계를 설계하십시오.</p>
+<p class="leading-relaxed text-slate-300 mb-6">자주 놓치는 점이 둘 있습니다. 중국에 지사를 두기만 해도 여기서 말하는 영업소가 있는 것으로 인정되지 않아 면제가 성립하지 않습니다. 또한 일본 출원인에게만 특별한 대우가 있는 것이 아니며, 수출 실적이나 인지도와 무관하게 모든 외국 주체에 같은 규정이 적용됩니다. 위임장을 상비하고 출원인 명칭과 주소를 모든 서류에서 일치시키며, 대리인을 단순한 서류 전달자가 아니라 팀의 일원으로 다루십시오.</p>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0">자격 요건의 개요는 <a href="/blog/ko/who-can-register-trademark-in-china.html">중국에서 상표를 등록할 수 있는 주체</a>와 <a href="/blog/ko/china-first-to-file-trademark-guide.html">선출원주의 가이드</a>를 참고하십시오.</p></div>
+<h2 id="kanji-is-not-chinese">한자는 간체자가 아니다</h2>
+<p class="leading-relaxed text-slate-300 mb-6">일본 한자와 중국 간체자는 같은 표장이 아닙니다. 또한 영문 표장과 중국어 표장은 중국에서 별개의 권리입니다. 로마자 표기의 브랜드를 등록해도 소비자가 실제로 쓰는 중국어 명칭은 보호되지 않습니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">공식 중국어 명칭, 흔히 쓰이는 음역, 소비자가 스스로 붙인 애칭을 출원하십시오. 유사 판단은 음·형·의 세 측면에서 이루어지므로 영문이 달라도 중국어 표기가 닮으면 충돌할 수 있습니다. 가타카나나 로마자 브랜드는 중국 소비자가 중국어로 다시 적는 것이 통례입니다. 제3자가 먼저 출원하기 전에 그 중국어 표기들을 조사하십시오.</p>
+<ul>
+<li><strong>영문·로마자 문자상표</strong>——포장에 찍히는 철자이며 매장에서 불리는 이름이 아닙니다.</li>
+<li><strong>공식 중국어 명칭</strong>——별개의 권리로 제3자가 독자적으로 등록할 수 있습니다.</li>
+<li><strong>음역과 표기 변형</strong>——형태나 의미뿐 아니라 음에서도 비교됩니다.</li>
+<li><strong>소비자 애칭·약칭</strong>——시장에서 실제로 유통되는 형태인 경우가 많습니다.</li>
+</ul>
+<p class="leading-relaxed text-slate-300 mb-6">일본 애니메이션·외식·소매 브랜드의 선점 등록은 이미 보도되어 있습니다. <a href="/blog/ko/muji-trademark-war-china.html">무인양품 사례</a>, <a href="/blog/ko/japanese-anime-ip-trademark-china.html">애니메이션 지식재산 분쟁</a>, <a href="/blog/ko/japanese-ramen-chain-china-trademark.html">라멘 체인 사례</a>를 보십시오. 중국어 표기 조사는 시장 진입의 첫 단계에 두어야 합니다.</p>
+<h2 id="priority-and-two-routes">6개월 우선권과 두 가지 출원 경로</h2>
+<p class="leading-relaxed text-slate-300 mb-6">파리 조약에 따라 국외에서 처음 출원한 상표는 그날부터 <strong>6개월 이내</strong>에 동일한 상표·동일한 상품 또는 서비스로 중국에 출원하며 우선권을 주장할 수 있습니다. 주장은 중국 출원 시 서면으로 하고, 최초 출원 서류의 사본을 <strong>3개월 이내</strong>에 제출합니다(2026년 법 제29조, 구법 제25조에 해당). 국제박람회에 전시한 상품에 처음 사용한 경우에도 6개월 우선권이 생깁니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">경로는 둘입니다. 마드리드 제도로 중국을 지정하는 국제등록은 CNIPA가 중국법에 따라 심사하며 상품 표시를 중국의 유사군·세부 구분에 맞춰야 합니다. 다른 하나는 CNIPA에 직접 하는 국내 출원입니다. 국제등록은 처음 <strong>5년간</strong> 본국의 기초등록에 의존합니다. 기초등록이 소멸하면 그 위에 세운 보호도 함께 무너질 수 있는, 이른바 센터 어택 위험입니다. 중국을 지정한 사건에 WIPO가 잠정 거절을 통지하면 직권에 의한 거절은 <strong>15일</strong>, 이의에 기초한 거절은 <strong>30일</strong>이 응답 기한이며 모두 통지 수령 시부터 기산하고, 보충 증거는 <strong>3개월 이내</strong>입니다(WIPO 공식 기한표). 짧은 기한에 대비해 중국 대리인에게 미리 지시해 두십시오.</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0">수출이나 OEM 제조만으로는 중국 상표권이 생기지 않습니다. 출하·등록 전에 출원하십시오. <a href="/blog/ko/madrid-vs-direct-filing-china.html">마드리드와 직접 출원 비교</a>와 <a href="/blog/ko/china-trademark-classes-complete-guide.html">클래스 가이드</a>도 활용하십시오.</p></div>
+<h2 id="documents-language-and-legalisation">서류·언어·인증</h2>
+<p class="leading-relaxed text-slate-300 mb-6">출원 서류는 중국어로 작성합니다. 외국어로 된 주체 자격 증명에는 중국어 번역본을 붙이고, 출원인 명칭과 주소는 영문 표기와 중국어 표기를 대응시켜야 합니다. 공식 중국어 표기를 한 번 정해 모든 서류에 통일하면 번역본과 등기 내용의 불일치로 인한 지적을 막는 지름길이 됩니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">위임장은 보통 서명이나 직인으로 충분하므로 반드시 공증·인증이 필요하다고 단정하지 마십시오. 공문서 인증이 필요한 경우, 헤이그 협약(외국 공문서의 인증 요건 폐지 협약)은 <strong>2023년 11월 7일</strong> 중국에서 발효했습니다. 체약국에서 온 공문서는 기존의 외교부와 재외 공관을 거치는 2단계 영사 인증 대신 아포스티유로 충분합니다. 비체약국은 기존 영사 인증을 계속 이용합니다. 적용 여부는 서류 종류와 접수 기관의 요건에 따라 달라지므로 일반론이 아니라 대리인에게 당기 취급을 확인하십시오.</p>
+<h2 id="the-2027-law">2027년 법이 일본 기업에 가져오는 변화</h2>
+<p class="leading-relaxed text-slate-300 mb-6">2026년 상표법은 <strong>2027년 1월 1일</strong> 시행됩니다. 제36조는 이의신청 기간을 공고일부터 3개월에서 <strong>2개월</strong>로 줄여 등록부 감시를 주 단위 운영 업무로 만듭니다. 제19조는 악의적 출원을 규제합니다. 제57조는 <strong>3년 연속</strong> 사용되지 않은 등록상표를 CNIPA가 직권으로 취소할 수 있게 하므로, 날짜가 있는 사용 증거를 첫날부터 보관해야 합니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">제21조는 미등록 주지상표에 클래스를 넘는 보호를 인정해, 중국에서 출원 전 이미 알려졌던 일본 브랜드와 관련됩니다. 제55조는 사용허락의 등록과 법정 해제권을, 제46조는 양도의 실질심사를 정합니다. 모두 등록부에 올려둔 권리보다 실제로 사용되고 감시되며 자료로 뒷받침되는 포트폴리오를 중시하는 방향입니다. <a href="/blog/ko/china-trademark-opposition-watch-sop-2-months.html">2개월 대응 워칭 절차</a>와 <a href="/blog/ko/china-trademark-non-use-cancellation-evidence.html">사용 증거 가이드</a>를 보십시오.</p>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0">대응 항목 전체는 <a href="/blog/ko/china-trademark-law-2027-foreign-brands.html">2027년 전에 외국 브랜드가 해야 할 일</a>에 정리했습니다.</p></div>
+<h2 id="sources">출처 및 유의사항</h2>
+<p class="leading-relaxed text-slate-300 mb-6">1차 자료: 『중화인민공화국 상표법(2026년 개정)』 제11조·제19조·제21조·제29조·제36조·제46조·제55조·제57조, 파리 조약, 헤이그 협약(2023년 11월 7일 중국 발효), WIPO 공식 기한표, CNIPA의 중국어 출원 실무. 절차는 시행조례 등에서 더 세분화될 수 있습니다. 당기 공식 요건을 확인하십시오. 본 글은 일반 정보이며 법률 자문이 아닙니다.</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>일본에서 출원을 검토 중이신가요?</strong> <a href="/contact.html">현지 대리인 선임, 중국어 명칭 조사, 우선권에 맞춘 출원 계획에 대해 문의하세요</a>.</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">이 글의 내용</p>
+<a href="#the-local-agent-rule" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">먼저 확인할 현지 대리인 규정</a>
+<a href="#kanji-is-not-chinese" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">한자는 간체자가 아니다</a>
+<a href="#priority-and-two-routes" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">6개월 우선권과 두 가지 출원 경로</a>
+<a href="#documents-language-and-legalisation" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">서류·언어·인증</a>
+<a href="#the-2027-law" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">2027년 법이 일본 기업에 가져오는 변화</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">출처 및 유의사항</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">관련 글</p>
+<a href="/blog/ko/china-trademark-law-2026-revision-changes.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">구법·신법 조항 대조</a>
+<a href="/blog/ko/china-trademark-law-2027-foreign-brands.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">2027년 전에 해야 할 일</a>
+<a href="/blog/ko/muji-trademark-war-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">무인양품 상표 분쟁</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">중국 상표 등록에 도움이 필요하신가요?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">무료 상담</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">중국 상표, 전문가와 상담하세요</h2>
+        <p class="text-slate-400 mb-8">전체 절차를 전문가가 안내해 드립니다.</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">무료 상담 신청</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">투웨 상표 등록 — 중국 내 전문 상표 서비스.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">서비스</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">상표 검색</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">출원 및 심사</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">상표 클래스</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">회사 소개</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">회사 소개</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">블로그</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">문의하기</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">법적 고지</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">개인정보처리방침</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">쿠키 정책</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 투웨 상표 등록. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

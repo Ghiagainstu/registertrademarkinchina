@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>Trademark Refusal Review in China: The 15-Day Deadline and How to Respond | RTMCN</title>
+  <meta name="description" content="A refusal starts two different clocks. The domestic 15-day review request, the 15-day and 30-day Madrid periods, and the six arguments that give a refusal review its best chance." />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/china-trademark-refusal-review-15-days.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/china-trademark-refusal-review-15-days.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/china-trademark-refusal-review-15-days.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/china-trademark-refusal-review-15-days.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/china-trademark-refusal-review-15-days.html" />
+  <meta property="og:title" content="Trademark Refusal Review in China: The 15-Day Deadline and How to Respond" />
+  <meta property="og:description" content="A refusal starts two different clocks. The domestic 15-day review request, the 15-day and 30-day Madrid periods, and the six arguments that give a refusal review its best chance." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/china-trademark-refusal-review-15-days.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-07" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Trademark Refusal Review in China: The 15-Day Deadline and How to Respond" />
+  <meta name="twitter:description" content="A refusal starts two different clocks. The domestic 15-day review request, the 15-day and 30-day Madrid periods, and the six arguments that give a refusal review its best chance." />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Trademark Refusal Review in China: The 15-Day Deadline and How to Respond",
+    "description": "A refusal starts two different clocks. The domestic 15-day review request, the 15-day and 30-day Madrid periods, and the six arguments that give a refusal review its best chance.",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/china-trademark-refusal-review-15-days.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Trademark Refusal Review in China: The 15-Day Deadline and How to Respond"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">Services</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">Process</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">Case Study</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">Classes</a>
+        <a href="/blog/" class="text-brand">Blog</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">About</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">Get Started</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">EN</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">Services</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">Process</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">Case Study</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">Classes</a>
+      <a href="/blog/" class="block text-sm text-brand">Blog</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">About</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/" class="hover:text-brand transition-colors">Home</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">Trademark Refusal Review in China: The 15-Day Deadline and How to Respond</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">Trademark Refusal Review in China: The 15-Day Deadline and How to Respond</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">A refusal is not the end of an application, but it does start a short clock. Under the revised law the request for review is due in 15 days, while a Madrid designation runs on a separate 15-day or 30-day timetable counted from the WIPO notification.</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="two-clocks">Two Clocks: The Domestic 15 Days and the Madrid Route</h2>
+<p class="leading-relaxed text-slate-300 mb-6">A refusal is not the end of an application, but it does start a clock. Under Article 37 of the revised Trademark Law, an applicant dissatisfied with a refusal may request review within <strong>15 days</strong>; CNIPA then decides the review within <strong>nine months</strong>, extendable by <strong>three months</strong>. Miss the 15 days and the refusal becomes final on the original application, so the first job is calendaring, not advocacy.</p>
+<p class="leading-relaxed text-slate-300 mb-6">International registrations designating China run on a different and easily confused timetable. When WIPO notifies a provisional refusal, the period for requesting review is counted from the date the holder receives that notification: <strong>15 days</strong> for a refusal issued ex officio and <strong>30 days</strong> for a refusal based on an opposition. These figures come from WIPO's official time-limits table and its Information Notice No. 19 of 2011. Do not assume the domestic rule and the Madrid periods are the same instrument; identify which refusal you have before computing the date.</p>
+<table>
+<thead><tr><th>Route</th><th>Trigger</th><th>Period to request review</th></tr></thead>
+<tbody>
+<tr><td>Chinese national application (Art. 37)</td><td>Receipt of the refusal</td><td>15 days</td></tr>
+<tr><td>Madrid designation, ex officio refusal</td><td>Holder receives the WIPO notification of provisional refusal</td><td>15 days</td></tr>
+<tr><td>Madrid designation, opposition-based refusal</td><td>Holder receives the WIPO notification of provisional refusal</td><td>30 days</td></tr>
+</tbody>
+</table>
+<h2 id="what-happens-after-you-file">What Happens After You File</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Once a review request is filed, the case is examined on its merits and on the evidence submitted with it. CNIPA's decision on a refusal review is due within nine months, extendable by three months under Article 37; those are decision targets for the authority, not deadlines for you to fill. Your evidence deadline is the one to watch: supplementary evidence in a Madrid-related review is to be submitted within <strong>three months from the date the review request is filed</strong>, per WIPO's time-limits materials.</p>
+<p class="leading-relaxed text-slate-300 mb-6">That structure rewards preparation. A review request that says only that the marks are different wastes the best opportunity to put the full case on record. Where the refusal cites earlier marks, decide early whether you are arguing dissimilarity of the signs, dissimilarity of the goods or services, both, or a coexistence-based position supported by use. The chosen theory determines what evidence to gather in the weeks after filing.</p>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>Calendar three things separately:</strong> the deadline to request review, the deadline for supplementary evidence, and the date on which a decision is expected. They run from different starting points and confusing them is a common, avoidable loss.</p></div>
+<h2 id="the-six-argument-menu">The Six-Argument Menu</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Practitioner guidance converges on six responses to a Chinese refusal. Most cases use more than one.</p>
+<ol>
+<li><strong>Argue the signs and the goods.</strong> Submit a structured comparison showing the applied-for mark is not similar to the cited mark, or that the designated goods or services are not similar, with reference to the relevant sub-classes.</li>
+<li><strong>Rely on coexistence or acquired distinctiveness.</strong> Put in evidence of honest concurrent use, market recognition, or distinctiveness acquired through use, so that confusion is unlikely.</li>
+<li><strong>Attack the citation.</strong> Where the cited registration has not been used for three consecutive years, consider a non-use cancellation action to remove the obstacle at its source.</li>
+<li><strong>Obtain a letter of consent.</strong> A coexistence agreement or consent from the earlier rights holder can resolve a citation that argument alone cannot.</li>
+<li><strong>Accept a partial refusal.</strong> Where only some goods are blocked, consider narrowing the designation to preserve a filing date for the acceptable items.</li>
+<li><strong>File a parallel Chinese national application.</strong> For a Madrid designation, a direct national filing can keep protection moving independently while the international refusal is contested.</li>
+</ol>
+<h2 id="building-the-evidence-file">Building the Evidence File</h2>
+<p class="leading-relaxed text-slate-300 mb-6">A review is won on documents. Keep any coexistence or consent document properly executed and translated, and make sure it identifies the exact marks and goods at issue. For acquired distinctiveness, assemble dated advertising, sales records, marketplace listings, media coverage and distribution materials showing that the applied-for sign identifies your business in China, not merely that it exists.</p>
+<p class="leading-relaxed text-slate-300 mb-6">For a non-use cancellation against a cited mark, the evidence question is different: the issue is whether the earlier registration has been genuinely used on the designated goods, so preserve the filing date, the three-year window counted back from it, and the goods on which use must be shown. A cancellation and a refusal review are separate proceedings; coordinate them so the review record reflects the cancellation's status.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Keep a single indexed file: the refusal notice, the WIPO notification where relevant, the review request, every exhibit, and a dated log of submissions. If the matter later moves to an appeal or a court, that chronology is the spine of the case. For the common grounds behind refusals, see <a href="/blog/common-reasons-trademark-rejection-china.html">common reasons for rejection in China</a>.</p>
+<h2 id="a-madrid-specific-playbook">A Madrid-Specific Playbook</h2>
+<p class="leading-relaxed text-slate-300 mb-6">For holders who entered China through the Madrid System, the most useful protective step is often a parallel Chinese national application. It creates an independent right that is not hostage to the fate of the international designation, and it allows a narrowed or divided filing strategy that the international registration cannot accommodate. Discuss with counsel whether the national application should claim the same scope, a reduced list of goods, or a separate Chinese-character mark.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Partial refusals deserve a deliberate decision rather than a reflex appeal. Where the objection is confined to part of the designation, accepting a narrower scope may preserve an early filing date for the rest while a fuller case is built. Conversely, where the blocked goods are commercially central, a parallel filing combined with a cancellation against the citation may be worth the extra work.</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>The WIPO notification starts the clock.</strong> Make sure the holder's address on record is monitored and that the notification date is logged the day it arrives. A 15-day or 30-day period leaves no room to reconstruct authority, translations and evidence from scratch, so authorise local counsel before a refusal is ever issued.</p></div>
+<h2 id="sources">Sources and Caveats</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Primary sources: Article 37 of the <em>Trademark Law of the PRC (2026 Revision)</em> (adopted 26 June 2026, effective 1 January 2027); WIPO, official time limits for responding to provisional refusals in designated contracting parties; WIPO Information Notice No. 19 of 2011. The Madrid periods are counted from the holder's receipt of the WIPO notification and differ between ex officio and opposition-based refusals; confirm the current WIPO table and the official announcements and rules with your agent. This is general information, not legal advice.</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>Facing a refusal with a deadline running?</strong> <a href="/contact.html">Contact our team</a> to discuss a review strategy and a parallel filing.</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">In This Article</p>
+<a href="#two-clocks" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Two Clocks: The Domestic 15 Days and the Madrid Route</a>
+<a href="#what-happens-after-you-file" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">What Happens After You File</a>
+<a href="#the-six-argument-menu" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">The Six-Argument Menu</a>
+<a href="#building-the-evidence-file" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Building the Evidence File</a>
+<a href="#a-madrid-specific-playbook" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">A Madrid-Specific Playbook</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Sources and Caveats</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">Related Articles</p>
+<a href="/blog/common-reasons-trademark-rejection-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Common Reasons for Rejection in China</a>
+<a href="/blog/madrid-vs-direct-filing-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Madrid vs Direct Filing in China</a>
+<a href="/blog/china-trademark-law-2026-revision-changes.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Old vs New: 2026 Trademark Law Comparison</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">Need help with China trademark registration?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">Free Consultation</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">Need Help With Your China Trademark?</h2>
+        <p class="text-slate-400 mb-8">Our experts will guide you through the entire process.</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">Get a Free Consultation</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — professional trademark services in China.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Services</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Trademark Search</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Filing &amp; Prosecution</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">Trademark Classes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Company</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">About Us</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Legal</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 Tuyue Trademark Registration. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

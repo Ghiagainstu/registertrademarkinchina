@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>How to Choose a Chinese Brand Name That Actually Passes CNIPA Examination | RTMCN</title>
+  <meta name="description" content="A pleasant-sounding name can still be refused. The sound, form and meaning test, the three grounds that block a Chinese-character name, and a six-lane clearance search that catches the variants squatters actually file." />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/chinese-brand-name-cnipa-examination.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/chinese-brand-name-cnipa-examination.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/chinese-brand-name-cnipa-examination.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/chinese-brand-name-cnipa-examination.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/chinese-brand-name-cnipa-examination.html" />
+  <meta property="og:title" content="How to Choose a Chinese Brand Name That Actually Passes CNIPA Examination" />
+  <meta property="og:description" content="A pleasant-sounding name can still be refused. The sound, form and meaning test, the three grounds that block a Chinese-character name, and a six-lane clearance search that catches the variants squatters actually file." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/chinese-brand-name-cnipa-examination.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-07" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Choose a Chinese Brand Name That Actually Passes CNIPA Examination" />
+  <meta name="twitter:description" content="A pleasant-sounding name can still be refused. The sound, form and meaning test, the three grounds that block a Chinese-character name, and a six-lane clearance search that catches the variants squatters actually file." />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Choose a Chinese Brand Name That Actually Passes CNIPA Examination",
+    "description": "A pleasant-sounding name can still be refused. The sound, form and meaning test, the three grounds that block a Chinese-character name, and a six-lane clearance search that catches the variants squatters actually file.",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/chinese-brand-name-cnipa-examination.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Choose a Chinese Brand Name That Actually Passes CNIPA Examination"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">Services</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">Process</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">Case Study</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">Classes</a>
+        <a href="/blog/" class="text-brand">Blog</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">About</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">Get Started</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">EN</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">Services</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">Process</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">Case Study</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">Classes</a>
+      <a href="/blog/" class="block text-sm text-brand">Blog</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">About</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/" class="hover:text-brand transition-colors">Home</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">How to Choose a Chinese Brand Name That Actually Passes CNIPA Examination</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">How to Choose a Chinese Brand Name That Actually Passes CNIPA Examination</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">Foreign brands often choose a Chinese name for marketing reasons and only then ask whether it can be registered. That order is backwards. In a first-to-file system, the cheaper and safer sequence is to clear the name first and fall in love with it second.</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="the-name-is-a-separate-right">Your Chinese Name Is a Separate Right</h2>
+<p class="leading-relaxed text-slate-300 mb-6">A foreign brand entering China usually has a Latin mark and, sooner or later, a Chinese name. Legally these are two different rights. Registering the Latin word does not protect a Chinese-character version, and a Chinese name adopted by consumers is not automatically yours to enforce. The safer sequence is to test registrability first and choose the name second, rather than fall in love with a name, print packaging, and only then discover a blocking citation.</p>
+<p class="leading-relaxed text-slate-300 mb-6">This matters because the market will produce a Chinese name whether you plan one or not. Consumers and retailers shorten, transliterate or translate foreign brands into everyday nicknames, and those nicknames are exactly what a squatter monitors. A name built purely for marketing, with a pleasant sound, an auspicious meaning and elegant characters, can still fail examination if it is descriptive, generic, or too close to an earlier filing along any of the three axes described below.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Treat the exercise as a legal availability question with a marketing input, not the reverse. Agree a shortlist of candidates, clear each one, and only then commission artwork and launch materials. The cost of dropping a candidate at shortlist stage is trivial compared with rebranding after a refusal.</p>
+<h2 id="three-axes-of-similarity">The Three Axes of Similarity: Sound, Form and Meaning</h2>
+<p class="leading-relaxed text-slate-300 mb-6">CNIPA examines similarity between Chinese-character marks along three axes, and a conflict on any one of them can be enough to refuse an application. Understanding them is what turns a name from something that sounds nice into something likely to survive examination.</p>
+<table>
+<thead><tr><th>Axis</th><th>What the examiner compares</th><th>Practical check</th></tr></thead>
+<tbody>
+<tr><td>Sound</td><td>Standard Mandarin pronunciation and pinyin, including tone patterns and homophones</td><td>Read candidates aloud; list same-syllable and near-syllable alternatives</td></tr>
+<tr><td>Form</td><td>The structure and arrangement of the Chinese characters, radicals and stroke composition</td><td>Compare visual similarity character by character, not just the overall impression</td></tr>
+<tr><td>Meaning</td><td>The sense of the characters and correspondence with the foreign mark or its translation</td><td>Check literal meaning, translated equivalents and connotations in context</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">A candidate can be clear on one axis and blocked on another: a name that reads differently but shares a distinctive character, or one that looks different but conveys the same meaning as an earlier mark. Clearance therefore has to run all three comparisons against the register, not just a search for identical characters.</p>
+<h2 id="absolute-grounds-articles-15-17-19">Absolute Grounds: Articles 15, 17 and 19</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Beyond conflicts with earlier rights, a name must be registrable in its own right. Article 17 refuses signs that are generic names of the goods, merely descriptive of their characteristics, or otherwise lacking distinctive character, with the important exception that a sign may become registrable where distinctiveness has been acquired through use. A name that simply states what the product is, praises its quality, or names a place or ingredient will struggle, and the exception requires a real evidence file of genuine use.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Article 15 sets out prohibited signs that cannot be used or registered as trademarks, and Article 19 targets bad-faith applications: a filing made with no intention to use and clearly exceeding normal business needs may be refused. For a brand owner, the practical point is the mirror image. Choose a coined, distinctive name, keep records showing an intention to use it, and avoid a portfolio of speculative defensive filings that looks like hoarding.</p>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>Coined beats descriptive.</strong> Invented combinations of characters with no direct dictionary meaning are usually easier to clear and easier to defend than a literal translation of your slogan or product category. They also give you a cleaner story when arguing acquired distinctiveness later.</p></div>
+<h2 id="six-lane-clearance-search">A Six-Lane Clearance Search</h2>
+<p class="leading-relaxed text-slate-300 mb-6">A clearance search for a Chinese name has to cover six lanes. Search the Chinese characters themselves; the pinyin and its homophones; the Latin or English source word; translated equivalents of the meaning; dialect and regional phonetic variants that produce awkward or similar readings; and the colloquial names consumers have already coined for your brand. Missing the last lane is a common reason a launch-name search looks clean while the market is already using a variant a squatter can register.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Use the official database as one input, not as a verdict. The publicly searchable register is not real time: there is a period during which recently filed applications are not yet visible, and the data may lag. A search result is therefore a risk assessment, not a guarantee of registrability. Do not treat a no-hits result as clearance to print packaging, and do not assume a fixed blind-spot duration; check the current position with your agent rather than relying on a stated number of months.</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>A no-hits result does not mean registrable.</strong> Combine an official-database search with a broader commercial search, keep dated records of what was searched and when, and refresh the search immediately before filing. Where a candidate is marginal, have a second and third choice cleared at the same time.</p></div>
+<h2 id="file-word-and-device-separately">File the Word and the Device Separately</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Examination looks at a combined mark element by element. When a device and a word are filed together, each component is assessed, and a problem with one element can hold up the whole application. The usual recommendation is to file the Chinese-character word mark, the Latin word mark and the device as separate applications: each stands or falls on its own, each is a separate right, and a refusal or opposition against one does not freeze the others.</p>
+<p class="leading-relaxed text-slate-300 mb-6">File the English and Chinese versions together as a matter of portfolio design, not as a single composite. They protect different things and support different enforcement and use-evidence files. If the chosen name is weak on distinctiveness, plan from the start for the evidence that Article 17's acquired-distinctiveness exception requires: dated advertising, sales and marketplace records showing that consumers recognise the name as yours.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Finally, register in the classes you use and keep the Latin and Chinese names consistent across packaging, platform listings and company materials. Inconsistent use creates the nicknames that make a later clearance search harder. For the underlying search mechanics see our <a href="/blog/free-china-trademark-search-guide.html">free China trademark search guide</a>, and for the separate-rights question see <a href="/blog/logo-vs-word-mark-china.html">logo versus word mark</a>.</p>
+<h2 id="sources">Sources and Caveats</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Basis: Articles 15, 17, 19 and 20 of the <em>Trademark Law of the PRC (2026 Revision)</em> (adopted 26 June 2026, effective 1 January 2027); general CNIPA examination practice on the sound, form and meaning of Chinese-character marks and on the examination of combined marks; practitioner guidance on Chinese brand naming. Official database coverage and examination standards may change, so confirm the current position and the live register against the official announcements and rules before filing. This is general information, not legal advice.</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>Want a Chinese name cleared before you commit to it?</strong> <a href="/contact.html">Ask our team</a> about a sound-form-meaning search and a shortlist you can actually register.</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">In This Article</p>
+<a href="#the-name-is-a-separate-right" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Your Chinese Name Is a Separate Right</a>
+<a href="#three-axes-of-similarity" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">The Three Axes of Similarity: Sound, Form and Meaning</a>
+<a href="#absolute-grounds-articles-15-17-19" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Absolute Grounds: Articles 15, 17 and 19</a>
+<a href="#six-lane-clearance-search" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">A Six-Lane Clearance Search</a>
+<a href="#file-word-and-device-separately" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">File the Word and the Device Separately</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Sources and Caveats</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">Related Articles</p>
+<a href="/blog/free-china-trademark-search-guide.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Free China Trademark Search Guide</a>
+<a href="/blog/coca-cola-chinese-name-trademark-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">How Coca-Cola Chose Its Chinese Name</a>
+<a href="/blog/logo-vs-word-mark-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Logo vs Word Mark in China</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">Need help with China trademark registration?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">Free Consultation</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">Need Help With Your China Trademark?</h2>
+        <p class="text-slate-400 mb-8">Our experts will guide you through the entire process.</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">Get a Free Consultation</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — professional trademark services in China.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Services</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Trademark Search</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Filing &amp; Prosecution</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">Trademark Classes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Company</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">About Us</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Legal</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 Tuyue Trademark Registration. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

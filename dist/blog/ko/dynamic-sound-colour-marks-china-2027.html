@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="/styles/tailwind.css" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>중국의 동적·소리·색채 상표: 2027년 시행 신법에서 무엇이 허용되나 | RTMCN</title>
+  <meta name="description" content="제14조가 동적 표장을 더하고 제18조가 기능상 특징을 배제합니다. 신법이 허용하는 범위, 동적 상표의 출원 꾸러미(초안), 식별력 증거의 짧은 제출 기한을 정리했습니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/dynamic-sound-colour-marks-china-2027.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/dynamic-sound-colour-marks-china-2027.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/dynamic-sound-colour-marks-china-2027.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/dynamic-sound-colour-marks-china-2027.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/ko/dynamic-sound-colour-marks-china-2027.html" />
+  <meta property="og:title" content="중국의 동적·소리·색채 상표: 2027년 시행 신법에서 무엇이 허용되나" />
+  <meta property="og:description" content="제14조가 동적 표장을 더하고 제18조가 기능상 특징을 배제합니다. 신법이 허용하는 범위, 동적 상표의 출원 꾸러미(초안), 식별력 증거의 짧은 제출 기한을 정리했습니다." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ko/dynamic-sound-colour-marks-china-2027.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-07" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="중국의 동적·소리·색채 상표: 2027년 시행 신법에서 무엇이 허용되나" />
+  <meta name="twitter:description" content="제14조가 동적 표장을 더하고 제18조가 기능상 특징을 배제합니다. 신법이 허용하는 범위, 동적 상표의 출원 꾸러미(초안), 식별력 증거의 짧은 제출 기한을 정리했습니다." />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "중국의 동적·소리·색채 상표: 2027년 시행 신법에서 무엇이 허용되나",
+    "description": "제14조가 동적 표장을 더하고 제18조가 기능상 특징을 배제합니다. 신법이 허용하는 범위, 동적 상표의 출원 꾸러미(초안), 식별력 증거의 짧은 제출 기한을 정리했습니다.",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/ko/dynamic-sound-colour-marks-china-2027.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "중국의 동적·소리·색채 상표: 2027년 시행 신법에서 무엇이 허용되나"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">서비스</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">프로세스</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">사례 연구</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">클래스 안내</a>
+        <a href="/blog/" class="text-brand">블로그</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">소개</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">문의하기</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">KO</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">서비스</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">프로세스</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">사례 연구</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">클래스 안내</a>
+      <a href="/blog/" class="block text-sm text-brand">블로그</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">소개</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">문의하기</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="브레드크럼">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ko/" class="hover:text-brand transition-colors">홈</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/ko/" class="hover:text-brand transition-colors">블로그</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">중국의 동적·소리·색채 상표: 2027년 시행 신법에서 무엇이 허용되나</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">중국의 동적·소리·색채 상표: 2027년 시행 신법에서 무엇이 허용되나</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">2027년 1월 1일 시행되는 개정 상표법은 비전통적 표장을 조문에서 분명히 다룹니다. 제14조는 동적 상표를 더하고, 제18조는 색채·소리·동적 표장에 기능을 이유로 한 배제를 정합니다. 출원 세부 사항은 심사 지침 초안에 근거하며 앞으로 달라질 수 있습니다.</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="what-changes-on-1-january-2027">2027년 1월 1일에 바뀌는 것</h2>
+<p class="leading-relaxed text-slate-300 mb-6">『중화인민공화국 상표법(2026년 개정)』은 <strong>2026년 6월 26일</strong>에 채택되어 <strong>2027년 1월 1일</strong>에 시행됩니다. 모두 9장 87조입니다. 눈에 띄는 변경 가운데 하나가 제14조로, 등록할 수 있는 표장에 <strong>동적 표장</strong>을 더했습니다. 다른 하나는 제18조로, 색채·소리·동적 표장에 기능을 이유로 한 배제를 정합니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">브랜드 쪽 요점은 비전통 상표가 중국 실무에 완전히 새롭다는 것이 아니라, 개정법이 조문에서 정면으로 다루었다는 점입니다. 색채·소리·동적 표장은 상표로 기능할 수 있는 표장이면서 고유한 배제를 받습니다. 틀에 얽매이지 않는다는 이유만으로 거절되지는 않지만, 상품의 기능상 특징을 독점하게 두지도 않습니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">동적 상표란 정지 화면이 아니라 시간에 따라 움직이거나 변하는 것으로 정의되는 표장입니다. 움직이는 로고, 일련의 동작, 소비자가 한 사업자를 가리킨다고 인식하는 전환 등이 해당합니다. 이 정의가 출원 방법, 식별력 입증, 그리고 기능성 배제가 무엇을 비워 두려는지를 모두 좌우합니다.</p>
+<h2 id="the-functionality-exclusion">제18조의 기능성 배제</h2>
+<p class="leading-relaxed text-slate-300 mb-6">제18조는 색채·소리·동적 표장 가운데 브랜드를 가리키는 것이 아니라 기능에 규정된 것을 등록에서 배제합니다. 거절되는 것은 다음 세 가지입니다.</p>
+<table>
+<thead><tr><th>배제되는 범주</th><th>뜻</th><th>원칙상의 예</th></tr></thead>
+<tbody>
+<tr><td>상품 자체의 성질에서만 생기는 것</td><td>그 제품이 본래 가진 특징인 경우</td><td>제품이 피할 수 없는 색이나 움직임</td></tr>
+<tr><td>기술상 효과를 얻는 데 필요한 것</td><td>제품의 작동이나 기능을 좋게 하는 특징</td><td>기계 작동을 알리는 소리나 동작</td></tr>
+<tr><td>상품에 실질상 가치를 주는 것</td><td>고객이 사는 주된 이유가 그 특징</td><td>그 자체가 제품 가치가 되는 미관상 효과</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">선은 출처를 <em>가리키는</em> 표장과 제품 <em>그 자체</em>인 특징 사이에 있습니다. 식별력 있는 움직이는 로고는 등록될 수 있지만, 기기가 그저 움직이는 모습은 등록되지 않습니다. 심사는 이 경계에 집중할 것으로 보이므로, 표장을 출처 표시로 자리매김하고 기능에 규정되지 않은 이유를 설명하는 서술을 준비하십시오.</p>
+<h2 id="how-a-dynamic-mark-is-filed">동적 상표 출원 방법</h2>
+<p class="leading-relaxed text-slate-300 mb-6">동적 상표의 심사 지침은 <strong>초안</strong>으로 제시되었고 제출물이 구체적으로 정해져 있습니다. <strong>20MB 이하의 MP4 동영상</strong>, <strong>3~9장의 JPEG 정지 화상</strong>, 그리고 사용 방법을 적은 설명서입니다. 정지 화상이 필요한 까닭은 등록부와 공고가 지면에서 멈춰 있기 때문이며, 움직임을 재현할 수 없는 자리에서 무엇이 보호되는지를 그림으로 정합니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">골라 낼 장면은 의식해 고르십시오. 같은 간격으로 뽑은 것이 아니라 일련의 움직임 가운데 인식의 핵심이 되는 장면을 넣고, 설명서는 따로 떨어진 그림의 모음이 아니라 하나의 표장으로 묶어야 합니다. 동영상·정지 화상·설명의 어긋남은 거절 이유로 곧장 이어지는 길입니다.</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>초안이므로 확정 사항으로 다루지 마십시오.</strong> 위 형식은 의견 수렴에 부쳐진 심사 지침 초안에 근거하며 달라질 수 있습니다. 출원 시 요건, 형식, 용량 상한은 대리인과 당기 공식 지침·공고·규칙으로 확인하십시오.</p></div>
+<h2 id="acquired-distinctiveness-and-the-15-day-evidence">사용에 따른 식별력과 15일 증거 기한</h2>
+<p class="leading-relaxed text-slate-300 mb-6">동적·색채·소리 상표도 다른 표장과 마찬가지로 식별력이 필요합니다. 제17조는 태생적으로 식별력이 없는 표장이라도 사용으로 식별력을 얻으면 등록을 허용합니다. 비전통 상표에서는 이 쟁점이 자주 나옵니다. 색이나 짧은 움직임은 그것만으로는 출처 표시로 받아들여지기 어려워, 소비자가 한 사업자를 가리키는 것으로 익혔다는 점을 보이도록 요구받습니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">초안 지침에서는 심사관이 사용에 따른 식별력 증거를 요구하면 <strong>통지를 받은 때부터 15일 이내</strong>에 제출하도록 됩니다. 짧은 기한인 데다 요구가 온 뒤 만들 수 있는 종류의 자료가 아닙니다. 날짜 있는 광고, 판매 실적, 보도, 소비자 인식을 보여 주는 자료를 진정한 사용의 축적으로 미리 갖춰야 합니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">출원 전부터 파일을 쌓으십시오. 움직이는 표장이나 소리 표장을 실제로 쓴 방송·전자상거래 기록, 전개 시기와 도달 범위, 표장을 일관되게 보인 예를 남깁니다. 15일이라는 기한은 준비를 시작할 기한이 아니라 일찍 대비할 이유입니다. 지침이 초안인 만큼 최종 기한과 형식은 공식으로 확인하십시오.</p>
+<h2 id="building-a-non-traditional-portfolio">비전통 상표를 아우른 포트폴리오</h2>
+<p class="leading-relaxed text-slate-300 mb-6">비전통 등록은 핵심 포트폴리오를 대신하는 것이 아니라 보태는 것입니다. 먼저 문자상표, 도형상표, 중국어 이름을 따로 출원하십시오. 이쪽이 조사도 쉽고 권리 행사도 쉬우며, 동영상이나 음성 파일이 올바로 재현되는지에 좌우되지도 않습니다. 동적·색채·소리 상표는 시장에서 실제로 인식을 떠받치는 경우에 더합니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">이어서 딸린 자료를 맞추십시오. 사용 방법 설명, 정지 화상, 사용에 따른 식별력 증거, 광고 기록은 모두 같은 표장이 같은 상품에 쓰였다는 것을 보여 주어야 합니다. 출원과 증거의 어긋남은 식별력 주장에서 흔히 보는 약점입니다.</p>
+<p class="leading-relaxed text-slate-300 mb-6">마지막으로 시행 규칙을 지켜보십시오. 개정법이 틀을 정하지만 출원 실무·형식·심사 운용은 개정 시행조례와 심사심리 지침에서 더 잘게 나뉠 수 있습니다. 초안이나 요약이 아니라 출원 시점의 당기 공식 공고·규칙에 기대십시오. 식별력 논리는 <a href="/blog/ko/chinese-brand-name-cnipa-examination.html">중국어 브랜드명 고르기</a>, 별개 권리라는 점은 <a href="/blog/ko/logo-vs-word-mark-china.html">로고 상표와 문자 상표의 차이</a>를 보십시오.</p>
+<h2 id="sources">출처 및 유의사항</h2>
+<p class="leading-relaxed text-slate-300 mb-6">1차 자료: 『중화인민공화국 상표법(2026년 개정)』 제14조·제17조·제18조(2026년 6월 26일 채택, 2027년 1월 1일 시행, 모두 9장 87조), 동적 상표에 관한 심사 지침 초안(20MB 이하 MP4 동영상, 3~9장의 JPEG 정지 화상, 사용 방법 설명, 사용에 따른 식별력 증거의 15일 제출 기한). <strong>지침은 초안·의견 수렴 단계이며 변경될 수 있습니다.</strong> 출원 요건과 최종 시행 규칙은 CNIPA의 당기 공식 공고·규칙으로 확인하십시오. 본 글은 일반 정보이며 법률 자문이 아닙니다.</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>동적·소리·색채 출원을 검토하시나요?</strong> <a href="/contact.html">제출물과 식별력 증거 계획에 대해 문의하세요</a>.</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">이 글의 내용</p>
+<a href="#what-changes-on-1-january-2027" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">2027년 1월 1일에 바뀌는 것</a>
+<a href="#the-functionality-exclusion" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">제18조의 기능성 배제</a>
+<a href="#how-a-dynamic-mark-is-filed" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">동적 상표 출원 방법</a>
+<a href="#acquired-distinctiveness-and-the-15-day-evidence" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">사용에 따른 식별력과 15일 증거 기한</a>
+<a href="#building-a-non-traditional-portfolio" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">비전통 상표를 아우른 포트폴리오</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">출처 및 유의사항</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">관련 글</p>
+<a href="/blog/ko/china-trademark-law-2026-revision-changes.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">구법·신법 조항 대조</a>
+<a href="/blog/ko/chinese-brand-name-cnipa-examination.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">중국어 브랜드명 고르기</a>
+<a href="/blog/ko/logo-vs-word-mark-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">로고 상표와 문자 상표의 차이</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">중국 상표 등록에 도움이 필요하신가요?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">무료 상담</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">중국 상표, 전문가와 상담하세요</h2>
+        <p class="text-slate-400 mb-8">전체 절차를 전문가가 안내해 드립니다.</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">무료 상담 신청</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">투웨 상표 등록 — 중국 내 전문 상표 서비스.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">서비스</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">상표 검색</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">출원 및 심사</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">상표 클래스</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">회사 소개</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">회사 소개</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">블로그</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">문의하기</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">법적 고지</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">개인정보처리방침</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">쿠키 정책</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 투웨 상표 등록. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

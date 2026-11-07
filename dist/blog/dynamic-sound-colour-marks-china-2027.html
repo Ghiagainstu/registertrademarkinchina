@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>Dynamic, Sound and Colour Marks in China: What the New Law Now Allows | RTMCN</title>
+  <meta name="description" content="Article 14 adds dynamic signs, while Article 18 keeps functional features free. What the 2027 law permits, the draft filing package for dynamic marks, and the short window for acquired-distinctiveness evidence." />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/dynamic-sound-colour-marks-china-2027.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/dynamic-sound-colour-marks-china-2027.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/dynamic-sound-colour-marks-china-2027.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/dynamic-sound-colour-marks-china-2027.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/dynamic-sound-colour-marks-china-2027.html" />
+  <meta property="og:title" content="Dynamic, Sound and Colour Marks in China: What the New Law Now Allows" />
+  <meta property="og:description" content="Article 14 adds dynamic signs, while Article 18 keeps functional features free. What the 2027 law permits, the draft filing package for dynamic marks, and the short window for acquired-distinctiveness evidence." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/dynamic-sound-colour-marks-china-2027.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-07" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dynamic, Sound and Colour Marks in China: What the New Law Now Allows" />
+  <meta name="twitter:description" content="Article 14 adds dynamic signs, while Article 18 keeps functional features free. What the 2027 law permits, the draft filing package for dynamic marks, and the short window for acquired-distinctiveness evidence." />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Dynamic, Sound and Colour Marks in China: What the New Law Now Allows",
+    "description": "Article 14 adds dynamic signs, while Article 18 keeps functional features free. What the 2027 law permits, the draft filing package for dynamic marks, and the short window for acquired-distinctiveness evidence.",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/dynamic-sound-colour-marks-china-2027.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "Dynamic, Sound and Colour Marks in China: What the New Law Now Allows"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">Services</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">Process</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">Case Study</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">Classes</a>
+        <a href="/blog/" class="text-brand">Blog</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">About</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">Get Started</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">EN</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">Services</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">Process</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">Case Study</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">Classes</a>
+      <a href="/blog/" class="block text-sm text-brand">Blog</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">About</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">Get Started</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/" class="hover:text-brand transition-colors">Home</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">Dynamic, Sound and Colour Marks in China: What the New Law Now Allows</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">Dynamic, Sound and Colour Marks in China: What the New Law Now Allows</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">The revised Trademark Law, effective 1 January 2027, addresses non-conventional signs expressly: Article 14 adds dynamic marks, and Article 18 sets out a functionality-based exclusion for colour, sound and dynamic signs. The filing details come from draft guidelines and may still change.</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="what-changes-on-1-january-2027">What Changes on 1 January 2027</h2>
+<p class="leading-relaxed text-slate-300 mb-6">The <em>Trademark Law of the PRC (2026 Revision)</em> was adopted on <strong>26 June 2026</strong> and takes effect on <strong>1 January 2027</strong>. It has nine chapters and 87 articles. Among its most visible changes is Article 14, which adds <strong>dynamic signs</strong> to the types of sign that may be registered, and Article 18, which sets out a functionality-based exclusion for colour, sound and dynamic signs.</p>
+<p class="leading-relaxed text-slate-300 mb-6">For brand owners, the point is not that non-conventional marks are entirely new to Chinese practice, but that the revised statute now addresses them expressly. Colour, sound and dynamic signs are dealt with as signs that can function as trademarks while being subject to a specific exclusion: a sign must not be refused simply because it is unconventional, but it must not be allowed to monopolise a functional feature of the goods either.</p>
+<p class="leading-relaxed text-slate-300 mb-6">A dynamic mark is, in essence, a mark defined by movement or change over time rather than by a static image: an animated logo, a moving sequence, or a transition that consumers recognise as identifying one undertaking. That definition drives everything else, including how the sign is filed, how distinctiveness is proved, and what the functionality exclusion is designed to keep free.</p>
+<h2 id="the-functionality-exclusion">The Functionality Exclusion in Article 18</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Article 18 excludes from registration signs that, for colour, sound and dynamic marks, are dictated by function rather than by brand identity. Three categories are refused:</p>
+<table>
+<thead><tr><th>Excluded category</th><th>What it means</th><th>Example in principle</th></tr></thead>
+<tbody>
+<tr><td>Resulting solely from the nature of the goods</td><td>The feature is inherent in what the product is</td><td>A colour or movement the product cannot avoid having</td></tr>
+<tr><td>Necessary to obtain a technical effect</td><td>The feature makes the product work better or perform a function</td><td>A sound or motion that signals a mechanical operation</td></tr>
+<tr><td>Giving the goods substantive value</td><td>The feature is a major reason customers buy the product</td><td>An aesthetic effect that is itself the product's value</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">The distinction is between a sign that <em>identifies</em> the source and a feature that <em>is</em> the product. A distinctive animated logo may be registrable; a movement that is simply how a device operates is not. Expect examination to focus on that boundary, so prepare a description that frames the sign as a badge of origin and explains why it is not dictated by function.</p>
+<h2 id="how-a-dynamic-mark-is-filed">How a Dynamic Mark Is Filed</h2>
+<p class="leading-relaxed text-slate-300 mb-6">The examination guidelines for dynamic marks were published in <strong>draft form</strong> and set out a specific submission package: an <strong>MP4 video of no more than 20 MB</strong>, a set of <strong>three to nine still JPEG frames</strong>, and a written description of how the mark is used. The still frames matter because the register and the public notice are static; they define what is protected when the movement cannot be reproduced in print.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Choose the frames deliberately. They should capture the recognisable states of the sequence, not simply be evenly spaced snapshots, and the written description should tie them together into a single sign rather than a collection of separate images. Inconsistency between the video, the frames and the description is a straightforward route to an objection.</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>Draft status, so do not treat these as final.</strong> The format requirements above come from draft examination guidelines issued for comment and may change. Confirm the current filing requirements, file formats and size limits with your agent and the official guidance in force at the time of filing, and check the official announcements and rules.</p></div>
+<h2 id="acquired-distinctiveness-and-the-15-day-evidence">Acquired Distinctiveness and the 15-Day Evidence Window</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Like any sign, a dynamic, colour or sound mark must be distinctive. Article 17 allows a sign that lacks inherent distinctiveness to become registrable where distinctiveness has been acquired through use. For non-conventional marks that question arises often: a colour or a short motion may not be inherently seen as a badge of origin, so the applicant is asked to show that consumers have come to recognise it as identifying one business.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Under the draft guidelines, where the examiner requires evidence of acquired distinctiveness, it must be submitted within <strong>15 days of receipt of the notification</strong>. That is a short window, and the evidence is not something that can be assembled after the request arrives: it takes dated advertising, sales figures, media coverage and consumer-recognition material built up over real use.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Build the file before filing. Keep broadcast and platform records showing the animated or sound sign in use, campaign dates and reach, and examples of how the sign is presented consistently. Treat the 15-day requirement as a reason to prepare early, not as a deadline to start preparing, and remember that the draft status of the guidelines means the final period and format should be checked officially.</p>
+<h2 id="building-a-non-traditional-portfolio">Building a Non-Traditional Portfolio</h2>
+<p class="leading-relaxed text-slate-300 mb-6">A non-conventional registration is a supplement to, not a replacement for, the core portfolio. File the word mark, the device mark and any Chinese-character name as separate applications first; they are simpler to clear, easier to enforce, and do not depend on a video or a sound file being reproduced correctly. Add the dynamic, colour or sound mark where the sign genuinely carries brand recognition in the market.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Then align the supporting materials: the use description, the still frames, the acquired-distinctiveness evidence and the advertising records should all describe the same sign used on the same goods. Inconsistency between the filing and the evidence is a common weakness in distinctiveness cases.</p>
+<p class="leading-relaxed text-slate-300 mb-6">Finally, watch the implementing rules. The revised law sets the framework, but filing mechanics, formats and examination practice may be refined by revised implementing regulations and examination guidelines. Rely on the current official announcements and rules at the time you file rather than on a draft or a summary. For the underlying distinctiveness analysis see <a href="/blog/chinese-brand-name-cnipa-examination.html">choosing a Chinese brand name</a>, and for the separate-rights question see <a href="/blog/logo-vs-word-mark-china.html">logo versus word mark</a>.</p>
+<h2 id="sources">Sources and Caveats</h2>
+<p class="leading-relaxed text-slate-300 mb-6">Primary sources: Articles 14, 17 and 18 of the <em>Trademark Law of the PRC (2026 Revision)</em> (adopted 26 June 2026, effective 1 January 2027; nine chapters, 87 articles); draft examination guidelines on dynamic marks covering the MP4 video of no more than 20 MB, three to nine JPEG still frames, the use description, and the 15-day period for acquired-distinctiveness evidence. <strong>The guidelines are a draft consultation text and may change.</strong> Confirm the current filing requirements and final implementing rules with CNIPA's official announcements and rules. This is general information, not legal advice.</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>Planning a dynamic, sound or colour filing?</strong> <a href="/contact.html">Talk to our team</a> about the submission package and a distinctiveness evidence plan.</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">In This Article</p>
+<a href="#what-changes-on-1-january-2027" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">What Changes on 1 January 2027</a>
+<a href="#the-functionality-exclusion" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">The Functionality Exclusion in Article 18</a>
+<a href="#how-a-dynamic-mark-is-filed" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">How a Dynamic Mark Is Filed</a>
+<a href="#acquired-distinctiveness-and-the-15-day-evidence" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Acquired Distinctiveness and the 15-Day Evidence Window</a>
+<a href="#building-a-non-traditional-portfolio" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Building a Non-Traditional Portfolio</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">Sources and Caveats</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">Related Articles</p>
+<a href="/blog/china-trademark-law-2026-revision-changes.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Old vs New: 2026 Trademark Law Comparison</a>
+<a href="/blog/chinese-brand-name-cnipa-examination.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Choosing a Chinese Brand Name</a>
+<a href="/blog/logo-vs-word-mark-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">Logo vs Word Mark in China</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">Need help with China trademark registration?</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">Free Consultation</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">Need Help With Your China Trademark?</h2>
+        <p class="text-slate-400 mb-8">Our experts will guide you through the entire process.</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">Get a Free Consultation</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">Tuyue Trademark Registration — professional trademark services in China.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Services</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Trademark Search</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">Filing &amp; Prosecution</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">Trademark Classes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Company</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">About Us</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">Blog</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">Legal</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Privacy Policy</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 Tuyue Trademark Registration. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>

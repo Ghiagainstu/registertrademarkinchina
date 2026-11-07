@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  
+  
+  
+  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#0FF0B3', 'brand-cyan': '#00D4FF', 'dark-900': '#0B0F1A', 'dark-800': '#111827' },
+          fontFamily: { display: ['Space Grotesk', 'system-ui', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    .article-body { font-size: 1rem; line-height: 1.85; color: #94a3b8; }
+    .article-body h2 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.625rem; font-weight: 700; color: #e2e8f0; margin-top: 3rem; margin-bottom: 1.25rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .article-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .article-body h3 { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 1.2rem; font-weight: 600; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body li { margin-bottom: 0.625rem; line-height: 1.75; }
+    .article-body ul li { list-style-type: none; position: relative; padding-left: 1.25rem; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, #0FF0B3, #00D4FF); }
+    .article-body ol li { list-style-type: decimal; }
+    .article-body strong { color: #e2e8f0; font-weight: 600; }
+    .article-body a { color: #0ff0b3; text-decoration: underline; text-decoration-color: rgba(15,240,179,0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .article-body a:hover { text-decoration-color: #0ff0b3; color: #00d4ff; }
+    .article-body blockquote { border-left: 3px solid; border-image: linear-gradient(180deg, #0FF0B3, #00D4FF) 1; padding: 1.25rem 1.5rem; margin: 2rem 0; background: rgba(15,240,179,0.03); border-radius: 0 12px 12px 0; color: #cbd5e1; font-style: italic; }
+    .article-body table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 2rem 0; font-size: 0.875rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
+    .article-body th { text-align: left; padding: 0.875rem 1.25rem; background: rgba(15,240,179,0.05); color: #e2e8f0; font-weight: 600; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .article-body td { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: #94a3b8; }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:hover td { background: rgba(255,255,255,0.02); }
+    .hero-gradient { background: radial-gradient(ellipse at 30% 0%, rgba(15,240,179,0.06) 0%, transparent 60%), radial-gradient(ellipse at 70% 0%, rgba(0,212,255,0.04) 0%, transparent 60%); }
+    #reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #0FF0B3, #00D4FF); z-index: 100; width: 0%; transition: width 0.1s linear; }
+    @media (max-width: 1024px) { .toc-sidebar { display: none; } }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+    .toc-link.active { color: #0FF0B3; border-left-color: #0FF0B3; background: rgba(15,240,179,0.05); }
+    .toc-link:hover { color: #0FF0B3; border-left-color: rgba(15,240,179,0.3); }
+    .btn-glow { background: linear-gradient(135deg, #0FF0B3, #00D4FF); color: #000; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(15,240,179,0.3); }
+    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(15,240,179,0.2), rgba(0,212,255,0.2), transparent); }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y42CW09D4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3Y42CW09D4');</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <title>CNIPAの審査を実際に通る中国語ブランド名の選び方 | RTMCN</title>
+  <meta name="description" content="読みが良くても拒絶されることがあります。音・形・義の三軸、中国語名を阻む三つの根拠、先取り登録者が狙う表記まで洗い出す六方向の調査を解説します。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://registertrademarkchina.com/blog/chinese-brand-name-cnipa-examination.html" />
+  <link rel="alternate" hreflang="ja" href="https://registertrademarkchina.com/blog/ja/chinese-brand-name-cnipa-examination.html" />
+  <link rel="alternate" hreflang="ko" href="https://registertrademarkchina.com/blog/ko/chinese-brand-name-cnipa-examination.html" />
+  <link rel="alternate" hreflang="x-default" href="https://registertrademarkchina.com/blog/chinese-brand-name-cnipa-examination.html" />
+  <link rel="canonical" href="https://registertrademarkchina.com/blog/ja/chinese-brand-name-cnipa-examination.html" />
+  <meta property="og:title" content="CNIPAの審査を実際に通る中国語ブランド名の選び方" />
+  <meta property="og:description" content="読みが良くても拒絶されることがあります。音・形・義の三軸、中国語名を阻む三つの根拠、先取り登録者が狙う表記まで洗い出す六方向の調査を解説します。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://registertrademarkchina.com/blog/ja/chinese-brand-name-cnipa-examination.html" />
+  <meta property="og:image" content="https://registertrademarkchina.com/og-image.png" />
+  <meta property="article:published_time" content="2026-11-07" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CNIPAの審査を実際に通る中国語ブランド名の選び方" />
+  <meta name="twitter:description" content="読みが良くても拒絶されることがあります。音・形・義の三軸、中国語名を阻む三つの根拠、先取り登録者が狙う表記まで洗い出す六方向の調査を解説します。" />
+  <meta name="twitter:image" content="https://registertrademarkchina.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CNIPAの審査を実際に通る中国語ブランド名の選び方",
+    "description": "読みが良くても拒絶されることがあります。音・形・義の三軸、中国語名を阻む三つの根拠、先取り登録者が狙う表記まで洗い出す六方向の調査を解説します。",
+    "datePublished": "2026-11-07",
+    "dateModified": "2026-11-07",
+    "author": {"@type": "Organization", "name": "RTMCN"},
+    "publisher": {"@type": "Organization", "name": "RTMCN"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://registertrademarkchina.com/blog/ja/chinese-brand-name-cnipa-examination.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://registertrademarkchina.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://registertrademarkchina.com/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "CNIPAの審査を実際に通る中国語ブランド名の選び方"}
+    ]
+  }
+  </script>
+
+<style>
+/* 2027 P0 articles: typography fallbacks */
+.article-body .callout { border-left:4px solid #0FF0B3; padding:1rem 1.25rem; border-radius:0.5rem; background:rgba(15,240,179,0.05); margin:1.5rem 0; }
+.article-body .callout-info { border-color:#00D4FF; background:rgba(0,212,255,0.05); }
+.article-body .callout-warning { border-color:#FFB800; background:rgba(255,184,0,0.05); }
+.article-body h2[id] { scroll-margin-top:100px; }
+.article-body table { width:100%; border-collapse:collapse; margin:2rem 0; font-size:0.9rem; }
+.article-body th, .article-body td { border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem 1rem; text-align:left; vertical-align:top; }
+.article-body th { color:#e2e8f0; font-weight:600; }
+.article-body h3 { margin-top:2.25rem; margin-bottom:0.9rem; }
+</style>
+</head><body class="bg-slate-950 text-slate-300 font-sans">
+  <div id="reading-progress"></div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <a href="/services.html" class="hover:text-brand transition-colors">サービス</a>
+        <a href="/process.html" class="hover:text-brand transition-colors">プロセス</a>
+        <a href="/case-study.html" class="hover:text-brand transition-colors">事例紹介</a>
+        <a href="/classes.html" class="hover:text-brand transition-colors">区分一覧</a>
+        <a href="/blog/" class="text-brand">ブログ</a>
+        <a href="/about.html" class="hover:text-brand transition-colors">概要</a>
+        <a href="/contact.html" class="btn-glow px-5 py-2 rounded-lg text-sm">お問い合わせ</a>
+      </div>
+            <div class="relative" id="lang-switcher">
+        <button id="lang-btn" class="focus:outline-none focus:ring-0 cursor-pointer select-none text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1" aria-label="Select language" aria-expanded="false">
+          <span class="inline-flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span class="current-lang-label">JA</span></span>
+        </button>
+        <div id="lang-dropdown" class="select-none hidden absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg py-1 shadow-xl z-50">
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="en">English</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-brand font-semibold" data-lang="ja">日本語</a>
+          <a class="cursor-pointer block px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors" data-lang="ko">한국어</a>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-brand" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
+      <a href="/services.html" class="block text-sm text-slate-400 hover:text-brand">サービス</a>
+      <a href="/process.html" class="block text-sm text-slate-400 hover:text-brand">プロセス</a>
+      <a href="/case-study.html" class="block text-sm text-slate-400 hover:text-brand">事例紹介</a>
+      <a href="/classes.html" class="block text-sm text-slate-400 hover:text-brand">区分一覧</a>
+      <a href="/blog/" class="block text-sm text-brand">ブログ</a>
+      <a href="/about.html" class="block text-sm text-slate-400 hover:text-brand">概要</a>
+      <a href="/contact.html" class="block btn-glow px-5 py-2 rounded-lg text-sm text-center">お問い合わせ</a>
+    </div>
+  </nav>
+  <main id="main-content" class="pt-16">
+    <nav class="max-w-5xl mx-auto px-6 pt-4 pb-2" aria-label="パンくずリスト">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="/ja/" class="hover:text-brand transition-colors">ホーム</a></li><li class="text-slate-600">/</li>
+        <li><a href="/blog/ja/" class="hover:text-brand transition-colors">ブログ</a></li><li class="text-slate-600">/</li>
+        <li class="text-slate-300">CNIPAの審査を実際に通る中国語ブランド名の選び方</li>
+      </ol>
+    </nav>
+
+    <section class="hero-gradient py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-6">CNIPAの審査を実際に通る中国語ブランド名の選び方</h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto">中国語名を販売上の理由で先に決め、登録できるかを後で確認する企業は少なくありません。順序が逆です。先願主義では、まず登録適性を調べ、その後に名前を決める方が安く確実です。</p>
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+    <section class="py-12 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-3">
+          <div class="lg:col-span-3 article-body">
+<h2 id="the-name-is-a-separate-right">中国語名は別個の権利</h2>
+<p class="leading-relaxed text-slate-300 mb-6">中国に進出する外国ブランドには、英字標といずれかの中国語名があります。中国法では別個の権利です。英字の文字商標を登録しても中国語表記は守られず、消費者が使い始めた中国語名が当然に自社の権利になるわけでもありません。名前を気に入って包装を印刷し、それから阻害要因を見つけるのではなく、まず登録適性を調べてから名を決める順序が安全です。</p>
+<p class="leading-relaxed text-slate-300 mb-6">そもそも、計画の有無にかかわらず市場は中国語名を作ります。消費者や小売は外国ブランドを短く呼んだり、音写したり、訳したりして通称を定着させ、先取り登録者はまさにその通称を狙います。読みが良く、縁起が良く、字面が美しいというだけで選んだ名前でも、商品そのものや品質をそのまま示すもの、あるいは後述する三軸のどれかで先行出願に近いものは、審査で拒絶され得ます。</p>
+<p class="leading-relaxed text-slate-300 mb-6">これは販売面の要望を取り込んだ登録適性の問題として扱い、逆にしないでください。候補をいくつか挙げ、それぞれを調査し、それから図案や発売資料を作ります。候補の段階で名前を捨てる負担は、拒絶後に改名する負担に比べればごく小さなものです。</p>
+<h2 id="three-axes-of-similarity">類似判断の三軸：音・形・義</h2>
+<p class="leading-relaxed text-slate-300 mb-6">CNIPAは中国語商標の類似を三つの軸で比べ、どれか一つで抵触しても拒絶の根拠になり得ます。この違いを押さえることが、読み心地の良い名前を審査に耐える名前へ変える第一歩です。</p>
+<table>
+<thead><tr><th>軸</th><th>審査で比べる点</th><th>実務上の確認</th></tr></thead>
+<tbody>
+<tr><td>音</td><td>普通話の読みとピンイン、声調、同音・近音</td><td>候補を声に出し、同音・近音の別表記を洗い出す</td></tr>
+<tr><td>形</td><td>漢字の字形、部首、画数の構成と並び</td><td>全体の印象だけでなく、一字ずつ視覚上の近さを比べる</td></tr>
+<tr><td>義</td><td>字義、外国標識やその訳語との対応</td><td>字義、訳し替え、文脈上の含意を確認する</td></tr>
+</tbody>
+</table>
+<p class="leading-relaxed text-slate-300 mb-6">ある軸で問題がなくても別の軸で引っかかる例は珍しくありません。読みは違っても目立つ一字を共有する場合や、見た目は違っても先行商標と同じ意味を伝える場合です。したがって調査は、同一の漢字を探すだけでなく、三軸すべてについて登録簿と突き合わせる必要があります。</p>
+<h2 id="absolute-grounds-articles-15-17-19">拒絶理由：第15条・第17条・第19条</h2>
+<p class="leading-relaxed text-slate-300 mb-6">先行権利との抵触とは別に、名前そのものに登録適性が要ります。第17条は、商品の通用名称、性質をそのまま示す表示、その他識別力を欠く標識を拒絶します。ただし使用によって識別力を得た場合は登録が認められるのが重要な例外です。商品そのものを言い表す名前、品質を賛美する名前、地名や原材料をそのまま冠する名前は通りにくく、例外を使うには真実の使用を示すまとまった証拠が要ります。</p>
+<p class="leading-relaxed text-slate-300 mb-6">第15条は商標として使用・登録できない禁止標識を定め、第19条は悪意の出願を対象に、使用の意思がなく通常の事業需要を明らかに超える出願を拒絶できるとします。ブランド側にとっての教訓は裏返しです。造語で識別力の高い名前を選び、使用の意思を示す記録を残し、投機と映る防御出願の山は避けます。</p>
+<div class="callout callout-info"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>造語が記述より強い。</strong> 辞書に載らない漢字の組み合わせは、スローガンや商品分野の直訳より調査も防衛も容易で、後から使用による識別力を主張するときも筋が通ります。</p></div>
+<h2 id="six-lane-clearance-search">六方向の先行調査</h2>
+<p class="leading-relaxed text-slate-300 mb-6">中国語名の先行調査は六方向を覆う必要があります。漢字そのもの、ピンインと同音語、英語などの原語、意味の訳し替え、方言・地域の読みから生じる似た音や望ましくない響き、そして消費者がすでに付けた通称です。最後の方向を漏らすと、発売前の調査はきれいに見えても、市場では先取り登録者が取れる表記がすでに流通している、という事態になります。</p>
+<p class="leading-relaxed text-slate-300 mb-6">公式データベースは判断材料の一つであり、結論ではありません。公開される登録簿は即時ではなく、出願してから反映されるまで空白の期間があり、データも遅れます。したがって検索結果は危険度の見取り図にとどまり、登録を保証しません。ヒットなしを包装印刷の許可と受け取らず、空白の期間を特定の月数と決めつけないでください。当期の状況は代理人に確認します。</p>
+<div class="callout callout-warning"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>ヒットなしは登録可能を意味しません。</strong> 公式検索に加えて幅広い商業検索を組み合わせ、何をいつ調べたかを日付付きで残し、出願の直前に再検索します。際どい候補なら、第二・第三の案も同時に調査しておきます。</p></div>
+<h2 id="file-word-and-device-separately">文字と図形は別々に出願する</h2>
+<p class="leading-relaxed text-slate-300 mb-6">結合商標は要素ごとに審査されます。図形と文字を一緒に出願すると双方が調べられ、片方に問題があるだけで出願全体が止まります。そこで、中国語の文字商標、英字の文字商標、図形は別々に出願するのが定番です。それぞれが単独で成否が決まり、別個の権利になり、一つに拒絶や異議が出ても他が止まりません。</p>
+<p class="leading-relaxed text-slate-300 mb-6">英字版と中国語版は、一つの結合商標としてではなく、ポートフォリオ設計として揃えて出願します。守る対象も、権利行使や使用証拠のファイルも別になります。選んだ名前の識別力が弱い場合は、第17条の例外に備え、消費者がその名前を自社と結び付けて認識していることを示す、日付入りの広告・販売・EC記録を当初から蓄積します。</p>
+<p class="leading-relaxed text-slate-300 mb-6">最後に、使用する区分で登録し、包装・EC画面・会社資料で英字名と中国語名の表記を揃えます。表記が揺れると通称が生まれ、後の先行調査が難しくなります。検索の実務は<a href="/blog/ja/free-china-trademark-search-guide.html">無料の中国商標検索ガイド</a>、別個の権利という点は<a href="/blog/ja/logo-vs-word-mark-china.html">ロゴ商標と文字商標の違い</a>をご覧ください。</p>
+<h2 id="sources">出典と注意書き</h2>
+<p class="leading-relaxed text-slate-300 mb-6">一次資料：『中華人民共和国商標法（2026年改正）』第15条・第17条・第19条・第20条（2026年6月26日採択、2027年1月1日施行）、中国語商標の音・形・義および結合商標の審査に関するCNIPAの一般実務、中国語命名に関する実務解説。公式データベースの反映状況や審査基準は変わり得るため、出願前に当期の公式公告・規則と最新の登録簿を確認してください。本記事は一般情報であり、個別の法律助言ではありません。</p>
+<div class="callout"><p class="leading-relaxed text-slate-300 mb-6" style="margin:0"><strong>決める前に中国語名を調査しますか？</strong> <a href="/contact.html">音・形・義の調査と、実際に登録できる候補一覧についてご相談ください</a>。</p></div>
+          </div>
+        </div>
+        <aside class="toc-sidebar hidden lg:block">
+          <div class="sticky top-28 space-y-7">
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">この記事の内容</p>
+<a href="#the-name-is-a-separate-right" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">中国語名は別個の権利</a>
+<a href="#three-axes-of-similarity" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">類似判断の三軸：音・形・義</a>
+<a href="#absolute-grounds-articles-15-17-19" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">拒絶理由：第15条・第17条・第19条</a>
+<a href="#six-lane-clearance-search" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">六方向の先行調査</a>
+<a href="#file-word-and-device-separately" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">文字と図形は別々に出願する</a>
+<a href="#sources" class="toc-link block text-sm text-slate-500 hover:text-brand pl-4 py-1 border-l-2 border-slate-800 hover:border-brand transition-all duration-200">出典と注意書き</a>
+            </div>
+            <div class="glass rounded-2xl p-6">
+              <p class="text-xs text-slate-600 uppercase tracking-widest font-semibold mb-3 pl-1">関連記事</p>
+<a href="/blog/ja/free-china-trademark-search-guide.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">無料の中国商標検索ガイド</a>
+<a href="/blog/ja/coca-cola-chinese-name-trademark-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">コカ・コーラが中国語名を選んだ経緯</a>
+<a href="/blog/ja/logo-vs-word-mark-china.html" class="block text-sm text-slate-500 hover:text-brand py-1 pl-1 transition-colors">ロゴ商標と文字商標の違い</a>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <p class="text-sm text-slate-400 mb-4">中国での商標登録についてご相談ですか？</p>
+              <a href="/contact.html" class="btn-glow inline-block w-full px-4 py-2.5 rounded-lg text-sm font-semibold text-center">無料相談</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section class="py-16 px-6 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-2xl md:text-3xl font-bold mb-4">中国商標のご相談はこちら</h2>
+        <p class="text-slate-400 mb-8">専門スタッフが手続き全体をサポートします。</p>
+        <a href="/contact.html" class="btn-glow inline-block px-8 py-3 rounded-lg text-sm font-semibold">無料相談を申し込む</a>
+      </div>
+    </section>
+  </main>
+<footer class="border-t border-white/5 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center gap-2"><img src="/images/logo-v1-preview.svg" alt="RTMCN - Tuyue Trademark Registration logo" class="h-8 w-auto"></a>
+          <p class="text-slate-500 text-sm mt-3 leading-relaxed">途悦商標登録 — 中国における専門商標サービス。</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">サービス</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/services.html" class="hover:text-brand transition-colors">商標検索</a></li>
+            <li><a href="/services.html" class="hover:text-brand transition-colors">出願・審査</a></li>
+            <li><a href="/classes.html" class="hover:text-brand transition-colors">商標区分</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">会社情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/about.html" class="hover:text-brand transition-colors">私たちについて</a></li>
+            <li><a href="/blog/" class="hover:text-brand transition-colors">ブログ</a></li>
+            <li><a href="/contact.html" class="hover:text-brand transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-sm mb-3">法的情報</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">プライバシーポリシー</a></li>
+            <li><a href="/cookie.html" class="hover:text-brand transition-colors">Cookieポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+        <p>© 2026 途悦商標登録. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/scripts/main.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('reading-progress').style.width = progress + '%';
+    });
+    (function() {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = [];
+      links.forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link: l });
+      });
+      if (!sections.length) return;
+      function update() {
+        let current = sections[0].id;
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s.id;
+        }
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#' + current + '"]');
+        if (active) active.classList.add('active');
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+<script>    (function() {
+      var btn = document.getElementById('lang-btn');
+      var dropdown = document.getElementById('lang-dropdown');
+      if (!btn || !dropdown) return;
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', dropdown.classList.contains('hidden') ? 'false' : 'true');
+      });
+      document.addEventListener('click', function() {
+        dropdown.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      dropdown.querySelectorAll('a[data-lang]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = link.dataset.lang;
+          var path = window.location.pathname;
+          var parts = path.split('/');
+          var slug = parts.pop() || 'index.html';
+          if (slug === '') slug = 'index.html';
+          var newPath;
+          if (lang === 'en') {
+            newPath = '/blog/' + slug;
+          } else {
+            newPath = '/blog/' + lang + '/' + slug;
+          }
+          window.location.href = newPath;
+        });
+      });
+    })();</script>
+</body>
+</html>
