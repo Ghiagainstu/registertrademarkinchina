@@ -2,36 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-[[redirects]]
-  from = "/about"
-  to = "/about.html"
-  status = 200
-
-[[redirects]]
-  from = "/services"
-  to = "/services.html"
-  status = 200
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact.html"
-  status = 200
-
-[[redirects]]
-  from = "/privacy"
-  to = "/privacy.html"
-  status = 200
-
-[[redirects]]
-  from = "/cookie"
-  to = "/cookie.html"
-  status = 200
-
-[[redirects]]
-  from = "/classes"
-  to = "/classes.html"
-  status = 200
-
 [[headers]]
   for = "/*"
   [headers.values]
@@ -39,42 +9,741 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Directory index roots: continue serving index.html (unchanged behaviour)
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/blog"
+  to = "/blog/index.html"
+  status = 200
 [[redirects]]
   from = "/ja"
   to = "/ja/index.html"
   status = 200
-
 [[redirects]]
-  from = "/ja/about"
-  to = "/ja/about.html"
+  from = "/ko"
+  to = "/ko/index.html"
   status = 200
-
-[[redirects]]
-  from = "/ja/services"
-  to = "/ja/services.html"
-  status = 200
-
-[[redirects]]
-  from = "/ja/contact"
-  to = "/ja/contact.html"
-  status = 200
-
-[[redirects]]
-  from = "/ja/privacy"
-  to = "/ja/privacy.html"
-  status = 200
-
-[[redirects]]
-  from = "/ja/cookie"
-  to = "/ja/cookie.html"
-  status = 200
-
-[[redirects]]
-  from = "/ja/classes"
-  to = "/ja/classes.html"
-  status = 200
-
 [[redirects]]
   from = "/blog/ja"
   to = "/blog/ja/index.html"
   status = 200
+[[redirects]]
+  from = "/blog/ko"
+  to = "/blog/ko/index.html"
+  status = 200
+# Leaf pages: 301 clean URL -> .html (the declared canonical)
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 301
+[[redirects]]
+  from = "/blog/amazon-tmall-trademark-requirement-china"
+  to = "/blog/amazon-tmall-trademark-requirement-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/apple-ipad-trademark-china-case"
+  to = "/blog/apple-ipad-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-first-to-file-trademark-guide"
+  to = "/blog/china-first-to-file-trademark-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-oem-agreement-trademark-clauses"
+  to = "/blog/china-oem-agreement-trademark-clauses.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-assignment-licence-recordal"
+  to = "/blog/china-trademark-assignment-licence-recordal.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-classes-complete-guide"
+  to = "/blog/china-trademark-classes-complete-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-enforcement-routes-after-registration"
+  to = "/blog/china-trademark-enforcement-routes-after-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-law-2026-revision-changes"
+  to = "/blog/china-trademark-law-2026-revision-changes.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-law-2027-foreign-brands"
+  to = "/blog/china-trademark-law-2027-foreign-brands.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-monitoring-protection"
+  to = "/blog/china-trademark-monitoring-protection.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-non-use-cancellation-evidence"
+  to = "/blog/china-trademark-non-use-cancellation-evidence.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-opposition-watch-sop-2-months"
+  to = "/blog/china-trademark-opposition-watch-sop-2-months.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-refusal-review-15-days"
+  to = "/blog/china-trademark-refusal-review-15-days.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-registration-complete-guide-2026"
+  to = "/blog/china-trademark-registration-complete-guide-2026.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-renewal-guide"
+  to = "/blog/china-trademark-renewal-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/china-trademark-squatting-decision-table"
+  to = "/blog/china-trademark-squatting-decision-table.html"
+  status = 301
+[[redirects]]
+  from = "/blog/chinese-brand-name-cnipa-examination"
+  to = "/blog/chinese-brand-name-cnipa-examination.html"
+  status = 301
+[[redirects]]
+  from = "/blog/coca-cola-chinese-name-trademark-china"
+  to = "/blog/coca-cola-chinese-name-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/common-reasons-trademark-rejection-china"
+  to = "/blog/common-reasons-trademark-rejection-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/disney-mickey-trademark-china"
+  to = "/blog/disney-mickey-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/dynamic-sound-colour-marks-china-2027"
+  to = "/blog/dynamic-sound-colour-marks-china-2027.html"
+  status = 301
+[[redirects]]
+  from = "/blog/eu-companies-china-trademark-registration"
+  to = "/blog/eu-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/free-china-trademark-search-guide"
+  to = "/blog/free-china-trademark-search-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/greater-china-trademark-separate-filings"
+  to = "/blog/greater-china-trademark-separate-filings.html"
+  status = 301
+[[redirects]]
+  from = "/blog/hermes-trademark-china-case"
+  to = "/blog/hermes-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/how-long-trademark-registration-china"
+  to = "/blog/how-long-trademark-registration-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/how-much-trademark-registration-cost-china"
+  to = "/blog/how-much-trademark-registration-cost-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/huawei-trademark-uk-case"
+  to = "/blog/huawei-trademark-uk-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/amazon-tmall-trademark-requirement-china"
+  to = "/blog/ja/amazon-tmall-trademark-requirement-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/apple-ipad-trademark-china-case"
+  to = "/blog/ja/apple-ipad-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-first-to-file-trademark-guide"
+  to = "/blog/ja/china-first-to-file-trademark-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-oem-agreement-trademark-clauses"
+  to = "/blog/ja/china-oem-agreement-trademark-clauses.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-assignment-licence-recordal"
+  to = "/blog/ja/china-trademark-assignment-licence-recordal.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-classes-complete-guide"
+  to = "/blog/ja/china-trademark-classes-complete-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-enforcement-routes-after-registration"
+  to = "/blog/ja/china-trademark-enforcement-routes-after-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-law-2026-revision-changes"
+  to = "/blog/ja/china-trademark-law-2026-revision-changes.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-law-2027-foreign-brands"
+  to = "/blog/ja/china-trademark-law-2027-foreign-brands.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-monitoring-protection"
+  to = "/blog/ja/china-trademark-monitoring-protection.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-non-use-cancellation-evidence"
+  to = "/blog/ja/china-trademark-non-use-cancellation-evidence.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-opposition-watch-sop-2-months"
+  to = "/blog/ja/china-trademark-opposition-watch-sop-2-months.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-refusal-review-15-days"
+  to = "/blog/ja/china-trademark-refusal-review-15-days.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-registration-complete-guide-2026"
+  to = "/blog/ja/china-trademark-registration-complete-guide-2026.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-renewal-guide"
+  to = "/blog/ja/china-trademark-renewal-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/china-trademark-squatting-decision-table"
+  to = "/blog/ja/china-trademark-squatting-decision-table.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/chinese-brand-name-cnipa-examination"
+  to = "/blog/ja/chinese-brand-name-cnipa-examination.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/coca-cola-chinese-name-trademark-china"
+  to = "/blog/ja/coca-cola-chinese-name-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/common-reasons-trademark-rejection-china"
+  to = "/blog/ja/common-reasons-trademark-rejection-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/disney-mickey-trademark-china"
+  to = "/blog/ja/disney-mickey-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/dynamic-sound-colour-marks-china-2027"
+  to = "/blog/ja/dynamic-sound-colour-marks-china-2027.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/eu-companies-china-trademark-registration"
+  to = "/blog/ja/eu-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/free-china-trademark-search-guide"
+  to = "/blog/ja/free-china-trademark-search-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/greater-china-trademark-separate-filings"
+  to = "/blog/ja/greater-china-trademark-separate-filings.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/hermes-trademark-china-case"
+  to = "/blog/ja/hermes-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/how-long-trademark-registration-china"
+  to = "/blog/ja/how-long-trademark-registration-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/how-much-trademark-registration-cost-china"
+  to = "/blog/ja/how-much-trademark-registration-cost-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/huawei-trademark-uk-case"
+  to = "/blog/ja/huawei-trademark-uk-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/japanese-anime-ip-trademark-china"
+  to = "/blog/ja/japanese-anime-ip-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/japanese-companies-china-trademark-registration"
+  to = "/blog/ja/japanese-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/japanese-ramen-chain-china-trademark"
+  to = "/blog/ja/japanese-ramen-chain-china-trademark.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/korean-brands-trademark-squatting-china-cases"
+  to = "/blog/ja/korean-brands-trademark-squatting-china-cases.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/korean-companies-china-trademark-registration"
+  to = "/blog/ja/korean-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/logo-vs-word-mark-china"
+  to = "/blog/ja/logo-vs-word-mark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/madrid-vs-direct-filing-china"
+  to = "/blog/ja/madrid-vs-direct-filing-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/michael-jordan-qiaodan-trademark-china"
+  to = "/blog/ja/michael-jordan-qiaodan-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/muji-trademark-war-china"
+  to = "/blog/ja/muji-trademark-war-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/new-balance-trademark-china-case"
+  to = "/blog/ja/new-balance-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/nice-classification-13th-edition-2026-china"
+  to = "/blog/ja/nice-classification-13th-edition-2026-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/nike-chinese-name-trademark-china"
+  to = "/blog/ja/nike-chinese-name-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/overseas-r-mark-vs-china-trademark-registration"
+  to = "/blog/ja/overseas-r-mark-vs-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/starbucks-xingbake-trademark-china"
+  to = "/blog/ja/starbucks-xingbake-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/tesla-trademark-china-case"
+  to = "/blog/ja/tesla-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/trademark-registered-by-someone-else-china"
+  to = "/blog/ja/trademark-registered-by-someone-else-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/us-companies-china-trademark-registration"
+  to = "/blog/ja/us-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ja/who-can-register-trademark-in-china"
+  to = "/blog/ja/who-can-register-trademark-in-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/japanese-anime-ip-trademark-china"
+  to = "/blog/japanese-anime-ip-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/japanese-companies-china-trademark-registration"
+  to = "/blog/japanese-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/japanese-ramen-chain-china-trademark"
+  to = "/blog/japanese-ramen-chain-china-trademark.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/amazon-tmall-trademark-requirement-china"
+  to = "/blog/ko/amazon-tmall-trademark-requirement-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/apple-ipad-trademark-china-case"
+  to = "/blog/ko/apple-ipad-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-first-to-file-trademark-guide"
+  to = "/blog/ko/china-first-to-file-trademark-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-oem-agreement-trademark-clauses"
+  to = "/blog/ko/china-oem-agreement-trademark-clauses.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-assignment-licence-recordal"
+  to = "/blog/ko/china-trademark-assignment-licence-recordal.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-classes-complete-guide"
+  to = "/blog/ko/china-trademark-classes-complete-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-enforcement-routes-after-registration"
+  to = "/blog/ko/china-trademark-enforcement-routes-after-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-law-2026-revision-changes"
+  to = "/blog/ko/china-trademark-law-2026-revision-changes.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-law-2027-foreign-brands"
+  to = "/blog/ko/china-trademark-law-2027-foreign-brands.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-monitoring-protection"
+  to = "/blog/ko/china-trademark-monitoring-protection.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-non-use-cancellation-evidence"
+  to = "/blog/ko/china-trademark-non-use-cancellation-evidence.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-opposition-watch-sop-2-months"
+  to = "/blog/ko/china-trademark-opposition-watch-sop-2-months.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-refusal-review-15-days"
+  to = "/blog/ko/china-trademark-refusal-review-15-days.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-registration-complete-guide-2026"
+  to = "/blog/ko/china-trademark-registration-complete-guide-2026.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-renewal-guide"
+  to = "/blog/ko/china-trademark-renewal-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/china-trademark-squatting-decision-table"
+  to = "/blog/ko/china-trademark-squatting-decision-table.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/chinese-brand-name-cnipa-examination"
+  to = "/blog/ko/chinese-brand-name-cnipa-examination.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/coca-cola-chinese-name-trademark-china"
+  to = "/blog/ko/coca-cola-chinese-name-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/common-reasons-trademark-rejection-china"
+  to = "/blog/ko/common-reasons-trademark-rejection-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/disney-mickey-trademark-china"
+  to = "/blog/ko/disney-mickey-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/dynamic-sound-colour-marks-china-2027"
+  to = "/blog/ko/dynamic-sound-colour-marks-china-2027.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/eu-companies-china-trademark-registration"
+  to = "/blog/ko/eu-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/free-china-trademark-search-guide"
+  to = "/blog/ko/free-china-trademark-search-guide.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/greater-china-trademark-separate-filings"
+  to = "/blog/ko/greater-china-trademark-separate-filings.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/hermes-trademark-china-case"
+  to = "/blog/ko/hermes-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/how-long-trademark-registration-china"
+  to = "/blog/ko/how-long-trademark-registration-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/how-much-trademark-registration-cost-china"
+  to = "/blog/ko/how-much-trademark-registration-cost-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/huawei-trademark-uk-case"
+  to = "/blog/ko/huawei-trademark-uk-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/japanese-anime-ip-trademark-china"
+  to = "/blog/ko/japanese-anime-ip-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/japanese-companies-china-trademark-registration"
+  to = "/blog/ko/japanese-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/japanese-ramen-chain-china-trademark"
+  to = "/blog/ko/japanese-ramen-chain-china-trademark.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/korean-brands-trademark-squatting-china-cases"
+  to = "/blog/ko/korean-brands-trademark-squatting-china-cases.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/korean-companies-china-trademark-registration"
+  to = "/blog/ko/korean-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/logo-vs-word-mark-china"
+  to = "/blog/ko/logo-vs-word-mark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/madrid-vs-direct-filing-china"
+  to = "/blog/ko/madrid-vs-direct-filing-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/michael-jordan-qiaodan-trademark-china"
+  to = "/blog/ko/michael-jordan-qiaodan-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/muji-trademark-war-china"
+  to = "/blog/ko/muji-trademark-war-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/new-balance-trademark-china-case"
+  to = "/blog/ko/new-balance-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/nice-classification-13th-edition-2026-china"
+  to = "/blog/ko/nice-classification-13th-edition-2026-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/nike-chinese-name-trademark-china"
+  to = "/blog/ko/nike-chinese-name-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/overseas-r-mark-vs-china-trademark-registration"
+  to = "/blog/ko/overseas-r-mark-vs-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/starbucks-xingbake-trademark-china"
+  to = "/blog/ko/starbucks-xingbake-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/tesla-trademark-china-case"
+  to = "/blog/ko/tesla-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/trademark-registered-by-someone-else-china"
+  to = "/blog/ko/trademark-registered-by-someone-else-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/us-companies-china-trademark-registration"
+  to = "/blog/ko/us-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/ko/who-can-register-trademark-in-china"
+  to = "/blog/ko/who-can-register-trademark-in-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/korean-brands-trademark-squatting-china-cases"
+  to = "/blog/korean-brands-trademark-squatting-china-cases.html"
+  status = 301
+[[redirects]]
+  from = "/blog/korean-companies-china-trademark-registration"
+  to = "/blog/korean-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/logo-vs-word-mark-china"
+  to = "/blog/logo-vs-word-mark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/madrid-vs-direct-filing-china"
+  to = "/blog/madrid-vs-direct-filing-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/michael-jordan-qiaodan-trademark-china"
+  to = "/blog/michael-jordan-qiaodan-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/muji-trademark-war-china"
+  to = "/blog/muji-trademark-war-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/new-balance-trademark-china-case"
+  to = "/blog/new-balance-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/nice-classification-13th-edition-2026-china"
+  to = "/blog/nice-classification-13th-edition-2026-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/nike-chinese-name-trademark-china"
+  to = "/blog/nike-chinese-name-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/overseas-r-mark-vs-china-trademark-registration"
+  to = "/blog/overseas-r-mark-vs-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/starbucks-xingbake-trademark-china"
+  to = "/blog/starbucks-xingbake-trademark-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/tesla-trademark-china-case"
+  to = "/blog/tesla-trademark-china-case.html"
+  status = 301
+[[redirects]]
+  from = "/blog/trademark-registered-by-someone-else-china"
+  to = "/blog/trademark-registered-by-someone-else-china.html"
+  status = 301
+[[redirects]]
+  from = "/blog/us-companies-china-trademark-registration"
+  to = "/blog/us-companies-china-trademark-registration.html"
+  status = 301
+[[redirects]]
+  from = "/blog/who-can-register-trademark-in-china"
+  to = "/blog/who-can-register-trademark-in-china.html"
+  status = 301
+[[redirects]]
+  from = "/case-study"
+  to = "/case-study.html"
+  status = 301
+[[redirects]]
+  from = "/case-study/apple-ipad"
+  to = "/case-study/apple-ipad.html"
+  status = 301
+[[redirects]]
+  from = "/case-study/hermes"
+  to = "/case-study/hermes.html"
+  status = 301
+[[redirects]]
+  from = "/case-study/jordan-qiaodan"
+  to = "/case-study/jordan-qiaodan.html"
+  status = 301
+[[redirects]]
+  from = "/case-study/new-balance"
+  to = "/case-study/new-balance.html"
+  status = 301
+[[redirects]]
+  from = "/case-study/tesla"
+  to = "/case-study/tesla.html"
+  status = 301
+[[redirects]]
+  from = "/classes"
+  to = "/classes.html"
+  status = 301
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 301
+[[redirects]]
+  from = "/cookie"
+  to = "/cookie.html"
+  status = 301
+[[redirects]]
+  from = "/ja/about"
+  to = "/ja/about.html"
+  status = 301
+[[redirects]]
+  from = "/ja/case-study"
+  to = "/ja/case-study.html"
+  status = 301
+[[redirects]]
+  from = "/ja/case-study/apple-ipad"
+  to = "/ja/case-study/apple-ipad.html"
+  status = 301
+[[redirects]]
+  from = "/ja/case-study/hermes"
+  to = "/ja/case-study/hermes.html"
+  status = 301
+[[redirects]]
+  from = "/ja/case-study/jordan-qiaodan"
+  to = "/ja/case-study/jordan-qiaodan.html"
+  status = 301
+[[redirects]]
+  from = "/ja/case-study/new-balance"
+  to = "/ja/case-study/new-balance.html"
+  status = 301
+[[redirects]]
+  from = "/ja/case-study/tesla"
+  to = "/ja/case-study/tesla.html"
+  status = 301
+[[redirects]]
+  from = "/ja/classes"
+  to = "/ja/classes.html"
+  status = 301
+[[redirects]]
+  from = "/ja/contact"
+  to = "/ja/contact.html"
+  status = 301
+[[redirects]]
+  from = "/ja/cookie"
+  to = "/ja/cookie.html"
+  status = 301
+[[redirects]]
+  from = "/ja/privacy"
+  to = "/ja/privacy.html"
+  status = 301
+[[redirects]]
+  from = "/ja/process"
+  to = "/ja/process.html"
+  status = 301
+[[redirects]]
+  from = "/ja/services"
+  to = "/ja/services.html"
+  status = 301
+[[redirects]]
+  from = "/ko/about"
+  to = "/ko/about.html"
+  status = 301
+[[redirects]]
+  from = "/ko/case-study"
+  to = "/ko/case-study.html"
+  status = 301
+[[redirects]]
+  from = "/ko/case-study/apple-ipad"
+  to = "/ko/case-study/apple-ipad.html"
+  status = 301
+[[redirects]]
+  from = "/ko/case-study/hermes"
+  to = "/ko/case-study/hermes.html"
+  status = 301
+[[redirects]]
+  from = "/ko/case-study/jordan-qiaodan"
+  to = "/ko/case-study/jordan-qiaodan.html"
+  status = 301
+[[redirects]]
+  from = "/ko/case-study/new-balance"
+  to = "/ko/case-study/new-balance.html"
+  status = 301
+[[redirects]]
+  from = "/ko/case-study/tesla"
+  to = "/ko/case-study/tesla.html"
+  status = 301
+[[redirects]]
+  from = "/ko/classes"
+  to = "/ko/classes.html"
+  status = 301
+[[redirects]]
+  from = "/ko/contact"
+  to = "/ko/contact.html"
+  status = 301
+[[redirects]]
+  from = "/ko/cookie"
+  to = "/ko/cookie.html"
+  status = 301
+[[redirects]]
+  from = "/ko/privacy"
+  to = "/ko/privacy.html"
+  status = 301
+[[redirects]]
+  from = "/ko/process"
+  to = "/ko/process.html"
+  status = 301
+[[redirects]]
+  from = "/ko/services"
+  to = "/ko/services.html"
+  status = 301
+[[redirects]]
+  from = "/logo-preview"
+  to = "/logo-preview.html"
+  status = 301
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 301
+[[redirects]]
+  from = "/process"
+  to = "/process.html"
+  status = 301
+[[redirects]]
+  from = "/services"
+  to = "/services.html"
+  status = 301
