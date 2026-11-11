@@ -2,6 +2,13 @@
   command = "npm run build"
   publish = "dist"
 
+# Disable Netlify Pretty URLs post-processing. It was rewriting in-page links
+# from /about.html to /about and serving clean URLs with 200, which created
+# duplicate URLs and shadowed the clean -> .html 301 rules below.
+# This overrides Project configuration > Developer settings > Post processing > Pretty URLs.
+[build.processing.html]
+  pretty_urls = false
+
 [[headers]]
   for = "/*"
   [headers.values]
